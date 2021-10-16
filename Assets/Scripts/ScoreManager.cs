@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+/// <summary>
+/// スコアの管理を行う
+/// </summary>
+public class ScoreManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static ScoreManager Instance;
 
     private void Awake()
     {

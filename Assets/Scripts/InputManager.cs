@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+/// <summary>
+/// プレイヤーからの入力を統括する
+/// </summary>
+public class InputManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static InputManager Instance;
 
     private void Awake()
     {
@@ -22,5 +25,14 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+
+    /// <summary>
+    /// マウスの位置を返す
+    /// </summary>
+    /// <returns></returns>
+    public Vector2 MousePos()
+    {
+        return Input.mousePosition;
     }
 }

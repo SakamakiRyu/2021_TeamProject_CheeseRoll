@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class SceneManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static SceneManager Instance;
 
     private void Awake()
     {
@@ -23,4 +23,8 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         }
     }
+
+    [SerializeField]
+    private bool _toGameImmediately;
+
 }
