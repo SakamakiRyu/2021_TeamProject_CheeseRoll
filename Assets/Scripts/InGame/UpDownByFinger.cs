@@ -37,6 +37,11 @@ public class UpDownByFinger : MonoBehaviour
             _isTouch = true;
         }
 
+        if (Input.GetButtonUp("Fire1"))
+        {
+            _isTouch = false;
+        }
+
         if (_isTouch)
         {
             // Vector3でマウスの位置座標を取得
