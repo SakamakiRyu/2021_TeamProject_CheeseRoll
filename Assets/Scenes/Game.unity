@@ -434,7 +434,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _container: {fileID: 317474186}
-  _splitTime: 0.5
+  _splitTime: 0.05
+  _roadPrefab: {fileID: 4356309577663889531, guid: 673fbb6d3c3ff92419814828364ca65f,
+    type: 3}
+  _roadSizeX: 3
+  _roadSizeY: 0.2
 --- !u!1 &1198498553
 GameObject:
   m_ObjectHideFlags: 0
