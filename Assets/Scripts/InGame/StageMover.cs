@@ -11,6 +11,8 @@ public class StageMover : MonoBehaviour
     [SerializeField]
     private float _moveSpeed;
 
+    public float MoveSpeed => _moveSpeed;
+
     private void Update()
     {
         Vector3 pos = transform.localPosition;
