@@ -68,8 +68,20 @@ public class UpDownByFinger : MonoBehaviour
             screenToWorldPointPosition = Camera.main.ScreenToWorldPoint(pos);
             // 前フレームとの差分を保存する
             var difference = (screenToWorldPointPosition.y - _prevMousePosY) * _variation;
-            // オブジェクトの座標を変化させる
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + difference, this.transform.position.z);
+            if (this.transform.position.y >= _min && this.transform.position.y <= _max)
+            {
+                this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + difference, this.transform.position.z);
+            }
+
+            // 補正
+            if (this.transform.position.y < _min )
+            {
+                this.transform.position = new Vector3( this.transform.position.x,_min,this.transform.position.z);
+            }
+            if (this.transform.position.y > _max)
+            {
+                this.transform.position = new Vector3(this.transform.position.x, _max, this.transform.position.z);
+            }
             // 前フレームの座標を保存
             _prevMousePosY = screenToWorldPointPosition.y;
         }
