@@ -32,10 +32,19 @@ public class SceneManager : MonoBehaviour
     [SerializeField]
     private bool _toGameImmediately;
 
+    //[SerializeField]
+    //private string _immediatelySceneName = "Game";
 
     private void StartTitle()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Title");
+        if (_toGameImmediately == true)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+        }
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Title");
+        }
     }
 
     /// <summary>
