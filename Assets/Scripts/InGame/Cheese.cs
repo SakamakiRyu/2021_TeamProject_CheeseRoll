@@ -7,7 +7,10 @@ public class Cheese : MonoBehaviour
     Rigidbody _rigidbody;
     [SerializeField]
     StageMover _move;
+    [SerializeField, Range(0.0f, 1.0f)]
+    float _onHitSensitivity = 0.5f;
     float _z;
+    float speed;
 
     private void Awake()
     {
@@ -17,15 +20,49 @@ public class Cheese : MonoBehaviour
 
     private void Update()
     {
+        UpdateSpeed();
+    }
+
+    private void FixedUpdate()
+    {
         //速度を固定
         Vector3 velocity = _rigidbody.velocity;
-        velocity.z = _move.MoveSpeed;
+        velocity.z = speed;
         velocity.x = 0;
         _rigidbody.velocity = velocity;
-        //位置を固定
-        Vector3 pos = this.transform.localPosition;
-        pos.z = _z + _move.transform.position.z;
-        pos.x = 0;
-        this.transform.localPosition = pos;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //タテ速度の変更
+        Vector3 nomal = collision.GetContact(0).normal;
+        float bai = -(nomal.z / nomal.y);
+        Vector3 velocity = _rigidbody.velocity;
+        velocity.z = speed;
+        velocity.y = speed * bai * _onHitSensitivity;
+        velocity.x = 0;
+        _rigidbody.velocity = velocity;
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        //タテ速度の変更
+        Vector3 nomal = collision.GetContact(0).normal;
+        float bai = -(nomal.z / nomal.y);
+        Vector3 velocity = _rigidbody.velocity;
+        velocity.z = speed;
+        velocity.y = speed * bai * _onHitSensitivity;
+        velocity.x = 0;
+        _rigidbody.velocity = velocity;
+    }
+
+    private void UpdateSpeed()
+    {
+        //本来いるべき座標との差を調べる
+        float realZ = this.transform.localPosition.z;
+        float z = _z + _move.transform.position.z;
+        float sa = z - realZ;
+        //差に応じて速度を変化させる
+        speed = _move.MoveSpeed + sa;
     }
 }
