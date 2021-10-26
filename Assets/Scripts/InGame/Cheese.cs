@@ -39,7 +39,7 @@ public class Cheese : MonoBehaviour
         float bai = -(nomal.z / nomal.y);
         Vector3 velocity = _rigidbody.velocity;
         velocity.z = speed;
-        velocity.y = speed * bai * _onHitSensitivity;
+        velocity.y = Mathf.Max(speed * bai * _onHitSensitivity, velocity.y);
         velocity.x = 0;
         _rigidbody.velocity = velocity;
     }
@@ -51,7 +51,7 @@ public class Cheese : MonoBehaviour
         float bai = -(nomal.z / nomal.y);
         Vector3 velocity = _rigidbody.velocity;
         velocity.z = speed;
-        velocity.y = speed * bai * _onHitSensitivity;
+        velocity.y = Mathf.Max(speed * bai * _onHitSensitivity, velocity.y);
         velocity.x = 0;
         _rigidbody.velocity = velocity;
     }
