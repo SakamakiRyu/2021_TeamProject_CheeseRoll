@@ -557,6 +557,7 @@ MonoBehaviour:
   - {fileID: 2130569136}
   - {fileID: 419713165}
   - {fileID: 1256419130}
+  _timeLineManager: {fileID: 1723353056}
 --- !u!1 &1133423738
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +585,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: ea96c23eadcebfe49bc8a4b631b11935, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0

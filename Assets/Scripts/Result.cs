@@ -11,10 +11,14 @@ public class Result : MonoBehaviour
 
     [SerializeField]
     ///<summary>スコアを表示するオブジェクト</summary>
-    Image[] _scoreEvaluationUiImage;
+    Image[] _scoreEvaluationUiImage;  
+    [SerializeField]
+    ///<summary>タイムラインを制御するオブジェクト</summary>
+    TimeLineManager _timeLineManager;
 
     void Start()
     {
+        _timeLineManager.PlayTimeLine(0);
         if (ScoreManager.Instance.Score <= 3)
         {
             _scoreEvaluationUiImage[0].gameObject.SetActive(true);
