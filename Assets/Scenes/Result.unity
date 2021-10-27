@@ -473,8 +473,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 991945621}
-  - component: {fileID: 991945620}
   - component: {fileID: 991945622}
+  - component: {fileID: 991945625}
+  - component: {fileID: 991945620}
   m_Layer: 0
   m_Name: Result
   m_TagString: Untagged
@@ -491,14 +492,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 991945619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1552a589a5d4b374fb528ab8578ceb85, type: 3}
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreTextUi: {fileID: 2117499330}
-  _scoreEvaluationUiImage:
-  - {fileID: 2130569136}
-  - {fileID: 419713165}
-  - {fileID: 1256419130}
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 86db2ddfb95268742a3d1c66e0c0c1f9, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 991945625}
+          m_MethodName: ScoreAnimStart
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &991945621
 Transform:
   m_ObjectHideFlags: 0
@@ -527,6 +540,73 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxScoreValue: 10
   _score: 7
+--- !u!114 &991945625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991945619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dceb6d7c4e9a4348be185d825e14182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreTextUi: {fileID: 2117499330}
+  _scoreEvaluationUiImage:
+  - {fileID: 2130569136}
+  - {fileID: 419713165}
+  - {fileID: 1256419130}
+--- !u!1 &1133423738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1133423740}
+  - component: {fileID: 1133423739}
+  m_Layer: 0
+  m_Name: ResultTimeLine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &1133423739
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133423738}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: ea96c23eadcebfe49bc8a4b631b11935, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 8144332362212912080, guid: ea96c23eadcebfe49bc8a4b631b11935, type: 2}
+    value: {fileID: 991945620}
+  m_ExposedReferences:
+    m_References: []
+--- !u!4 &1133423740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133423738}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1723353057}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1256419128
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +826,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1610248479}
   m_CullTransparentMesh: 0
+--- !u!1 &1723353055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1723353057}
+  - component: {fileID: 1723353056}
+  m_Layer: 0
+  m_Name: TimeLineManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1723353056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723353055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f987ed884c59c0e47b896bc6de9fa4e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playableDirectorList:
+  - {fileID: 1133423739}
+--- !u!4 &1723353057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723353055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 118.47952, y: 51.875427, z: 11.024128}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1133423740}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1930164858
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +966,7 @@ GameObject:
   - component: {fileID: 2117499329}
   - component: {fileID: 2117499331}
   - component: {fileID: 2117499330}
+  - component: {fileID: 2117499332}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -907,6 +1034,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117499328}
   m_CullTransparentMesh: 0
+--- !u!95 &2117499332
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117499328}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2130569134
 GameObject:
   m_ObjectHideFlags: 0
