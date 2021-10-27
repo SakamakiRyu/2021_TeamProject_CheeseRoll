@@ -421,6 +421,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _min: 0.55
   _max: 7
+  _variationMaxValue: 1
+  _variationMinValue: 1
+  _maxChengeValue: 1
+  _minChengeValue: 0
+  _chengeValue: 0
 --- !u!114 &893504409
 MonoBehaviour:
   m_ObjectHideFlags: 0

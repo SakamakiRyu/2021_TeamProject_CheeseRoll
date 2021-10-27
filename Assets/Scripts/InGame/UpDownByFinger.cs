@@ -15,15 +15,33 @@ public class UpDownByFinger : MonoBehaviour
     [SerializeField]
     private float _max;
 
-    [Header("変化量の倍率")]
+    [Header("変化量にかける最大倍率")]
     [SerializeField]
-    private float _variation = 1;
+    private float _variationMaxValue;
+
+    [Header("変化量にかける最小倍率")]
+    [SerializeField]
+    private float _variationMinValue;
+
+    [Header("変化をかける最小値")]
+    [SerializeField]
+    private float _maxChengeValue = 0f;
+
+    [Header("変化をかける最大値")]
+    [SerializeField]
+    private float _minChengeValue = 0f;
+
+    /// <summary>変化量</summary>
+    private float _chengeValue;
 
     /// <summary>前のフレームのy座標を保存しておく</summary>
     private float _prevMousePosY;
 
     /// <summary>画面に触っているかのフラグ</summary>
     private bool _isTouched = default;
+
+    /// <summary>経過時間を保存する変数</summary>
+    private float _time = 0f;
 
     private void Update()
     {
@@ -35,6 +53,8 @@ public class UpDownByFinger : MonoBehaviour
     {
         Vector3 pos;
         Vector3 screenToWorldPointPosition;
+
+        
 
         if (Input.GetButtonDown("Fire1"))
         {
@@ -60,29 +80,49 @@ public class UpDownByFinger : MonoBehaviour
 
         if (_isTouched)
         {
+            _time += Time.deltaTime;
+
             // Vector3でマウスの位置座標を取得
             pos = Input.mousePosition;
             // Z軸修正
             pos.z = 10f;
-            // マウス位置座標からスクリーン座標に変換する
+            // マウスの位置座標からスクリーン座標に変換する
             screenToWorldPointPosition = Camera.main.ScreenToWorldPoint(pos);
             // 前フレームとの差分を保存する
-            var difference = (screenToWorldPointPosition.y - _prevMousePosY) * _variation;
+            var differenceValue = (screenToWorldPointPosition.y - _prevMousePosY) * _variationMaxValue;
+            // 差分を変価値に加算する
+            _chengeValue += differenceValue;
+            // 変化量の絶対値を計算
+            var abs = Mathf.Abs(differenceValue);
+            // 値が、最大変化量を超えた場合は補正する
+            if (abs > _maxChengeValue)
+            {
+                if (differenceValue < 0)
+                {
+                    differenceValue = _maxChengeValue * -1;
+                }
+                else
+                {
+                    differenceValue = _maxChengeValue;
+                }
+            }
+
             if (this.transform.position.y >= _min && this.transform.position.y <= _max)
             {
-                this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + difference, this.transform.position.z);
+                // this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + _chengeValue, this.transform.position.z);
             }
 
             // 補正
-            if (this.transform.position.y < _min )
+            if (this.transform.position.y < _min)
             {
-                this.transform.position = new Vector3( this.transform.position.x,_min,this.transform.position.z);
+                this.transform.position = new Vector3(this.transform.position.x, _min, this.transform.position.z);
             }
             if (this.transform.position.y > _max)
             {
                 this.transform.position = new Vector3(this.transform.position.x, _max, this.transform.position.z);
             }
-            // 前フレームの座標を保存
+
+            // 座標を保存
             _prevMousePosY = screenToWorldPointPosition.y;
         }
     }
