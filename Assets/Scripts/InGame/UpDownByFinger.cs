@@ -30,6 +30,14 @@ public class UpDownByFinger : MonoBehaviour
 
     private Vector3 _velo;
 
+    private void Awake()
+    {
+        if (!_targetTransform)
+        {
+            Debug.LogError("targetTransformを設定してください");
+        }
+    }
+
     private void Update()
     {
         Control();
