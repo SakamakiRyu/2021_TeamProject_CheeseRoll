@@ -28,6 +28,9 @@ public class UpDownByFinger : MonoBehaviour
     /// <summary>前のフレームのy座標を保存しておく変数</summary>
     private float _prevMousePosY;
 
+    /// <summary>画面に触れていたか</summary>
+    private bool _isTouch = false;
+
     private Vector3 _velo;
 
     private void Awake()
@@ -49,19 +52,33 @@ public class UpDownByFinger : MonoBehaviour
         Vector3 pos;
         Vector3 screenToWorldPointPosition;
 
-        // Vector3でマウスの位置座標を取得
-        pos = Input.mousePosition;
-        // Z軸修正
-        pos.z = 10f;
-        // マウスの位置座標からスクリーン座標に変換する
-        screenToWorldPointPosition = Camera.main.ScreenToWorldPoint(pos);
-        // 前フレームとの差分を保存する
-        var differenceValue = (screenToWorldPointPosition.y - _prevMousePosY);
-
-        // ターゲット座標の設定
-        if (_targetTransform.position.y >= _min && _targetTransform.position.y <= _max)
+        if (Input.GetButtonDown("Fire1"))
         {
-            _targetTransform.position = new Vector3(this.transform.position.x, _targetTransform.position.y + differenceValue, this.transform.position.z);
+            _isTouch = true;
+        }
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            _isTouch = false;
+        }
+
+        if (_isTouch)
+        {
+            // Vector3でマウスの位置座標を取得
+            pos = Input.mousePosition;
+            // Z軸修正
+            pos.z = 10f;
+            // マウスの位置座標からスクリーン座標に変換する
+            screenToWorldPointPosition = Camera.main.ScreenToWorldPoint(pos);
+            // 前フレームとの差分を保存する
+            var differenceValue = (screenToWorldPointPosition.y - _prevMousePosY);
+            // y座標の保存
+            _prevMousePosY = screenToWorldPointPosition.y;
+            // ターゲット座標の設定
+            if (_targetTransform.position.y >= _min && _targetTransform.position.y <= _max)
+            {
+                _targetTransform.position = new Vector3(this.transform.position.x, _targetTransform.position.y + differenceValue, this.transform.position.z);
+            }
         }
 
         // 補正(ターゲットのy座標が設定した下限値を下まわった場合は、下限値に修正する)
@@ -74,9 +91,6 @@ public class UpDownByFinger : MonoBehaviour
         {
             _targetTransform.position = new Vector3(_targetTransform.position.x, _max, _targetTransform.position.z);
         }
-
-        // y座標の保存
-        _prevMousePosY = screenToWorldPointPosition.y;
 
         // ターゲット座標の変更
         _targetTransform.position = new Vector3(this.transform.position.x, _targetTransform.position.y, this.transform.position.z);
