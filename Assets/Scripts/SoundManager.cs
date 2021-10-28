@@ -9,10 +9,27 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
+    /// <summary>
+    /// 流す音のデータの配列
+    /// </summary>
+    [SerializeField]
+    private AudioClip[] _audios;
 
+    private AudioSource _se;
+    private AudioSource _bgm;
+    public enum SoundType
+    {
+        HomeBGM, // ==0
+        StageSelectBGM, // ==1
+        GameBGM, // ==2
+        PinchBGM, // ==3
+        //SE追加予定
+    }
     private void Awake()
     {
         MakeSingle();
+        _se = GetComponent<AudioSource>();
+        _bgm = GetComponent<AudioSource>();
     }
 
     private void MakeSingle()
@@ -29,20 +46,24 @@ public class SoundManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 効果音を一回再生する
+    /// 効果音を一回再生する。鳴らしたい音に合うステートを引数に渡す。
     /// </summary>
     /// <param name="soundName"></param>
-    public void PlaySE(string soundName)
+    public void PlaySE(SoundType soundName)
     {
         //ここを記述
+        _se.PlayOneShot(_audios[(int)soundName]);
     }
 
     /// <summary>
-    /// BGMを再生する
+    /// BGMを再生する。鳴らしたいBGMに合うステートを引数に渡す。
     /// </summary>
     /// <param name="bgmName"></param>
-    public void PlayBGM(string bgmName)
+    public void PlayBGM(SoundType bgmName)
     {
         //ここを記述
+        _bgm.clip = _audios[(int)bgmName];
+        _bgm.loop = true;
+        _bgm.Play();
     }
 }

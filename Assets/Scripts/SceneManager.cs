@@ -11,6 +11,11 @@ public class SceneManager : MonoBehaviour
         MakeSingle();
     }
 
+    private void Start()
+    {
+        StartTitle();
+    }
+
     private void MakeSingle()
     {
         if (Instance is null)
@@ -27,4 +32,27 @@ public class SceneManager : MonoBehaviour
     [SerializeField]
     private bool _toGameImmediately;
 
+    //[SerializeField]
+    //private string _immediatelySceneName = "Game";
+
+    private void StartTitle()
+    {
+        if (_toGameImmediately == true)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+        }
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Title");
+        }
+    }
+
+    /// <summary>
+    /// シーン遷移する
+    /// </summary>
+    /// <param name="nextSceneName">シーン指定 シーンの名前</param>
+    public void GoNextScene(string nextSceneName)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
+    }
 }
