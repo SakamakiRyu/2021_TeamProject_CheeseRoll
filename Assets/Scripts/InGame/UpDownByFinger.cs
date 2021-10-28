@@ -41,6 +41,11 @@ public class UpDownByFinger : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        _targetTransform.position = this.transform.position;
+    }
+
     private void Update()
     {
         Control();
