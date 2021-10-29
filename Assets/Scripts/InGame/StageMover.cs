@@ -19,4 +19,10 @@ public class StageMover : MonoBehaviour
         pos.z += _moveSpeed * Time.deltaTime;
         transform.localPosition = pos;
     }
+
+    /// <summary> 移動速度を０にする </summary>
+    public void MoveStop()
+    {
+        _moveSpeed = 0;
+    }
 }

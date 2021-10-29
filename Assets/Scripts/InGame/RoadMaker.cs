@@ -19,6 +19,12 @@ public class RoadMaker : MonoBehaviour
     private float _timer;
     private RoadChip _cullentChip;
 
+
+    private bool _nowPlay = true;
+
+    /// <summary> 道を生成 するか否か </summary>
+    public bool NowPlay { set => _nowPlay = value; }
+
     private void Start()
     {
         MakeNewChip();
@@ -26,12 +32,15 @@ public class RoadMaker : MonoBehaviour
 
     private void Update()
     {
-        StretchRoad();
-        _timer += Time.deltaTime;
-        if (_timer > _splitTime)
+        if (_nowPlay)
         {
-            _timer -= _splitTime;
-            Split();
+            StretchRoad();
+            _timer += Time.deltaTime;
+            if (_timer > _splitTime)
+            {
+                _timer -= _splitTime;
+                Split();
+            }
         }
     }
 
