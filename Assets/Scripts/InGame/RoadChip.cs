@@ -36,7 +36,8 @@ public class RoadChip : MonoBehaviour
 
         //三角形
         mesh.triangles = new int[] {1, 3, 7, 7, 5, 1,
-                                    3, 2, 6, 6, 7, 3};
+                                    3, 2, 6, 6, 7, 3,
+                                    0, 1, 4, 4, 1, 5};
 
         //領域と法線の計算
         mesh.RecalculateBounds();
