@@ -60,6 +60,14 @@ public class UpDownByFinger : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             _isTouch = true;
+            // Vector3でマウスの位置座標を取得
+            pos = Input.mousePosition;
+            // Z軸修正
+            pos.z = 10f;
+            // マウスの位置座標からスクリーン座標に変換する
+            screenToWorldPointPosition = Camera.main.ScreenToWorldPoint(pos);
+            // リセット
+            _prevMousePosY = screenToWorldPointPosition.y;
         }
 
         if (Input.GetButtonUp("Fire1"))
