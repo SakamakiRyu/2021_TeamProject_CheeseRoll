@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b1874221e6e3f2149989c44165da2ce7
+guid: 214cafc11f711d14391c3397a9408956
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MT_Ingredients_Broccoli
-    second: {fileID: 2100000, guid: 37bd78cfc06d8584e92823d1f38282a1, type: 2}
+      name: lambert4
+    second: {fileID: 2100000, guid: 2d844c1c8fec5d84db83ddef2340877c, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
