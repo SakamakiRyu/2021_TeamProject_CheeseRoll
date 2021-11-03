@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 768bed006b9a3ba479ca30ba39145a18
+guid: a9e99df1fec20144f9c0d1e2c45707bc
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert4
-    second: {fileID: 2100000, guid: eda58f14126f0cc479a704f2187abf70, type: 2}
+      name: MT_Ingredients_Carrot
+    second: {fileID: 2100000, guid: fd0bd48d420d91f4dadeec8672aca15d, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 927c018f00602ef48950925cbf98814a
+guid: f2f8632d6f7c26e498baf4be73d947de
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MT_Enemy_Chili
-    second: {fileID: 2100000, guid: 2957bb25e0c139442816802bc9bdd995, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0

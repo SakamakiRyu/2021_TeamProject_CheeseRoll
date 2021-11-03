@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 214cafc11f711d14391c3397a9408956
+guid: 5191d6d89983bb54582507a7a90a48c6
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert4
-    second: {fileID: 2100000, guid: 2d844c1c8fec5d84db83ddef2340877c, type: 2}
+      name: MT_Background_Stage1_Wall2
+    second: {fileID: 2100000, guid: e4f8be21ac9537d47b7f104779c7f588, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
