@@ -7,7 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert5
+      name: MT_Ingredients_Potato
     second: {fileID: 2100000, guid: 63ec786828ebbb84b8f59c9df04edcbc, type: 2}
   materials:
     materialImportMode: 1
