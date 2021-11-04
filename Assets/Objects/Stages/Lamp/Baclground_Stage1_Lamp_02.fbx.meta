@@ -3,7 +3,12 @@ guid: f2f8632d6f7c26e498baf4be73d947de
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MT_Baclground_Stage1_Lamp
+    second: {fileID: 2100000, guid: 96591341239d9d444948efb93dfe509a, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
