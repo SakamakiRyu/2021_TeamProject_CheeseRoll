@@ -8,7 +8,7 @@ public class stageID : MonoBehaviour
     public ID _id;
     public enum ID
     {
-        test,
+        test = -1,
         one,
         two,
         three,

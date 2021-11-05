@@ -31,6 +31,7 @@ public class StageSelectPlayerCon : MonoBehaviour
         {
             
             var namae = collision.GetComponent<stageID>();
+            Debug.Log(namae._id);
             _StagePopupController.PopUp((int)namae._id);
             Debug.Log("in");
         }
@@ -39,6 +40,8 @@ public class StageSelectPlayerCon : MonoBehaviour
     {
         if (collision.CompareTag("Stage trigger"))
         {
+            var namae = collision.GetComponent<stageID>();
+            _StagePopupController.PopUp((int)namae._id);
             Debug.Log("out");
         }
     }
