@@ -55,6 +55,13 @@ public class Cheese : MonoBehaviour
         //タテ速度の変更
         Vector3 nomal = collision.GetContact(0).normal;
         float bai = -(nomal.z / nomal.y);
+        //ロードチップがある場合の処理
+        RoadChip chip = collision.transform.GetComponent<RoadChip>();
+        if (chip)
+        {
+            nomal = chip.WallVector;
+            bai = nomal.y / nomal.z;
+        }
         Vector3 velocity = _rigidbody.velocity;
         velocity.z = speed;
         velocity.y = Mathf.Max(speed * bai * _onHitSensitivity, velocity.y);

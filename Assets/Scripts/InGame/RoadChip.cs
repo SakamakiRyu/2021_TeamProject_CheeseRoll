@@ -12,6 +12,13 @@ public class RoadChip : MonoBehaviour
     [SerializeField]
     MeshCollider _meshCollider;
 
+    Vector3 _wallVector;
+
+    /// <summary>
+    /// 壁擦りベクトル
+    /// </summary>
+    public Vector3 WallVector => _wallVector;
+
     public void Init(float width, float height)
     {
         //メッシュ生成
@@ -29,6 +36,9 @@ public class RoadChip : MonoBehaviour
         vertices[5] = new Vector3(width, -height, 0);
         vertices[6] = new Vector3(-width, height, 0);
         vertices[7] = new Vector3(width, height, 0);
+
+        //壁擦りベクトルの作成
+        MakeWallVector(vertices[3], vertices[7]);
 
         mesh.vertices = vertices;
 
@@ -58,11 +68,19 @@ public class RoadChip : MonoBehaviour
     {
         Mesh mesh = _meshFilter.mesh;
         mesh.vertices = vertices;
+        //壁擦りベクトルの作成
+        MakeWallVector(vertices[3], vertices[7]);
+
         //領域と法線の計算
         mesh.RecalculateBounds();
         mesh.RecalculateNormals();
 
         _meshFilter.mesh = mesh;
         _meshCollider.sharedMesh = mesh;
+    }
+
+    private void MakeWallVector(Vector3 from, Vector3 to)
+    {
+        _wallVector = to - from;
     }
 }
