@@ -69,6 +69,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
         type: 3}
+      propertyPath: _name
+      value: Chili
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
       propertyPath: objectType
       value: 100
       objectReference: {fileID: 0}
@@ -76,6 +81,42 @@ PrefabInstance:
         type: 3}
       propertyPath: _objectType
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: -216339680019050401, guid: 8c069d5c5b897cd41b48b0ea2513f524,
+        type: 3}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: StartBurn
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: Chili
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538d4af330938be40aecd2038db86240, type: 3}

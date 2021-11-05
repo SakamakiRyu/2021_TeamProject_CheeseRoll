@@ -69,6 +69,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
         type: 3}
+      propertyPath: _name
+      value: Recovery1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
       propertyPath: _objectType
       value: 80
       objectReference: {fileID: 0}

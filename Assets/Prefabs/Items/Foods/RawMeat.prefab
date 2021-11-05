@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RawMeat
       objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _name
+      value: RawMeat
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538d4af330938be40aecd2038db86240, type: 3}
 --- !u!4 &7576375396026796408 stripped
