@@ -7,22 +7,38 @@ public class StageSelectPlayerCon : MonoBehaviour
     [SerializeField]
     public StagePopupController _StagePopupController;
 
+    GameObject[] _stageTarget ;
+    int _index = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        _stageTarget = GameObject.FindGameObjectsWithTag("Stage trigger");
+        transform.position = _stageTarget[0].transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            transform.position += transform.right * 10f * Time.deltaTime;
+            _index++;
+            if (_index >= _stageTarget.Length)
+            {
+                Debug.Log(_index);
+                _index = _stageTarget.Length -1;
+            }
+            transform.position = _stageTarget[_index].transform.position;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            transform.position -= transform.right * 10f * Time.deltaTime;
+            _index--;
+            if (_index <= 0)
+            {
+                Debug.Log(_index);
+                _index = 0;
+            }
+            transform.position = _stageTarget[_index].transform.position;
         }
     }
     private void OnTriggerEnter(Collider collision)
