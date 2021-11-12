@@ -7,8 +7,16 @@ public class StageSelectPlayerCon : MonoBehaviour
     [SerializeField]
     public StagePopupController _StagePopupController;
 
+    [SerializeField]
+    float _speed;
+
     GameObject[] _stageTarget ;
     int _index = 0;
+
+    private float _startTime, distance;
+
+    private bool _ismove;
+    Vector3 vec = Vector3.zero;
 
     // Start is called before the first frame update
     void Start()
@@ -20,25 +28,46 @@ public class StageSelectPlayerCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        Debug.Log(_index);
+        if (!_ismove)
         {
-            _index++;
-            if (_index >= _stageTarget.Length)
+            if (Input.GetButtonUp("Fire1"))
             {
-                Debug.Log(_index);
-                _index = _stageTarget.Length -1;
+                if (Input.mousePosition.x > Screen.width / 2)
+                {
+                    if (_index < _stageTarget.Length - 1)
+                    {
+                        StageSelectPlayerAnimationController.Instance.OnMove(StageSelectPlayerAnimationController.Move.Right);
+                        vec.x = _speed;
+                        Debug.Log(_index);
+                        _index++;
+                    }
+                    _ismove = true;
+                }
+                else
+                {
+                    if (_index > 0)
+                    {
+                        StageSelectPlayerAnimationController.Instance.OnMove(StageSelectPlayerAnimationController.Move.Left);
+                        vec.x = -_speed;
+                        Debug.Log(_index);
+                        _index--;
+                    }
+                    _ismove = true;
+                }
             }
-            transform.position = _stageTarget[_index].transform.position;
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        else
         {
-            _index--;
-            if (_index <= 0)
+            if (Vector3.Distance(transform.position, _stageTarget[_index].transform.position) > 0.05)
             {
-                Debug.Log(_index);
-                _index = 0;
+                transform.position += vec;
+               // Debug.Log(_stageTarget[_index].transform.position);
             }
-            transform.position = _stageTarget[_index].transform.position;
+            else
+            {
+                _ismove = false;
+            }
         }
     }
     private void OnTriggerEnter(Collider collision)
