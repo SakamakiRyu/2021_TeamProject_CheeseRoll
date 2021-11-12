@@ -43,4 +43,12 @@ public class StageSelectPlayerAnimationController : MonoBehaviour
         }
 
     }
+
+    public void AnimControll(bool param)
+    {
+        if (param)
+            _animator.SetBool("Animation", true);
+        else
+            _animator.SetBool("Animation", false);
+    }
 }
