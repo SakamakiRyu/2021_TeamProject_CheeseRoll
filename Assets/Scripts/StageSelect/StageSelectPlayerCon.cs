@@ -33,7 +33,7 @@ public class StageSelectPlayerCon : MonoBehaviour
         {
             if (Input.GetButtonUp("Fire1"))
             {
-                if (Input.mousePosition.x > Screen.width / 2)
+                if (Input.mousePosition.x > Screen.width / 2 && Input.mousePosition.y > (Screen.height / 3) * 2)
                 {
                     if (_index < _stageTarget.Length - 1)
                     {
@@ -44,7 +44,7 @@ public class StageSelectPlayerCon : MonoBehaviour
                     }
                     _ismove = true;
                 }
-                else
+                else if ((Input.mousePosition.x <= Screen.width / 2 && Input.mousePosition.y > (Screen.height / 3) * 2))
                 {
                     if (_index > 0)
                     {
