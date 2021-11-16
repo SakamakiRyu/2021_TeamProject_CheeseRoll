@@ -72,9 +72,10 @@ public class StageSelectPlayerCon : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
+        //アニメストップ
+        StageSelectPlayerAnimationController.Instance.AnimControll(false);
         if (collision.CompareTag("Stage trigger"))
         {
-            
             var namae = collision.GetComponent<stageID>();
             Debug.Log(namae._id);
             _StagePopupController.PopUp((int)namae._id);
@@ -83,6 +84,8 @@ public class StageSelectPlayerCon : MonoBehaviour
     }
     private void OnTriggerExit(Collider collision)
     {
+        //アニメスタート
+        StageSelectPlayerAnimationController.Instance.AnimControll(true);
         if (collision.CompareTag("Stage trigger"))
         {
             var namae = collision.GetComponent<stageID>();
