@@ -40,8 +40,11 @@ public class RushCheese : MonoBehaviour
         //‘¬“x‚ðŒÅ’è
         Vector3 velocity = _rigidbody.velocity;
         velocity.z = speed;
-        velocity.x = Xpos;
+        velocity.x = 0;
         _rigidbody.velocity = velocity;
+        Vector3 pos = transform.position;
+        pos.x = Xpos;
+        transform.position = pos;
     }
 
     
