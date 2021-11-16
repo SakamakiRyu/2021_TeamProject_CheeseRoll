@@ -7,29 +7,22 @@ public class RushJump : MonoBehaviour
     Rigidbody _rb;
     [SerializeField]
     float _jumpPower;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
+    //void Update()
+    //{
+    //    Debug.Log(_rb);
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            if (other.TryGetComponent(out Rigidbody rigidbody))
-                _rb = other.GetComponent<Rigidbody>();
-
-            if (_rb)
+            _rb = null;
+            if (other.TryGetComponent(out _rb))
             {
-                _rb.AddForce(Vector3.up * _jumpPower);
-                Debug.Log("Jump");
+                _rb.AddForce(Vector3.up * _jumpPower, ForceMode.Impulse);
+                Debug.Log(_rb);
             }
         }
     }
