@@ -21,7 +21,7 @@ public class ScoreUI : MonoBehaviour
     /// <summary>
     /// ステージの食材をUIに設定する
     /// </summary>
-    void ScoreUiSetup()
+    public void ScoreUiSetup()
     {
         for (int i = 0; i < ScoreManager.Instance.ScoreStructure.FoodsList.Length; i++)
         {
