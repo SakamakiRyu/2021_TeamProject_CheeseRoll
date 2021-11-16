@@ -14,17 +14,8 @@ public class ScoreManager : MonoBehaviour
 
     private int[] _dishesScore = { 10, 30, 60 };
 
-    //↓これをステージ内のスクリプトでインスタンスと初期化をしてください
-    /*/
-     * ステージ内の食材
-     string[] foods = {
-             "Tomato",
-             "Onion",
-         };
+   
 
-         int[] nums = new int[foods.Length];
-         ScoreManager.Instance._scoreStructure = new ScoreManager.Score() { _FoodsList = foods, _FoodsNums = nums, _ScoreUI = FindObjectOfType<ScoreUI>(), _Dishes = 3 };
-     /*/
     private void Awake()
     {
         MakeSingle();
@@ -57,13 +48,18 @@ public class ScoreManager : MonoBehaviour
         ///<summary>獲得した焦げた具材の数</summary>
         public int BurntFoodCount { get; set; }
 
-        public Score(string[] foodsList,int[] foodsNums,int dishes,ScoreUI scoreUI)
+        public GameObject[] FoodsObject { get; set; }
+
+        public GameObject[] DishsObject { get; set; }
+        public Score(string[] foodsList,int[] foodsNums,int dishes,ScoreUI scoreUI,GameObject[] foodsObject,GameObject[] dishObject )
         {
             this.FoodsList = foodsList;
             this.FoodsNums = foodsNums;
             this.Dishes = dishes;
             this.ScoreUI = scoreUI;
             this.BurntFoodCount = 0;
+            this.FoodsObject = foodsObject;
+            this.DishsObject = dishObject;
         }
         /// <summary>
         /// スコアを加算する

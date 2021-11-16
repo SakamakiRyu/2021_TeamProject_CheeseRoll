@@ -13,6 +13,16 @@ public class StageManager : MonoBehaviour
 
     [SerializeField] GameObject _testResultButton;
 
+    [SerializeField] string[] _foodsList;
+
+    int[] _foodsNums;
+
+    [SerializeField] int _dishes;
+
+    [SerializeField] GameObject[] _foodsObject;
+    [SerializeField] GameObject[] _dishesObject;
+
+    [SerializeField] ScoreUI _scoreUI;
     private void Start()
     {
         if (_testStop)
@@ -21,6 +31,7 @@ public class StageManager : MonoBehaviour
             kari.z = 10;
             _endTransform.position = kari;
         }
+        ScoreInit();
     }
 
     private void Update()
@@ -39,5 +50,11 @@ public class StageManager : MonoBehaviour
         _stageMover.MoveStop();
         _testResultButton.SetActive(true);
         _roadMaker.NowPlay = false;
+    }
+    public void ScoreInit()
+    {
+        _foodsNums = new int[_foodsList.Length];
+        ScoreManager.Instance.ScoreStructure = new ScoreManager.Score() { FoodsList = _foodsList, FoodsNums = _foodsNums, ScoreUI = _scoreUI, Dishes = _dishes , FoodsObject=_foodsObject, DishsObject= _dishesObject};
+        _scoreUI.ScoreUiSetup();
     }
 }
