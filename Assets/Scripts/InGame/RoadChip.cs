@@ -43,6 +43,18 @@ public class RoadChip : MonoBehaviour
         mesh.vertices = vertices;
 
         //uv設定(あとでかく)
+        Vector2[] vector2s = new Vector2[8];
+        vector2s[0] = new Vector2(0, 0);
+        vector2s[1] = new Vector2(1, 0);
+        vector2s[2] = new Vector2(0, 0);
+        vector2s[3] = new Vector2(1, 0);
+        vector2s[4] = new Vector2(0 ,1);
+        vector2s[5] = new Vector2(1, 1);
+        vector2s[6] = new Vector2(0, 1);
+        vector2s[7] = new Vector2(1, 1);
+        mesh.uv = vector2s;
+
+
 
         //三角形
         mesh.triangles = new int[] {1, 3, 7, 7, 5, 1,
