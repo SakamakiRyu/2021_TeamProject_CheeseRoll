@@ -3,7 +3,12 @@ guid: c06f302a5174dd64686866264681c894
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MT_Background_Stage1Decoration_frying_pan
+    second: {fileID: 2100000, guid: 69a2efcc86bb67b4da7e87756cf0eeef, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

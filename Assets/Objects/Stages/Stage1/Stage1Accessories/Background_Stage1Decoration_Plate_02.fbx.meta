@@ -3,7 +3,12 @@ guid: 549caf871d8419049ae91a09e697589d
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MT_Background_Stage1Decoration_Plate
+    second: {fileID: 2100000, guid: dc4f31a81355b31469d2cb48ee106fd0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
