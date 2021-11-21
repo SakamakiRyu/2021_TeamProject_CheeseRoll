@@ -27,6 +27,10 @@ public class Cheese : MonoBehaviour
 
     private void Update()
     {
+        if (!_rigidbody)
+        {
+            _rigidbody = GetComponent<Rigidbody>();
+        }
         UpdateSpeed();
     }
 
