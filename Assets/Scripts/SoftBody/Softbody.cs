@@ -2,6 +2,10 @@
 using UnityEditor.PackageManager;
 using UnityEngine;
 
+
+/// <summary>
+/// https://github.com/omarvision/Softbody-Physics-Spring-Joint-
+/// </summary>
 public static class Softbody 
 {
     #region --- helpers ---
@@ -18,10 +22,11 @@ public static class Softbody
     public static float Spring;
     public static float Damper;
     public static RigidbodyConstraints Constraints;
+    public static PhysicMaterial PhysicMaterial;
     public static LineRenderer PrefabLine;
     public static bool ViewLines;
 
-    public static void Init(ColliderShape shape, float collidersize, float rigidbodymass, float spring, float damper, RigidbodyConstraints constraints)
+    public static void Init(ColliderShape shape, float collidersize, float rigidbodymass, float spring, float damper, RigidbodyConstraints constraints, PhysicMaterial physicMaterial)
     {
         Shape = shape;
         ColliderSize = collidersize;
@@ -29,6 +34,7 @@ public static class Softbody
         Spring = spring;
         Damper = damper;
         Constraints = constraints;
+        PhysicMaterial = physicMaterial;
         ViewLines = false;
     }
     public static void Init(ColliderShape shape, float collidersize, float rigidbodymass, float spring, float damper, RigidbodyConstraints constraints, LineRenderer prefabline, bool viewlines)
@@ -67,10 +73,12 @@ public static class Softbody
             case ColliderShape.Box:
                 BoxCollider bc = go.AddComponent<BoxCollider>();
                 bc.size = new Vector3(size, size, size);
+                bc.material = PhysicMaterial;
                 break;
             case ColliderShape.Sphere:
                 SphereCollider sc = go.AddComponent<SphereCollider>();
                 sc.radius = size;
+                sc.material = PhysicMaterial;
                 break;
         }
 
