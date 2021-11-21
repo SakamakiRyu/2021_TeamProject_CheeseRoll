@@ -23,6 +23,10 @@ public class ScoreUI : MonoBehaviour
     /// </summary>
     public void ScoreUiSetup()
     {
+        if (ScoreManager.Instance is null)
+        {
+            return;
+        }
         for (int i = 0; i < ScoreManager.Instance.ScoreStructure.FoodsList.Length; i++)
         {
             _foods.Add(Instantiate(_foodImage, _foodPanelUi.transform));
