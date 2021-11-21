@@ -84,7 +84,7 @@ public static class Softbody
 
         Rigidbody rb = go.AddComponent<Rigidbody>();
         rb.mass = mass;
-        rb.drag = 0f;
+        rb.drag = 0.1f;
         rb.angularDrag = 10f;
         rb.constraints = Constraints;
         return rb;
