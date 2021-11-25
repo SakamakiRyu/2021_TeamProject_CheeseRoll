@@ -33,6 +33,15 @@ public class HittableObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "BurningArea")
+        {
+            if (_objectType == HittableObjectType.Food)
+            {
+                _objectType = HittableObjectType.Burn;
+                //this.gameObject.GetComponentInChildren<Renderer>().material.SetColor("_BaseColor", Color.black);
+            }
+        }
+
         if (other.tag == _hitJudgeTag)
         {
             _hitObj = other.gameObject;

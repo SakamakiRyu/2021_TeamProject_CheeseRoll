@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Stage trigger
+  - BurningArea
   layers:
   - Default
   - TransparentFX

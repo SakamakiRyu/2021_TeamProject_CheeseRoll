@@ -23,9 +23,6 @@ public class ScoreUI : MonoBehaviour
     /// </summary>
     public void ScoreUiSetup()
     {
-        //Debug.Log(ScoreManager.Instance.ScoreStructure.FoodsList.Length);
-        // NullReferenceException: Object reference not set to an instance of an object.
-
         for (int i = 0; i < ScoreManager.Instance.ScoreStructure.FoodsList.Length; i++)
         {
             _foods.Add(Instantiate(_foodImage, _foodPanelUi.transform));
