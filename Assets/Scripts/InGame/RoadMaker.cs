@@ -23,7 +23,7 @@ public class RoadMaker : MonoBehaviour
     private bool _nowPlay = true;
 
     /// <summary> 道を生成 するか否か </summary>
-    public bool NowPlay { set => _nowPlay = value; }
+    public bool NowPlay { set => _nowPlay = value; get => _nowPlay; }
 
     private void Start()
     {
