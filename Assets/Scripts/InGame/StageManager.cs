@@ -51,10 +51,16 @@ public class StageManager : MonoBehaviour
         _testResultButton.SetActive(true);
         _roadMaker.NowPlay = false;
     }
+
     public void ScoreInit()
     {
         _foodsNums = new int[_foodsList.Length];
-        ScoreManager.Instance.ScoreStructure = new ScoreManager.Score() { FoodsList = _foodsList, FoodsNums = _foodsNums, ScoreUI = _scoreUI, Dishes = _dishes , FoodsObject=_foodsObject, DishsObject= _dishesObject};
-        _scoreUI.ScoreUiSetup();
+
+        //ScoreManager.Instance.ScoreStructure = new ScoreManager.Score() { FoodsList = _foodsList, FoodsNums = _foodsNums, ScoreUI = _scoreUI, Dishes = _dishes , FoodsObject=_foodsObject, DishsObject= _dishesObject};
+
+        this.gameObject.AddComponent<ScoreManager>();
+        ScoreManager.Instance.ScoreStructure = new ScoreManager.Score() { FoodsList = _foodsList, FoodsNums = _foodsNums, ScoreUI = _scoreUI, Dishes = _dishes, FoodsObject = _foodsObject, DishsObject = _dishesObject };
+
+        //_scoreUI.ScoreUiSetup();
     }
 }

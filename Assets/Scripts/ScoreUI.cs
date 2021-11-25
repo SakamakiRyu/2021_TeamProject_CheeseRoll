@@ -23,6 +23,9 @@ public class ScoreUI : MonoBehaviour
     /// </summary>
     public void ScoreUiSetup()
     {
+        //Debug.Log(ScoreManager.Instance.ScoreStructure.FoodsList.Length);
+        // NullReferenceException: Object reference not set to an instance of an object.
+
         for (int i = 0; i < ScoreManager.Instance.ScoreStructure.FoodsList.Length; i++)
         {
             _foods.Add(Instantiate(_foodImage, _foodPanelUi.transform));
@@ -45,5 +48,10 @@ public class ScoreUI : MonoBehaviour
                 _foods[i].GetComponentInChildren<Text>().text = $"Å~{ScoreManager.Instance.ScoreStructure.FoodsNums[i]}";
             }
         }
+    }
+
+    public void BurntFoodUi()
+    {
+        _foods[_foods.Count-1].GetComponentInChildren<Text>().text = $"Å~{ScoreManager.Instance.ScoreStructure.BurntFoodCount}";
     }
 }

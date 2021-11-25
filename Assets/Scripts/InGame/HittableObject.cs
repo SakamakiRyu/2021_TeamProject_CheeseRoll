@@ -24,6 +24,8 @@ public class HittableObject : MonoBehaviour
 
     public string Name { get => _name;}
 
+    GameObject _hitObj;
+
     //private void Start()
     //{
 
@@ -33,12 +35,31 @@ public class HittableObject : MonoBehaviour
     {
         if (other.tag == _hitJudgeTag)
         {
+            _hitObj = other.gameObject;
+
             _onItemPickup.Invoke();
 
             //DebugItem1();
 
             //DestroyThis();
         }
+    }
+
+    public void AddScore()
+    {
+        if ((int)_objectType == 0)
+        {
+            ScoreManager.Instance.ScoreStructure.ScoreUp(_name);
+        }
+        else if ((int)_objectType == 110)
+        {
+            ScoreManager.Instance.ScoreStructure.BurntFoodCountUp();
+        }
+    }
+
+    public void StartBurning()
+    {
+        _hitObj.GetComponent<BurningCheese>().StartBurn(_name);
     }
 
     /// <summary>
