@@ -11,17 +11,21 @@ public class Cheese : MonoBehaviour
     float _minSize;
     [SerializeField]
     float _scaleMinusValue;
-    float time = 0;
+    float _time = 0;
     [SerializeField]
     StageMover _move;
     [SerializeField, Range(0.0f, 1.0f)]
     float _onHitSensitivity = 0.5f;
-    float _z;
-    float speed;
+    [Header("チーズが鉄板のどれぐらい後ろについてくるか")]
+    [SerializeField]
+    float _zPosition = -1f;
+
+    public float ZPosition => _zPosition;
+
+    float _speed = 0;
 
     private void Awake()
     {
-        _z = this.transform.localPosition.z;
         _rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -34,7 +38,7 @@ public class Cheese : MonoBehaviour
     {
         //速度を固定
         Vector3 velocity = _rigidbody.velocity;
-        velocity.z = speed;
+        velocity.z = _speed;
         velocity.x = 0;
         _rigidbody.velocity = velocity;
     }
@@ -63,34 +67,44 @@ public class Cheese : MonoBehaviour
             bai = nomal.y / nomal.z;
         }
         Vector3 velocity = _rigidbody.velocity;
-        velocity.z = speed;
-        velocity.y = Mathf.Max(speed * bai * _onHitSensitivity, velocity.y);
+        velocity.z = _speed;
+        velocity.y = Mathf.Max(_speed * bai * _onHitSensitivity, velocity.y);
         velocity.x = 0;
         _rigidbody.velocity = velocity;
     }
 
     private void UpdateSpeed()
     {
-        //本来いるべき座標との差を調べる
-        float realZ = this.transform.localPosition.z;
-        float z = _z + _move.transform.position.z;
-        float sa = z - realZ;
-        //差に応じて速度を変化させる
-        speed = _move.MoveSpeed + sa;
+        if (_move.IsMoving)
+        {
+            //本来いるべき座標との差を調べる
+            float realZ = this.transform.position.z;
+            float z = _zPosition + _move.transform.position.z;
+            float sa = z - realZ;
+            //差に応じて速度を変化させる
+            _speed = _move.MoveSpeed + sa;
+        }
+        else
+        {
+            //デフォルトの移動スピードを採用する
+            _speed = _move.DefaultMoveSpeed;
+        }
+
+        
     }
     void ChangeScale()
     {
         if (_hp > _minSize)
         {
-            if (time > 0.1f)
+            if (_time > 0.1f)
             {
                 _hp -= _scaleMinusValue;
                 this.gameObject.transform.localScale = new Vector3(_hp / 100, _hp / 100, _hp / 100);
-                time = 0;
+                _time = 0;
             }
             else
             {
-                time += Time.deltaTime;
+                _time += Time.deltaTime;
             }
 
         }

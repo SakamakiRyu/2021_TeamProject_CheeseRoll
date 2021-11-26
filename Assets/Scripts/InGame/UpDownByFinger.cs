@@ -33,12 +33,15 @@ public class UpDownByFinger : MonoBehaviour
 
     private Vector3 _velo;
 
+    private RoadMaker _maker;
+
     private void Awake()
     {
         if (!_targetTransform)
         {
             Debug.LogError("targetTransformを設定してください");
         }
+        _maker = GetComponent<RoadMaker>();
     }
 
     private void Start()
@@ -48,7 +51,10 @@ public class UpDownByFinger : MonoBehaviour
 
     private void Update()
     {
-        Control();
+        if (_maker.NowPlay)
+        {
+            Control();
+        }
     }
 
     /// <summary>スマホの上下のスワイプ操作にて、生成位置を変更する(↑にスワイプ=上昇)</summary>

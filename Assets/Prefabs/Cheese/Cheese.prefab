@@ -68,6 +68,7 @@ MonoBehaviour:
   _scaleMinusValue: 0
   _move: {fileID: 0}
   _onHitSensitivity: 1
+  _zPosition: -1
 --- !u!135 &2240036976987341437
 SphereCollider:
   m_ObjectHideFlags: 0
