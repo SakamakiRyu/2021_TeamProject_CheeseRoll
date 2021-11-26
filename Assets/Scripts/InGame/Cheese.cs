@@ -5,12 +5,11 @@ using UnityEngine;
 public class Cheese : MonoBehaviour
 {
     Rigidbody _rigidbody;
-    [SerializeField]
-    float _hp;
+    public float Hp;
     [SerializeField]
     float _minSize;
     [SerializeField]
-    float _scaleMinusValue;
+    float _oneScaleValue;
     float _time = 0;
     [SerializeField]
     StageMover _move;
@@ -90,17 +89,15 @@ public class Cheese : MonoBehaviour
             _speed = _move.DefaultMoveSpeed;
         }
 
-        
+
     }
     void ChangeScale()
     {
-        if (_hp > _minSize)
+        if (Hp > _minSize)
         {
             if (_time > 0.1f)
             {
-                _hp -= 1;
-                var scale = this.gameObject.transform.localScale;
-                this.gameObject.transform.localScale = new Vector3(scale.x -= _scaleMinusValue, scale.y -= _scaleMinusValue, scale.z -= _scaleMinusValue);
+                ChangeHpAndScale(-1);
                 _time = 0;
             }
             else
@@ -109,5 +106,14 @@ public class Cheese : MonoBehaviour
             }
 
         }
+    }
+    public void ChangeHpAndScale(int value)
+    {
+        var scale = this.gameObject.transform.localScale;
+        scale += new Vector3(_oneScaleValue * value, _oneScaleValue * value, _oneScaleValue * value);
+        this.gameObject.transform.localScale = new Vector3(Mathf.Clamp(scale.x, _minSize, 1), Mathf.Clamp(scale.y, _minSize, 1), Mathf.Clamp(scale.z, _minSize, 1));
+        Hp = Mathf.Clamp(Hp + value, 0, 100);
+
+        Debug.Log(Hp);
     }
 }
