@@ -102,13 +102,23 @@ public class StageManager : MonoBehaviour
         _testResultButton.SetActive(true);
         _roadMaker.NowPlay = false;
     }
+
     public void ScoreInit()
     {
-        if (ScoreManager.Instance && _scoreUI)
-        {
-            _foodsNums = new int[_foodsList.Length];
-            ScoreManager.Instance.ScoreStructure = new ScoreManager.Score() { FoodsList = _foodsList, FoodsNums = _foodsNums, ScoreUI = _scoreUI, Dishes = _dishes, FoodsObject = _foodsObject, DishsObject = _dishesObject };
-            _scoreUI.ScoreUiSetup();
-        }
+        _foodsNums = new int[_foodsList.Length];
+
+        GameObject kariMana = new GameObject("Kari_Manager");
+        kariMana.AddComponent<ScoreManager>();
+
+        ScoreManager.Instance.ScoreStructure = new ScoreManager.Score() { FoodsList = _foodsList, FoodsNums = _foodsNums, ScoreUI = _scoreUI, Dishes = _dishes, FoodsObject = _foodsObject, DishsObject = _dishesObject };
+
+        //_scoreUI.ScoreUiSetup();
+
+        //if (ScoreManager.Instance && _scoreUI)
+        //{
+        //    _foodsNums = new int[_foodsList.Length];
+        //    ScoreManager.Instance.ScoreStructure = new ScoreManager.Score() { FoodsList = _foodsList, FoodsNums = _foodsNums, ScoreUI = _scoreUI, Dishes = _dishes, FoodsObject = _foodsObject, DishsObject = _dishesObject };
+        //    _scoreUI.ScoreUiSetup();
+        //}
     }
 }

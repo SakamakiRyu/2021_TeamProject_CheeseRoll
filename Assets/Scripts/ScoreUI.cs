@@ -50,4 +50,9 @@ public class ScoreUI : MonoBehaviour
             }
         }
     }
+
+    public void BurntFoodUi()
+    {
+        _foods[_foods.Count-1].GetComponentInChildren<Text>().text = $"Å~{ScoreManager.Instance.ScoreStructure.BurntFoodCount}";
+    }
 }

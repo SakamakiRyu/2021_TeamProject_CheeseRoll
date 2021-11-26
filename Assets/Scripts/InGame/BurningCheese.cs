@@ -60,8 +60,15 @@ public class BurningCheese : MonoBehaviour
             {
                 //nowBurn = _burns[i];
 
-                _maxTime = _burns[i].Time;
-                _burning = true;
+                if (_maxTime - _timer < _burns[i].Time)
+                {
+                    _timer = 0;
+                    _maxTime = _burns[i].Time;
+                    _burning = true;
+                }
+
+                //_maxTime = _burns[i].Time;
+                //_burning = true;
 
                 if (_testObj != null)
                 {

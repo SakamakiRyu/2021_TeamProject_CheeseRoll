@@ -69,6 +69,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
         type: 3}
+      propertyPath: _name
+      value: Chili
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
       propertyPath: objectType
       value: 100
       objectReference: {fileID: 0}
@@ -76,6 +81,41 @@ PrefabInstance:
         type: 3}
       propertyPath: _objectType
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 6185277338127011968}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: StartBurning
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: HittableObject, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538d4af330938be40aecd2038db86240, type: 3}
@@ -85,6 +125,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 473097083051250809}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6185277338127011968 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+    type: 3}
+  m_PrefabInstance: {fileID: 473097083051250809}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253648f7d3507ab4bb351e021cc39bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2347150876857484096
 PrefabInstance:
   m_ObjectHideFlags: 0

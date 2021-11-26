@@ -32,18 +32,18 @@ public class SceneManager : MonoBehaviour
     [SerializeField]
     private bool _toGameImmediately;
 
-    //[SerializeField]
-    //private string _immediatelySceneName = "Game";
+    [SerializeField]
+    private string _immediatelySceneName = "Game";
 
     private void StartTitle()
     {
         if (_toGameImmediately == true)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+            GoNextScene(_immediatelySceneName);
         }
         else
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Title");
+            GoNextScene("Title");
         }
     }
 
@@ -53,6 +53,14 @@ public class SceneManager : MonoBehaviour
     /// <param name="nextSceneName">シーン指定 シーンの名前</param>
     public void GoNextScene(string nextSceneName)
     {
+        //for (int i = 0; i < UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings; i++)
+        //{
+        //    if (nextSceneName == UnityEngine.SceneManagement.SceneManager.GetSceneByBuildIndex(i).name)
+        //    {
+
+        //    }
+        //}
+
         UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
     }
 }
