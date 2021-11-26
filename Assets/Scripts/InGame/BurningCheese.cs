@@ -22,7 +22,7 @@ public class BurningCheese : MonoBehaviour
 
     [SerializeField] GameObject _testObj;
 
-    [SerializeField] GameObject fireUi;
+    [SerializeField] GameObject _fireUi;
 
     //[SerializeField] Material _road;
     //Ray _ray;
@@ -58,31 +58,40 @@ public class BurningCheese : MonoBehaviour
 
             if (_timer > _maxTime)
             {
-                _burning = false;
-                _timer = 0;
-
-                if (_testObj != null)
-                {
-                    _testObj.SetActive(false);
-                }
+                EndBurn();
             }
         }
     }
 
-    //  唐辛子につけてる チーズから呼び出したい？？
     /// <summary>
-    /// 
+    /// アツアツ状態を終了する
+    /// </summary>
+    public void EndBurn()
+    {
+        _burning = false;
+        _timer = 0;
+
+        if (_testObj != null)
+        {
+            _testObj.SetActive(false);
+        }
+
+        if (_fireUi != null)
+        {
+            _fireUi.SetActive(false);
+        }
+    }
+
+    /// <summary>
+    /// アツアツ状態を始める
     /// </summary>
     /// <param name="name"> HittableObj の Name </param>
     public void StartBurn(string name)
     {
-        //Burns nowBurn;
         for (int i = 0; i < _burns.Length; i++)
         {
             if (name == _burns[i].Name)
             {
-                //nowBurn = _burns[i];
-
                 if (_maxTime - _timer < _burns[i].Time)
                 {
                     _timer = 0;
@@ -90,12 +99,14 @@ public class BurningCheese : MonoBehaviour
                     _burning = true;
                 }
 
-                //_maxTime = _burns[i].Time;
-                //_burning = true;
-
                 if (_testObj != null)
                 {
                     _testObj.SetActive(true);
+                }
+
+                if (_fireUi != null)
+                {
+                    _fireUi.SetActive(true);
                 }
             }
         }

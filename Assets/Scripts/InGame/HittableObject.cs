@@ -7,9 +7,11 @@ public class HittableObject : MonoBehaviour
     private enum HittableObjectType
     {
         Food = 0,            // 食べ物
+        DropOfWater =70,     // 雫
         Recoverey = 80,      // 回復
         RedHeat = 100,          // 唐辛子
         Burn = 110,             // 焦げた
+
         HittableObject = 150,　// 障害物
     }
 
@@ -72,26 +74,39 @@ public class HittableObject : MonoBehaviour
     }
 
     /// <summary>
+    /// DropOfWater ならアツアツ状態じゃなくす
+    /// </summary>
+    public void EndBurning()
+    {
+        if (_objectType == HittableObjectType.DropOfWater)
+        {
+            _hitObj.GetComponent<BurningCheese>().EndBurn();
+        }
+    }
+
+    /// <summary>
     /// Debug.Log を出す。GameObjectの名前、Nameに入ってる単語、オブジェクトタイプが出る
     /// </summary>
     public void DebugItem1()
     {
-        if ((int)_objectType >= 150)
-        {
-            Debug.Log($"Hit {this.name} {Name} {_objectType}");
-        }
-        else if ((int)_objectType >= 100)
-        {
-            Debug.Log($"Burning {this.name} {Name} {_objectType}");
-        }
-        else if ((int)_objectType >= 80)
-        {
-            Debug.Log($"Recoverey {this.name} {Name} {_objectType}");
-        }
-        else
-        {
-            Debug.Log($"Food {this.name} {Name} {_objectType}");
-        }
+        Debug.Log($"Hit {this.name} {Name} {_objectType}");
+
+        //if ((int)_objectType >= 150)
+        //{
+        //    Debug.Log($"Hit {this.name} {Name} {_objectType}");
+        //}
+        //else if ((int)_objectType >= 100)
+        //{
+        //    Debug.Log($"Burning {this.name} {Name} {_objectType}");
+        //}
+        //else if ((int)_objectType >= 80)
+        //{
+        //    Debug.Log($"Recoverey {this.name} {Name} {_objectType}");
+        //}
+        //else
+        //{
+        //    Debug.Log($"Food {this.name} {Name} {_objectType}");
+        //}
     }
 
     /// <summary>
@@ -100,5 +115,13 @@ public class HittableObject : MonoBehaviour
     public void DestroyThis()
     {
         Destroy(this.gameObject, 0.1f);
+    }
+
+    /// <summary>
+    /// 非アクティブにする
+    /// </summary>
+    public void ActiveFalse()
+    {
+        this.gameObject.SetActive(false);
     }
 }
