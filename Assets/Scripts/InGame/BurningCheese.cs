@@ -22,6 +22,13 @@ public class BurningCheese : MonoBehaviour
 
     [SerializeField] GameObject _testObj;
 
+    [SerializeField] GameObject fireUi;
+
+    //[SerializeField] Material _road;
+    //Ray _ray;
+    //RaycastHit _hit;
+    //Vector3 _direction = new Vector3(0, -1, 0);
+
     /// <summary>
     /// アツアツ状態か否か を取得
     /// </summary>
@@ -31,6 +38,22 @@ public class BurningCheese : MonoBehaviour
     {
         if (_burning)
         {
+            //_ray = new Ray(_testObj.transform.position, _direction);
+            //if(Physics.Raycast(_ray,out _hit, 3))
+            //{
+            //    if(_hit.transform.name== "RoadChip(Clone)")
+            //    {
+            //        _hit.transform.GetComponent<Renderer>().material = _road;
+
+            //        //Material material = _hit.transform.GetComponent<Renderer>().material;
+
+            //        //Color color = material.GetColor("Color_7c2c9ab94c004508a97a96a7d632d94a");
+            //        ////color
+            //        //material.SetColor("Color_7c2c9ab94c004508a97a96a7d632d94a", color);
+            //        //_hit.transform.GetComponent<Renderer>().material = material;
+            //    }
+            //}
+
             _timer += Time.deltaTime;
 
             if (_timer > _maxTime)
