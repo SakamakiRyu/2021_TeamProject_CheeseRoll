@@ -1,26 +1,28 @@
-ï»¿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class MouseBeheiviour : MonoBehaviour
+public class HeraMouse : MonoBehaviour
 {
-    /// <summary>ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚¿ãƒ¼</summary>
+    /// <summary>ƒAƒjƒ[ƒ^[</summary>
     [SerializeField]
     private Animator _animator = null;
 
-    /// <summary>è‡ªèº«ã®åº§æ¨™</summary>
+    /// <summary>©g‚ÌÀ•W</summary>
     [SerializeField]
     private Transform _myTransform = null;
 
-    /// <summary>ç§»å‹•é€Ÿåº¦</summary>
-    [Header("åå¾©é€Ÿåº¦")]
+    /// <summary>ˆÚ“®‘¬“x</summary>
+    [Header("”½•œ‘¬“x")]
     [SerializeField]
     private float _upDownSpeed = 1.0f;
 
-    [Header("è¿«ã£ã¦ãã‚‹é€Ÿã•")]
+    [Header("”—‚Á‚Ä‚­‚é‘¬‚³")]
     [SerializeField]
     private float _moveSpeed = 1.0f;
 
-    /// <summary>ä¸Šä¸‹ã®ç§»å‹•é‡</summary>
-    [Header("ç§»å‹•é‡")]
+    /// <summary>ã‰º‚ÌˆÚ“®—Ê</summary>
+    [Header("ˆÚ“®—Ê")]
     [SerializeField]
     private float _upDownMoveValue = 5.0f;
 
@@ -52,15 +54,7 @@ public class MouseBeheiviour : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            Debug.Log("hit cheese");
+            UpDownByFinger.Instance.ChengeControll();
         }
-    }
-
-    /// <summary>
-    /// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã§ã€ãƒãƒ¼ã‚ºã‚’é£Ÿã¹çµ‚ã‚ã£ãŸéš›ã«å‘¼ã¶ã‚¤ãƒ™ãƒ³ãƒˆ
-    /// </summary>
-    public void AteCheese()
-    {
-        StageManager.Instance.GameOver();
     }
 }
