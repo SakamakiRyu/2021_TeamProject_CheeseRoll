@@ -105,7 +105,6 @@ public class StageManager : MonoBehaviour
 
     public void ScoreInit()
     {
-<<<<<<< HEAD
         _foodsNums = new int[_foodsList.Length];
 
         GameObject kariMana = new GameObject("Kari_Manager");
@@ -114,13 +113,12 @@ public class StageManager : MonoBehaviour
         ScoreManager.Instance.ScoreStructure = new ScoreManager.Score() { FoodsList = _foodsList, FoodsNums = _foodsNums, ScoreUI = _scoreUI, Dishes = _dishes, FoodsObject = _foodsObject, DishsObject = _dishesObject };
 
         //_scoreUI.ScoreUiSetup();
-=======
-        if (ScoreManager.Instance && _scoreUI)
-        {
-            _foodsNums = new int[_foodsList.Length];
-            ScoreManager.Instance.ScoreStructure = new ScoreManager.Score() { FoodsList = _foodsList, FoodsNums = _foodsNums, ScoreUI = _scoreUI, Dishes = _dishes, FoodsObject = _foodsObject, DishsObject = _dishesObject };
-            _scoreUI.ScoreUiSetup();
-        }
->>>>>>> master
+
+        //if (ScoreManager.Instance && _scoreUI)
+        //{
+        //    _foodsNums = new int[_foodsList.Length];
+        //    ScoreManager.Instance.ScoreStructure = new ScoreManager.Score() { FoodsList = _foodsList, FoodsNums = _foodsNums, ScoreUI = _scoreUI, Dishes = _dishes, FoodsObject = _foodsObject, DishsObject = _dishesObject };
+        //    _scoreUI.ScoreUiSetup();
+        //}
     }
 }
