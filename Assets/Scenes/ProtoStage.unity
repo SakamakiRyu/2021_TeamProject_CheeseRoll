@@ -212,6 +212,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meat
       objectReference: {fileID: 0}
+    - target: {fileID: 5717520953991383952, guid: b968dd5423f8e694d85023c4a591c69d,
+        type: 3}
+      propertyPath: _isRotate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717520953991383952, guid: b968dd5423f8e694d85023c4a591c69d,
+        type: 3}
+      propertyPath: _rotateSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7951618594015373545, guid: b968dd5423f8e694d85023c4a591c69d,
         type: 3}
       propertyPath: m_RootOrder
@@ -1562,7 +1572,7 @@ PrefabInstance:
     - target: {fileID: 6237830718176622239, guid: d7320a46650208649ac67aae913f454b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7320a46650208649ac67aae913f454b, type: 3}
@@ -1765,8 +1775,14 @@ MonoBehaviour:
   - Corn
   - Carrot
   - Potato
-  _dishes: 1
-  _foodsObject: []
+  _dishes: 3
+  _foodsObject:
+  - {fileID: 1592734310401349485, guid: b968dd5423f8e694d85023c4a591c69d, type: 3}
+  - {fileID: 3807968081737823707, guid: dc4fc0a1ab671cc4ead4e2cd7ef50370, type: 3}
+  - {fileID: 421045152291318733, guid: 335658df7a338a74b86142d7ad68db28, type: 3}
+  - {fileID: 7171420855455058790, guid: af4e0e6c4cff200458f21ba0eeac6cda, type: 3}
+  - {fileID: 7776842606003083362, guid: 57efddc4cb13e8c49952bed19a0e44ed, type: 3}
+  - {fileID: 3006308235910430795, guid: efc401360a9c8214db2ecc5c20d3fff6, type: 3}
   _dishesObject:
   - {fileID: 0}
   - {fileID: 0}
