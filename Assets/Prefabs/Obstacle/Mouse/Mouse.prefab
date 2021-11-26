@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3120641419436768467}
   - component: {fileID: 3120641419436768468}
   - component: {fileID: 3120641419436768469}
+  - component: {fileID: 8450787817535867236}
   m_Layer: 0
   m_Name: Mouse
   m_TagString: Untagged
@@ -57,6 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -81,6 +83,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &3120641419436768468
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106,7 +109,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb143e8346184d446a2e6f8fcdf5a1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 8450787817535867236}
   _myTransform: {fileID: 3120641419436768465}
   _upDownSpeed: 1
   _moveSpeed: 1
   _upDownMoveValue: 3
+--- !u!95 &8450787817535867236
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120641419436768470}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
