@@ -5,6 +5,8 @@
 /// </summary>
 public class UpDownByFinger : MonoBehaviour
 {
+    public static UpDownByFinger Instance;
+
     [Header("追従速度")]
     [SerializeField]
     private float _chaseSpeed;
@@ -31,6 +33,9 @@ public class UpDownByFinger : MonoBehaviour
     /// <summary>画面に触れていたか</summary>
     private bool _isTouch = false;
 
+    [SerializeField]
+    private bool _isReverse = false;
+
     private Vector3 _velo;
 
     private RoadMaker _maker;
@@ -42,6 +47,7 @@ public class UpDownByFinger : MonoBehaviour
             Debug.LogError("targetTransformを設定してください");
         }
         _maker = GetComponent<RoadMaker>();
+        Instance = this;
     }
 
     private void Start()
@@ -55,6 +61,15 @@ public class UpDownByFinger : MonoBehaviour
         {
             Control();
         }
+    }
+
+    /// <summary>
+    /// 操作方法の変更
+    /// </summary>
+    public void ChengeControll()
+    {
+        // 反転状況の反転
+        _isReverse = _isReverse ? false : true;
     }
 
     /// <summary>スマホの上下のスワイプ操作にて、生成位置を変更する(↑にスワイプ=上昇)</summary>
@@ -96,6 +111,10 @@ public class UpDownByFinger : MonoBehaviour
             // ターゲット座標の設定
             if (_targetTransform.position.y >= _min && _targetTransform.position.y <= _max)
             {
+                if (_isReverse)
+                {
+                    differenceValue *= -1;
+                }
                 _targetTransform.position = new Vector3(this.transform.position.x, _targetTransform.position.y + differenceValue, this.transform.position.z);
             }
         }

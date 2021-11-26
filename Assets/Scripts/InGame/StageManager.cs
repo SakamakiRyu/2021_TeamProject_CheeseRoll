@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class StageManager : MonoBehaviour
 {
+    public static StageManager Instance;
+
     public enum StageState
     {
         PreGame,
@@ -45,6 +47,17 @@ public class StageManager : MonoBehaviour
         _onGameOver.Invoke();
     }
 
+    public void StopStage()
+    {
+        _stageMover.MoveStop();
+        _roadMaker.NowPlay = false;
+    }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
         if (_testStop)
@@ -73,6 +86,7 @@ public class StageManager : MonoBehaviour
         }
         
     }
+
 
     private void PreGameUpdate()
     {
