@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StageManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class StageManager : MonoBehaviour
         PreGame,
         InGame,
         EndGame,
+        GameOver,
     }
 
     [SerializeField] Transform _endTransform;
@@ -31,9 +33,17 @@ public class StageManager : MonoBehaviour
     [SerializeField] GameObject[] _dishesObject;
 
     [SerializeField] ScoreUI _scoreUI;
+    [SerializeField] UnityEvent _onGameOver;
+    [SerializeField] UnityEvent _onGameClear;
 
 
     StageState _state = StageState.PreGame;
+
+    public void GameOver()
+    {
+        _state = StageState.GameOver;
+        _onGameOver.Invoke();
+    }
 
     private void Start()
     {
@@ -101,6 +111,7 @@ public class StageManager : MonoBehaviour
         _stageMover.MoveStop();
         _testResultButton.SetActive(true);
         _roadMaker.NowPlay = false;
+        _onGameClear.Invoke();
     }
 
     public void ScoreInit()
