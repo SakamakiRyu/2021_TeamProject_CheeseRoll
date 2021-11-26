@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Cinemachine;
 
 public class StageManager : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class StageManager : MonoBehaviour
     [SerializeField] Cheese _cheese;
     //[SerializeField] float _stopDistance = -1.5f;
     [SerializeField] bool _testStop;
+
+    [SerializeField] private CinemachineVirtualCamera _endCamera;
 
     [SerializeField] GameObject _testResultButton;
 
@@ -122,6 +125,7 @@ public class StageManager : MonoBehaviour
 
     private void StageClear()
     {
+        _endCamera.Priority = 3;
         _stageMover.MoveStop();
         _testResultButton.SetActive(true);
         _roadMaker.NowPlay = false;
