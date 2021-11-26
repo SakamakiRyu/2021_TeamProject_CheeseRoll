@@ -98,8 +98,9 @@ public class Cheese : MonoBehaviour
         {
             if (_time > 0.1f)
             {
-                _hp -= _scaleMinusValue;
-                this.gameObject.transform.localScale = new Vector3(_hp / 100, _hp / 100, _hp / 100);
+                _hp -= 1;
+                var scale = this.gameObject.transform.localScale;
+                this.gameObject.transform.localScale = new Vector3(scale.x -= _scaleMinusValue, scale.y -= _scaleMinusValue, scale.z -= _scaleMinusValue);
                 _time = 0;
             }
             else
