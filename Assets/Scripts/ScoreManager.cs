@@ -85,8 +85,9 @@ public class ScoreManager : MonoBehaviour
         {
 
             BurntFoodCount++;
-            ScoreUI.ScoreUpUi("BurntFood");
+            //ScoreUI.ScoreUpUi("BurntFood");
 
+            ScoreUI.BurntFoodUi();
         }
        
     }
