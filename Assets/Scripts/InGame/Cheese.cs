@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Cheese : MonoBehaviour
 {
+    public static Cheese Instance;
+
     Rigidbody _rigidbody;
     [SerializeField]
     float _hp;
@@ -23,11 +25,13 @@ public class Cheese : MonoBehaviour
 
     public float ZPosition => _zPosition;
     public float HP => _hp;
+    public float MaxHp => _maxHp;
 
     float _speed = 0;
 
     private void Awake()
     {
+        Instance = this;
         _rigidbody = GetComponent<Rigidbody>();
         _maxSize = transform.localScale.x;
         _maxHp = _hp;

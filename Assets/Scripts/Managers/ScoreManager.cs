@@ -8,7 +8,9 @@ using UnityEngine;
 /// </summary>
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager Instance;
+    public static ScoreManager Instance => _instance;
+
+    static ScoreManager _instance;
 
     public Score ScoreStructure;
 
@@ -23,9 +25,9 @@ public class ScoreManager : MonoBehaviour
 
     private void MakeSingle()
     {
-        if (Instance is null)
+        if (_instance is null)
         {
-            Instance = this;
+            _instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
         else
@@ -97,21 +99,21 @@ public class ScoreManager : MonoBehaviour
     /// <returns>最終的なスコア</returns>
     public int ScoreCalculation()
     {
-        if (Instance.ScoreStructure.FoodsNums == null)
+        if (ScoreStructure.FoodsNums == null)
         {
             return 0;
         }
         int bonus = 0;//何個とったか？
-        Instance.ScoreStructure.FoodsNums.ToList().ForEach(x => bonus += x);
+        ScoreStructure.FoodsNums.ToList().ForEach(x => bonus += x);
 
         int dishes = 0;//何人前か？
         bool isBreak = false;//trueなら抜け出す
-        for (int i = 0; i < Instance.ScoreStructure.Dishes; i++)
+        for (int i = 0; i < ScoreStructure.Dishes; i++)
         {
-            for (int k = 0; k < Instance.ScoreStructure.FoodsNums.Length; k++)
+            for (int k = 0; k < ScoreStructure.FoodsNums.Length; k++)
             {
-                Instance.ScoreStructure.FoodsNums[k]--;
-                if (Instance.ScoreStructure.FoodsNums[k] > 0)
+                ScoreStructure.FoodsNums[k]--;
+                if (ScoreStructure.FoodsNums[k] > 0)
                 {
                     isBreak = true;
                     break;
@@ -126,6 +128,6 @@ public class ScoreManager : MonoBehaviour
             dishes = _dishesScore[i];
         }
 
-        return bonus * dishes - Instance.ScoreStructure.BurntFoodCount;//最終的なスコア
+        return bonus * dishes - ScoreStructure.BurntFoodCount;//最終的なスコア
     }
 }

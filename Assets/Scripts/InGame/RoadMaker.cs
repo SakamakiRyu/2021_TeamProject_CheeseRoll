@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class RoadMaker : MonoBehaviour
 {
-    //生成したオブジェクトの収納先
-    [SerializeField]
-    private Transform _container;
+    
     [SerializeField]
     private float _splitTime;
     [SerializeField]
@@ -18,12 +16,19 @@ public class RoadMaker : MonoBehaviour
 
     private float _timer;
     private RoadChip _cullentChip;
+    //生成したオブジェクトの収納先
+    private Transform _container;
 
 
     private bool _nowPlay = true;
 
     /// <summary> 道を生成 するか否か </summary>
     public bool NowPlay { set => _nowPlay = value; get => _nowPlay; }
+
+    private void Awake()
+    {
+        _container = new GameObject("Roads").transform;
+    }
 
     private void Start()
     {

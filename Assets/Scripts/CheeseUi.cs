@@ -9,11 +9,10 @@ public class CheeseUi : MonoBehaviour
 
     [SerializeField] Image _cheeseHpImage;
 
-    [SerializeField] Cheese _cheese;
     void Update()
     {
-        _cheeseHpText.text = $"{_cheese.HP}Åì";
-        _cheeseHpImage.fillAmount = _cheese.HP/100;
+        _cheeseHpText.text = $"{(int)(Cheese.Instance?.HP ?? 999)}Åì";
+        _cheeseHpImage.fillAmount = (Cheese.Instance?.HP ?? 1.0f) / (Cheese.Instance?.MaxHp ?? 1.0f);
     }
     
 }

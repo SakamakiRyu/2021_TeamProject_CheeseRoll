@@ -170,7 +170,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cheeseHpText: {fileID: 493650540}
   _cheeseHpImage: {fileID: 938476036260576257}
-  _cheese: {fileID: 0}
 --- !u!1 &938476036756444886
 GameObject:
   m_ObjectHideFlags: 0
