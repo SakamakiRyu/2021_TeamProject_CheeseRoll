@@ -159,9 +159,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28452dddae702a846b8d294d1d21ccb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 0
+  _hp: 100
   _minSize: 0.5
-  _oneScaleValue: 0
+  _plateDamageOverTimes: 6
   _move: {fileID: 0}
   _onHitSensitivity: 1
   _zPosition: -1

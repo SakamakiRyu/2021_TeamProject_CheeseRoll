@@ -12,9 +12,8 @@ public class CheeseUi : MonoBehaviour
     [SerializeField] Cheese _cheese;
     void Update()
     {
-        _cheeseHpText.text = $"{_cheese.Hp}Åì";
-        _cheeseHpImage.fillAmount = _cheese.Hp/100;
-
+        _cheeseHpText.text = $"{_cheese.HP}Åì";
+        _cheeseHpImage.fillAmount = _cheese.HP/100;
     }
     
 }

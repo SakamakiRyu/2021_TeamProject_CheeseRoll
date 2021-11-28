@@ -12,7 +12,7 @@ public class RecoveryCheese : MonoBehaviour
     {
         if (other.gameObject.GetComponent<Cheese>())
         {
-            other.gameObject.GetComponent<Cheese>().ChangeHpAndScale(_recoveryValue);
+            other.gameObject.GetComponent<Cheese>().GetDamage(-_recoveryValue);
         }
     }
 }
