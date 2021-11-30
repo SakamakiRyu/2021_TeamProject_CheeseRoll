@@ -152,4 +152,9 @@ public class StageManager : MonoBehaviour
         //    _scoreUI.ScoreUiSetup();
         //}
     }
+    public void GateIn()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Result");
+        //SceneManager.Instance.GoNextScene("Result");
+    }
 }
