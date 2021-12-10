@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Cheese : MonoBehaviour
 {
+    public static Cheese Instance;
+
     Rigidbody _rigidbody;
-    public float Hp;
+    [SerializeField]
+    float _hp;
+    float _maxHp;
     [SerializeField]
     float _minSize;
+    float _maxSize;
     [SerializeField]
-    float _oneScaleValue;
-    float _time = 0;
+    float _plateDamageOverTimes;
     [SerializeField]
     StageMover _move;
     [SerializeField, Range(0.0f, 1.0f)]
@@ -18,19 +22,30 @@ public class Cheese : MonoBehaviour
     [Header("チーズが鉄板のどれぐらい後ろについてくるか")]
     [SerializeField]
     float _zPosition = -1f;
+    [SerializeField]
+    Animator _animator;
+
+    CheeseCollisionChecker _collisionChecker;
 
     public float ZPosition => _zPosition;
+    public float HP => _hp;
+    public float MaxHp => _maxHp;
 
     float _speed = 0;
 
     private void Awake()
     {
+        Instance = this;
         _rigidbody = GetComponent<Rigidbody>();
+        _collisionChecker = GetComponent<CheeseCollisionChecker>();
+        _maxSize = transform.localScale.x;
+        _maxHp = _hp;
     }
 
     private void Update()
     {
         UpdateSpeed();
+        UpdateAnimation();
     }
 
     private void FixedUpdate()
@@ -50,26 +65,29 @@ public class Cheese : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         ChangeSpeed(collision);
-        ChangeScale();
+        GetPlateDamage();
     }
 
     void ChangeSpeed(Collision collision)
     {
-        //タテ速度の変更
-        Vector3 nomal = collision.GetContact(0).normal;
-        float bai = -(nomal.z / nomal.y);
-        //ロードチップがある場合の処理
-        RoadChip chip = collision.transform.GetComponent<RoadChip>();
-        if (chip)
+        if (_move.IsMoving)
         {
-            nomal = chip.WallVector;
-            bai = nomal.y / nomal.z;
+            //タテ速度の変更
+            Vector3 nomal = collision.GetContact(0).normal;
+            float bai = -(nomal.z / nomal.y);
+            //ロードチップがある場合の処理
+            RoadChip chip = collision.transform.GetComponent<RoadChip>();
+            if (chip)
+            {
+                nomal = chip.WallVector;
+                bai = nomal.y / nomal.z;
+            }
+            Vector3 velocity = _rigidbody.velocity;
+            velocity.z = _speed;
+            velocity.y = Mathf.Max(_speed * bai * _onHitSensitivity, velocity.y);
+            velocity.x = 0;
+            _rigidbody.velocity = velocity;
         }
-        Vector3 velocity = _rigidbody.velocity;
-        velocity.z = _speed;
-        velocity.y = Mathf.Max(_speed * bai * _onHitSensitivity, velocity.y);
-        velocity.x = 0;
-        _rigidbody.velocity = velocity;
     }
 
     private void UpdateSpeed()
@@ -83,37 +101,61 @@ public class Cheese : MonoBehaviour
             //差に応じて速度を変化させる
             _speed = _move.MoveSpeed + sa;
         }
-        else
+        else if(StageManager.Instance.State == StageManager.StageState.PreGame)
         {
             //デフォルトの移動スピードを採用する
             _speed = _move.DefaultMoveSpeed;
         }
+        else
+        {
+            _speed = 0;
+        }
 
 
     }
-    void ChangeScale()
+
+    bool _lr;
+    private void UpdateAnimation()
     {
-        if (Hp > _minSize)
+        if (_collisionChecker.IsGroundEnter)
         {
-            if (_time > 0.1f)
+            if (_lr)
             {
-                ChangeHpAndScale(-1);
-                _time = 0;
+                _animator.CrossFade("Ground0", 0.08f);
             }
             else
             {
-                _time += Time.deltaTime;
+                _animator.CrossFade("Ground1", 0.08f);
             }
-
+            _lr = !_lr;
+            _collisionChecker.GroundEnterUsed();
         }
     }
-    public void ChangeHpAndScale(int value)
-    {
-        var scale = this.gameObject.transform.localScale;
-        scale += new Vector3(_oneScaleValue * value, _oneScaleValue * value, _oneScaleValue * value);
-        this.gameObject.transform.localScale = new Vector3(Mathf.Clamp(scale.x, _minSize, 1), Mathf.Clamp(scale.y, _minSize, 1), Mathf.Clamp(scale.z, _minSize, 1));
-        Hp = Mathf.Clamp(Hp + value, 0, 100);
 
-        Debug.Log(Hp);
+    void GetPlateDamage()
+    {
+        GetDamage(Time.deltaTime * _plateDamageOverTimes);
+    }
+
+    private void UpdateSize()
+    {
+        float size = _minSize;
+        size += (_maxSize - _minSize) * (_hp / _maxHp);
+        this.transform.localScale = new Vector3(size, size, size);
+    }
+
+    public void GetDamage(float damage)
+    {
+        _hp -= damage;
+        if (_hp < 0)
+        {
+            _hp = 0;
+            StageManager.Instance.GameOver();
+        }
+        else if (_hp > 100)
+        {
+            _hp = 100;
+        }
+        UpdateSize();
     }
 }

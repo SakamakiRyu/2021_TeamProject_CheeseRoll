@@ -20,7 +20,7 @@ public class StageManager : MonoBehaviour
     [SerializeField] Transform _startTransform;
     [SerializeField] StageMover _stageMover;
     [SerializeField] RoadMaker _roadMaker;
-    [SerializeField] Cheese _cheese;
+    
     //[SerializeField] float _stopDistance = -1.5f;
     [SerializeField] bool _testStop;
 
@@ -44,6 +44,9 @@ public class StageManager : MonoBehaviour
 
     StageState _state = StageState.PreGame;
 
+    Cheese Cheese => Cheese.Instance;
+
+    public StageState State => _state;
     public void GameOver()
     {
         _state = StageState.GameOver;
@@ -93,7 +96,7 @@ public class StageManager : MonoBehaviour
 
     private void PreGameUpdate()
     {
-        if (_startTransform.position.z + _cheese.ZPosition < _cheese.transform.position.z)
+        if (_startTransform.position.z + Cheese.ZPosition < Cheese.transform.position.z)
         {
             StageStart();
             _state = StageState.InGame;
@@ -102,7 +105,7 @@ public class StageManager : MonoBehaviour
 
     private void InGameUpdate()
     {
-        if (_endTransform.position.z < _cheese.transform.position.z)
+        if (_endTransform.position.z < Cheese.transform.position.z)
         {
             //_stageMover.MoveSpeed = 0;
             //Debug.Log("静止予定" + _cheese.position);
@@ -117,7 +120,7 @@ public class StageManager : MonoBehaviour
 
     }
 
-    private void StageStart()
+    public void StageStart()
     {
         _stageMover.MoveStart();
         _roadMaker.NowPlay = true;
@@ -149,5 +152,10 @@ public class StageManager : MonoBehaviour
         //    ScoreManager.Instance.ScoreStructure = new ScoreManager.Score() { FoodsList = _foodsList, FoodsNums = _foodsNums, ScoreUI = _scoreUI, Dishes = _dishes, FoodsObject = _foodsObject, DishsObject = _dishesObject };
         //    _scoreUI.ScoreUiSetup();
         //}
+    }
+    public void GateIn()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Result");
+        //SceneManager.Instance.GoNextScene("Result");
     }
 }

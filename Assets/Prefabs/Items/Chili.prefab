@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8555767413156987365, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _isRotate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2901069292810607970, guid: 538d4af330938be40aecd2038db86240,
         type: 3}
       propertyPath: m_RootOrder

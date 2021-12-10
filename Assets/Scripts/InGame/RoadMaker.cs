@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class RoadMaker : MonoBehaviour
 {
-    //生成したオブジェクトの収納先
+    
     [SerializeField]
-    private Transform _container;
-    [SerializeField]
-    private float _splitTime;
+    private float _splitLength;
+    private float _latesetSplitPosz;
     [SerializeField]
     private RoadChip _roadPrefab;
     [SerializeField]
@@ -16,14 +15,20 @@ public class RoadMaker : MonoBehaviour
     [SerializeField]
     private float _roadSizeY;
 
-    private float _timer;
     private RoadChip _cullentChip;
+    //生成したオブジェクトの収納先
+    private Transform _container;
 
 
     private bool _nowPlay = true;
 
     /// <summary> 道を生成 するか否か </summary>
     public bool NowPlay { set => _nowPlay = value; get => _nowPlay; }
+
+    private void Awake()
+    {
+        _container = new GameObject("Roads").transform;
+    }
 
     private void Start()
     {
@@ -35,11 +40,10 @@ public class RoadMaker : MonoBehaviour
         if (_nowPlay)
         {
             StretchRoad();
-            _timer += Time.deltaTime;
-            if (_timer > _splitTime)
+            if (this.transform.position.z - _latesetSplitPosz > _splitLength)
             {
-                _timer -= _splitTime;
                 Split();
+                _latesetSplitPosz = this.transform.position.z;
             }
         }
     }
