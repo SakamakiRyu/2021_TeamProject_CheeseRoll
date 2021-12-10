@@ -22,6 +22,10 @@ public class Cheese : MonoBehaviour
     [Header("チーズが鉄板のどれぐらい後ろについてくるか")]
     [SerializeField]
     float _zPosition = -1f;
+    [SerializeField]
+    Animator _animator;
+
+    CheeseCollisionChecker _collisionChecker;
 
     public float ZPosition => _zPosition;
     public float HP => _hp;
@@ -33,6 +37,7 @@ public class Cheese : MonoBehaviour
     {
         Instance = this;
         _rigidbody = GetComponent<Rigidbody>();
+        _collisionChecker = GetComponent<CheeseCollisionChecker>();
         _maxSize = transform.localScale.x;
         _maxHp = _hp;
     }
@@ -40,6 +45,7 @@ public class Cheese : MonoBehaviour
     private void Update()
     {
         UpdateSpeed();
+        UpdateAnimation();
     }
 
     private void FixedUpdate()
@@ -107,6 +113,25 @@ public class Cheese : MonoBehaviour
 
 
     }
+
+    bool _lr;
+    private void UpdateAnimation()
+    {
+        if (_collisionChecker.IsGroundEnter)
+        {
+            if (_lr)
+            {
+                _animator.CrossFade("Ground0", 0.08f);
+            }
+            else
+            {
+                _animator.CrossFade("Ground1", 0.08f);
+            }
+            _lr = !_lr;
+            _collisionChecker.GroundEnterUsed();
+        }
+    }
+
     void GetPlateDamage()
     {
         GetDamage(Time.deltaTime * _plateDamageOverTimes);
