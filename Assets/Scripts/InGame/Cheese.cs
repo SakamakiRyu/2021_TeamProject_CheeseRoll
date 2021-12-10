@@ -101,7 +101,7 @@ public class Cheese : MonoBehaviour
             //差に応じて速度を変化させる
             _speed = _move.MoveSpeed + sa;
         }
-        else if(StageManager.Instance.State == StageManager.StageState.PreGame)
+        else if(StageManager.Instance.State == StageManager.StageState.PreGame || StageManager.Instance.State == StageManager.StageState.EndGame)
         {
             //デフォルトの移動スピードを採用する
             _speed = _move.DefaultMoveSpeed;
