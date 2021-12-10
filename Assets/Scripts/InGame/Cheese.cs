@@ -64,21 +64,24 @@ public class Cheese : MonoBehaviour
 
     void ChangeSpeed(Collision collision)
     {
-        //タテ速度の変更
-        Vector3 nomal = collision.GetContact(0).normal;
-        float bai = -(nomal.z / nomal.y);
-        //ロードチップがある場合の処理
-        RoadChip chip = collision.transform.GetComponent<RoadChip>();
-        if (chip)
+        if (_move.IsMoving)
         {
-            nomal = chip.WallVector;
-            bai = nomal.y / nomal.z;
+            //タテ速度の変更
+            Vector3 nomal = collision.GetContact(0).normal;
+            float bai = -(nomal.z / nomal.y);
+            //ロードチップがある場合の処理
+            RoadChip chip = collision.transform.GetComponent<RoadChip>();
+            if (chip)
+            {
+                nomal = chip.WallVector;
+                bai = nomal.y / nomal.z;
+            }
+            Vector3 velocity = _rigidbody.velocity;
+            velocity.z = _speed;
+            velocity.y = Mathf.Max(_speed * bai * _onHitSensitivity, velocity.y);
+            velocity.x = 0;
+            _rigidbody.velocity = velocity;
         }
-        Vector3 velocity = _rigidbody.velocity;
-        velocity.z = _speed;
-        velocity.y = Mathf.Max(_speed * bai * _onHitSensitivity, velocity.y);
-        velocity.x = 0;
-        _rigidbody.velocity = velocity;
     }
 
     private void UpdateSpeed()
@@ -92,10 +95,14 @@ public class Cheese : MonoBehaviour
             //差に応じて速度を変化させる
             _speed = _move.MoveSpeed + sa;
         }
-        else
+        else if(StageManager.Instance.State == StageManager.StageState.PreGame)
         {
             //デフォルトの移動スピードを採用する
             _speed = _move.DefaultMoveSpeed;
+        }
+        else
+        {
+            _speed = 0;
         }
 
 
