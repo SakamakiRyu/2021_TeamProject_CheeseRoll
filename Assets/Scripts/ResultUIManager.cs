@@ -41,4 +41,13 @@ public class ResultUIManager : MonoBehaviour
 
         Instantiate(_dishObject, _dish);
     }
+
+    public void  GetScores(float time,int foodsQuantity,int ngFoodsQuantity,float score,GameObject dish)
+    {
+        _clearTime = time;
+        _foodsNum = foodsQuantity;
+        _ngFoodsNum = ngFoodsQuantity;
+        _score = score;
+        _dishObject = dish;
+    }
 }
