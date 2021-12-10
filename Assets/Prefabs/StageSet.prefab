@@ -1380,7 +1380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e43f4e35133d04a8413ce581de7f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _splitTime: 0.05
+  _splitLength: 0.1
   _roadPrefab: {fileID: 4356309577663889531, guid: 673fbb6d3c3ff92419814828364ca65f,
     type: 3}
   _roadSizeX: 1.5

@@ -6,7 +6,8 @@ public class RoadMaker : MonoBehaviour
 {
     
     [SerializeField]
-    private float _splitTime;
+    private float _splitLength;
+    private float _latesetSplitPosz;
     [SerializeField]
     private RoadChip _roadPrefab;
     [SerializeField]
@@ -14,7 +15,6 @@ public class RoadMaker : MonoBehaviour
     [SerializeField]
     private float _roadSizeY;
 
-    private float _timer;
     private RoadChip _cullentChip;
     //生成したオブジェクトの収納先
     private Transform _container;
@@ -40,11 +40,10 @@ public class RoadMaker : MonoBehaviour
         if (_nowPlay)
         {
             StretchRoad();
-            _timer += Time.deltaTime;
-            if (_timer > _splitTime)
+            if (this.transform.position.z - _latesetSplitPosz > _splitLength)
             {
-                _timer -= _splitTime;
                 Split();
+                _latesetSplitPosz = this.transform.position.z;
             }
         }
     }
