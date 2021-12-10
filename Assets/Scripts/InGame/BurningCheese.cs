@@ -20,7 +20,7 @@ public class BurningCheese : MonoBehaviour
  
     bool _burning = false;
 
-    [SerializeField] GameObject _testObj;
+    [SerializeField,UnityEngine.Serialization.FormerlySerializedAs("_testObj")] GameObject _judgArea;
 
     [SerializeField] GameObject _fireUi;
 
@@ -53,9 +53,9 @@ public class BurningCheese : MonoBehaviour
         _burning = false;
         _timer = 0;
 
-        if (_testObj != null)
+        if (_judgArea != null)
         {
-            _testObj.SetActive(false);
+            _judgArea.SetActive(false);
         }
 
         if (_fireUi != null)
@@ -86,9 +86,9 @@ public class BurningCheese : MonoBehaviour
                     _burning = true;
                 }
 
-                if (_testObj != null)
+                if (_judgArea != null)
                 {
-                    _testObj.SetActive(true);
+                    _judgArea.SetActive(true);
                 }
 
                 if (_fireUi != null)

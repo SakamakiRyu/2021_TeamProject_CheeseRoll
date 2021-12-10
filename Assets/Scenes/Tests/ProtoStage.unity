@@ -2959,7 +2959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e43f4e35133d04a8413ce581de7f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _splitTime: 0.05
+  _splitLength: 0.15
   _roadPrefab: {fileID: 4356309577663889531, guid: 673fbb6d3c3ff92419814828364ca65f,
     type: 3}
   _roadSizeX: 1.5
@@ -2979,7 +2979,8 @@ MonoBehaviour:
   _roadPrefab: {fileID: 4446000482208417858, guid: 673fbb6d3c3ff92419814828364ca65f,
     type: 3}
   _resetRoadMaterial: {fileID: 2100000, guid: 2a9c8bec6e99ca04794dbc6391d6b761, type: 2}
-  _heatingRoad: {fileID: 2100000, guid: df81c11b77cabda4a8ff6274a069287b, type: 2}
+  _heatingRoadMaterial: {fileID: 2100000, guid: df81c11b77cabda4a8ff6274a069287b,
+    type: 2}
 --- !u!1 &907741955
 GameObject:
   m_ObjectHideFlags: 0
