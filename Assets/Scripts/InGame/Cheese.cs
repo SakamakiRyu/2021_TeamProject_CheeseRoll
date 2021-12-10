@@ -130,6 +130,7 @@ public class Cheese : MonoBehaviour
             _lr = !_lr;
             _collisionChecker.GroundEnterUsed();
         }
+        _animator.SetBool("IsAir", _collisionChecker.IsAir);
     }
 
     void GetPlateDamage()

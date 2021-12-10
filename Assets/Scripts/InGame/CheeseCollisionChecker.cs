@@ -11,6 +11,7 @@ public class CheeseCollisionChecker : MonoBehaviour
     bool isCollisionPre;
 
     public bool IsGroundEnter { get; private set; }
+    public bool IsAir { get; private set; }
 
     public void GroundEnterUsed() => IsGroundEnter = false;
 
@@ -22,6 +23,14 @@ public class CheeseCollisionChecker : MonoBehaviour
             {
                 IsGroundEnter = true;
             }
+        }
+        if (isCollision)
+        {
+            IsAir = false;
+        }
+        else
+        {
+            IsAir = true;
         }
         isCollisionPre = isCollision;
         isCollision = false;

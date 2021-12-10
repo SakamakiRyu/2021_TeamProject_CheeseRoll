@@ -50,6 +50,7 @@ public class StageManager : MonoBehaviour
     public void GameOver()
     {
         _state = StageState.GameOver;
+        StopStage();
         _onGameOver.Invoke();
     }
 
