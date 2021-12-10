@@ -25,8 +25,8 @@ public class CircleFade : MonoBehaviour
     {
         while (transform.localScale.x > _minAspect && this.transform.localScale.y > _minAspect)
         {
-            float x = transform.localScale.x - 0.25f;
-            float y = transform.localScale.y - 0.25f;
+            float x = transform.localScale.x - 0.4f;
+            float y = transform.localScale.y - 0.4f;
             Vector3 scale = new Vector3 (x,y,0);
             transform.localScale = scale;
             yield return null;
@@ -37,8 +37,8 @@ public class CircleFade : MonoBehaviour
     {
         while (transform.localScale.x < _maxAspect && this.transform.localScale.y < _maxAspect)
         {
-            float x = transform.localScale.x + 0.25f;
-            float y = transform.localScale.y + 0.25f;
+            float x = transform.localScale.x + 0.4f;
+            float y = transform.localScale.y + 0.4f;
             Vector3 scale = new Vector3(x, y, 0);
             transform.localScale = scale;
             yield return null;
