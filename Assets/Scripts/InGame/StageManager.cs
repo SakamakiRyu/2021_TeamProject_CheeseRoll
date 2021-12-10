@@ -112,13 +112,11 @@ public class StageManager : MonoBehaviour
             //Debug.Log("静止予定" + _cheese.position);
 
             StageClear();
-            _state = StageState.EndGame;
         }
     }
 
     private void EndGameUpdate()
     {
-
     }
 
     public void StageStart()
@@ -129,11 +127,12 @@ public class StageManager : MonoBehaviour
 
     private void StageClear()
     {
+        _state = StageState.EndGame;
         _endCamera.Priority = 3;
         _stageMover.MoveStop();
-        _testResultButton.SetActive(true);
         _roadMaker.NowPlay = false;
         _onGameClear.Invoke();
+        _testResultButton?.SetActive(true);
     }
 
     public void ScoreInit()
