@@ -36,6 +36,7 @@ public class StageMover : MonoBehaviour
 
     public void MoveStart()
     {
+        _moveSpeed = _defaultMoveSpeed;
         _isMoving = true;
     }
 
@@ -43,6 +44,6 @@ public class StageMover : MonoBehaviour
     public void MoveStop()
     {
         _moveSpeed = 0;
-        _isMoving= false;
+        _isMoving = false;
     }
 }

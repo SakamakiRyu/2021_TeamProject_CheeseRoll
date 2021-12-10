@@ -46,6 +46,7 @@ public class StageManager : MonoBehaviour
 
     Cheese Cheese => Cheese.Instance;
 
+    public StageState State => _state;
     public void GameOver()
     {
         _state = StageState.GameOver;
@@ -119,7 +120,7 @@ public class StageManager : MonoBehaviour
 
     }
 
-    private void StageStart()
+    public void StageStart()
     {
         _stageMover.MoveStart();
         _roadMaker.NowPlay = true;
