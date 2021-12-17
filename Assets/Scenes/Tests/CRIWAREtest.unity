@@ -990,7 +990,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fac372776aa4c54a8192708dc98f45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _BGMSource: {fileID: 1670217459}
+  _bgmSource: {fileID: 0}
+  _bgmClips: []
+  _meSource: {fileID: 0}
+  _meClips: []
+  _seSource: {fileID: 0}
+  _seClips: []
 --- !u!114 &1670217457
 MonoBehaviour:
   m_ObjectHideFlags: 0

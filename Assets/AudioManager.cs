@@ -5,64 +5,92 @@ using UnityEngine;
 /// </summary>
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField]
-    private CriAtomSource _BGMSource;
+    public static AudioManager Instance { get; private set; }
 
     [SerializeField]
-    private AudioClip[] _bgmClips;
+    private CriAtomSource _bgmSource;
 
     [SerializeField]
-    private CriAtomSource _SESource;
+    private CriAtomSource _meSource;
 
     [SerializeField]
-    private AudioClip[] _seClips;
+    private CriAtomSource _seSource;
 
-    /// <summary>
-    /// BGMのcueName
-    /// </summary>
+    private void Awake()
+    {
+        if (Instance)
+        {
+            Instance = this;
+        }
+    }
+
     public enum BGMtype
     {
-        None = -1,
-        /// <summary>ゲーム中</summary>
-        Game,
-        /// <summary>メイン</summary>
-        Main,
-        /// <summary>追跡</summary>
-        Chase
+        None,
+        GamePlay01,
+        HotStatas,
+        Result,
+        StageSelect,
+        Title
+    }
+
+    public enum METype
+    {
+        None,
+        GameOver,
+        Goal
     }
 
     public enum SEtype
     {
-        None = -1
+        None,
+        BlowTheFire,
+        BurnrlngredientsAcquired,
+        Button01,
+        CancelButton,
+        CheeseJump,
+        CheeseMelted,
+        Fall,
+        GameStart,
+        IngredientsAcquired,
+        IronPlate,
+        MouseChewing,
+        RecoveryItem,
+        SlicerSound,
+        TitleTap,
+        ResultScore,
+        CheeseRoll_01,
+        CheeseRoll_02,
+        CheeseRoll_random
     }
 
-    // CryAtomSource の cueSheet と cueNameを変更す
-    // ることで鳴らす音の素材を変更する。
-
     /// <summary>
-    /// BGMの設定をする
+    /// BGMを鳴らす
     /// </summary>
-    /// <param name="type">設定するBGM</param>
-    public void SetBGM(BGMtype type)
+    /// <param name="bgm">鳴らすBGM</param>
+    public void PlayBGM(BGMtype bgm)
     {
-        _BGMSource.Stop();
-        _BGMSource.cueName = $"BGM_{type}";
+        _bgmSource.cueName = $"BGM_{bgm}";
+        _bgmSource.Play();
     }
 
     /// <summary>
-    /// BGMの再生をする
+    /// MEを鳴らす
     /// </summary>
-    public void PlayBGM()
+    /// <param name="me">鳴らすME</param>
+    public void PlayME(METype me)
     {
-        _BGMSource.Play();
+        _meSource.cueName = $"ME_{me}";
+        _meSource.Play();
     }
 
     /// <summary>
     /// SEを鳴らす
     /// </summary>
-    /// <param name="se"></param>
+    /// <param name="se">鳴らすSE</param>
     public void PlaySE(SEtype se)
     {
-
+        _seSource.cueName = $"SE_{se}";
+        _seSource.Play();
     }
 }
