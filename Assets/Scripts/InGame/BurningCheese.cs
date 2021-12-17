@@ -15,10 +15,12 @@ public class BurningCheese : MonoBehaviour
     }
 
     [SerializeField] Burns[] _burns;
-    [SerializeField] float _timer;
+    float _timer;
     float _maxTime;
- 
-    bool _burning = false;
+
+    [SerializeField,Range(1,10)] float _hpDamegeMagni = 2.0f;
+
+    bool _isBurning = false;
 
     [SerializeField,UnityEngine.Serialization.FormerlySerializedAs("_testObj")] GameObject _judgArea;
 
@@ -29,11 +31,12 @@ public class BurningCheese : MonoBehaviour
     /// <summary>
     /// アツアツ状態か否か を取得
     /// </summary>
-    public bool Burning { get => _burning;}
+    public bool IsBurning { get => _isBurning;}
+    public float HpDamegeMagni { get => _hpDamegeMagni;}
 
     private void Update()
     {
-        if (_burning)
+        if (_isBurning == true)
         {
 
             _timer += Time.deltaTime;
@@ -50,7 +53,7 @@ public class BurningCheese : MonoBehaviour
     /// </summary>
     public void EndBurn()
     {
-        _burning = false;
+        _isBurning = false;
         _timer = 0;
 
         if (_judgArea != null)
@@ -83,7 +86,7 @@ public class BurningCheese : MonoBehaviour
                 {
                     _timer = 0;
                     _maxTime = _burns[i].Time;
-                    _burning = true;
+                    _isBurning = true;
                 }
 
                 if (_judgArea != null)

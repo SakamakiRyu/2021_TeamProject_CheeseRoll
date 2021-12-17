@@ -27,6 +27,8 @@ public class Cheese : MonoBehaviour
 
     CheeseCollisionChecker _collisionChecker;
 
+    BurningCheese _burningCheese;
+
     public float ZPosition => _zPosition;
     public float HP => _hp;
     public float MaxHp => _maxHp;
@@ -40,6 +42,8 @@ public class Cheese : MonoBehaviour
         _collisionChecker = GetComponent<CheeseCollisionChecker>();
         _maxSize = transform.localScale.x;
         _maxHp = _hp;
+
+        _burningCheese = GetComponent<BurningCheese>();
     }
 
     private void Update()
@@ -147,6 +151,8 @@ public class Cheese : MonoBehaviour
 
     public void GetDamage(float damage)
     {
+        if (_burningCheese.IsBurning == true) { damage *= _burningCheese.HpDamegeMagni; }
+
         _hp -= damage;
         if (_hp < 0)
         {
