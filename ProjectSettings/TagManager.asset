@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Stage trigger
   - BurningArea
+  - Road
   layers:
   - Default
   - TransparentFX

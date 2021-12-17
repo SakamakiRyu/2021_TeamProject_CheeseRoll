@@ -125,6 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3359496793120422637}
   - component: {fileID: 6844007330714658452}
+  - component: {fileID: 838871587119852165}
   m_Layer: 0
   m_Name: StopHit
   m_TagString: Untagged
@@ -154,11 +155,24 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4101266045066974328}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.46, y: 1.93, z: 0.36}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &838871587119852165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4101266045066974328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a05709a00128f24e8af0a76390d2740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fork: {fileID: 3634229276026722169}
 --- !u!1 &5802806729297879473
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 867102169947114046}
   - component: {fileID: 4210396500200467930}
+  - component: {fileID: 879695848556517784}
   m_Layer: 0
   m_Name: GameOverHit
   m_TagString: Untagged
@@ -203,3 +218,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.27088052, y: 0.12999997, z: 0.27824533}
   m_Center: {x: -0.015587419, y: -0.92, z: -0.010995885}
+--- !u!114 &879695848556517784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5802806729297879473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d06a2ea52049942a79428a3af5cf03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
