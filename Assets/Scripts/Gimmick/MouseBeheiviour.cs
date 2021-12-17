@@ -53,6 +53,7 @@ public class MouseBeheiviour : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("hit cheese");
+            _animator.SetTrigger("GameOver");
         }
     }
 
