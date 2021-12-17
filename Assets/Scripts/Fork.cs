@@ -33,7 +33,6 @@ public class Fork : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
-            Debug.Log("GameOver");
             StageManager.Instance.GameOver();
             StageManager.Instance.StopStage();
             foreach (var collider in this.GetComponentsInChildren<Collider>())
@@ -41,18 +40,15 @@ public class Fork : MonoBehaviour
                 collider.enabled = false;
             }
         }
-      
+    
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Stop");
         StageManager.Instance.StopStage();
     }
     void OnTriggerExit(Collider other)
     {
-        Debug.Log("Start");
         StageManager.Instance.StageStart();
         foreach (var collider in this.GetComponentsInChildren<Collider>())
         {
