@@ -16,7 +16,7 @@ public class ScoreManager : MonoBehaviour
 
     private int[] _dishesScore = { 10, 30, 60 };
 
-   
+
 
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class ScoreManager : MonoBehaviour
             Destroy(this);
         }
     }
-   
+
 
     public struct Score
     {
@@ -53,7 +53,7 @@ public class ScoreManager : MonoBehaviour
         public GameObject[] FoodsObject { get; set; }
 
         public GameObject[] DishsObject { get; set; }
-        public Score(string[] foodsList,int[] foodsNums,int dishes,ScoreUI scoreUI,GameObject[] foodsObject,GameObject[] dishObject )
+        public Score(string[] foodsList, int[] foodsNums, int dishes, ScoreUI scoreUI, GameObject[] foodsObject, GameObject[] dishObject)
         {
             this.FoodsList = foodsList;
             this.FoodsNums = foodsNums;
@@ -91,7 +91,7 @@ public class ScoreManager : MonoBehaviour
 
             ScoreUI.BurntFoodUi();
         }
-       
+
     }
     /// <summary>
     /// 最終的なスコアを計算する
@@ -129,5 +129,14 @@ public class ScoreManager : MonoBehaviour
         }
 
         return bonus * dishes - ScoreStructure.BurntFoodCount;//最終的なスコア
+    }
+
+    /// <summary>
+    /// スコアの星の数を返す
+    /// </summary>
+    /// <returns></returns>
+    public int GetStar()
+    {
+        return 5;
     }
 }
