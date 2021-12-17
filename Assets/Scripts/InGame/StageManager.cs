@@ -144,7 +144,7 @@ public class StageManager : MonoBehaviour
 
         ScoreManager.Instance.ScoreStructure = new ScoreManager.Score() { FoodsList = _foodsList, FoodsNums = _foodsNums, ScoreUI = _scoreUI, Dishes = _dishes, FoodsObject = _foodsObject, DishsObject = _dishesObject };
 
-        //_scoreUI.ScoreUiSetup();
+        _scoreUI.ScoreUiSetup();
 
         //if (ScoreManager.Instance && _scoreUI)
         //{
