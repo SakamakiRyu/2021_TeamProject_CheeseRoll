@@ -4,16 +4,23 @@ public class UIPopupControl : MonoBehaviour
 {
     public static UIPopupControl Instance { get; private set; } = null;
 
+    [SerializeField]
+    private GameObject _obj;
+
     private Animator _animator;
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance is null)
+        {
+            Instance = this;
+        }
     }
 
     private void Start()
     {
         TryGetComponent(out _animator);
+        _obj.SetActive(false);
     }
 
     /// <summary>

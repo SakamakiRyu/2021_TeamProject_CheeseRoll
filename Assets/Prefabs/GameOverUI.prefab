@@ -369,6 +369,7 @@ GameObject:
   - component: {fileID: 6896112696069891129}
   - component: {fileID: 6896112696069891126}
   - component: {fileID: 6896112696069891130}
+  - component: {fileID: 4704956656797808322}
   m_Layer: 5
   m_Name: GameOverUI
   m_TagString: Untagged
@@ -476,6 +477,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4704956656797808322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6896112696069891127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc1b41ff34ba8249b3bd539cdc2ebe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _obj: {fileID: 6896112695823308947}
 --- !u!1 &6896112696286793015
 GameObject:
   m_ObjectHideFlags: 0

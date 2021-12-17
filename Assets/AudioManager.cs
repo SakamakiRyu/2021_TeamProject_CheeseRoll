@@ -9,14 +9,20 @@ public class AudioManager : MonoBehaviour
     private CriAtomSource _BGMSource;
 
     [SerializeField]
+    private AudioClip[] _bgmClips;
+
+    [SerializeField]
     private CriAtomSource _SESource;
+
+    [SerializeField]
+    private AudioClip[] _seClips;
 
     /// <summary>
     /// BGM‚ÌcueName
     /// </summary>
     public enum BGMtype
     {
-        None,
+        None = -1,
         /// <summary>ƒQ[ƒ€’†</summary>
         Game,
         /// <summary>ƒƒCƒ“</summary>
@@ -27,7 +33,7 @@ public class AudioManager : MonoBehaviour
 
     public enum SEtype
     {
-        None
+        None = -1
     }
 
     // CryAtomSource ‚Ì cueSheet ‚Æ cueName‚ğ•ÏX‚·
@@ -49,5 +55,14 @@ public class AudioManager : MonoBehaviour
     public void PlayBGM()
     {
         _BGMSource.Play();
+    }
+
+    /// <summary>
+    /// SE‚ğ–Â‚ç‚·
+    /// </summary>
+    /// <param name="se"></param>
+    public void PlaySE(SEtype se)
+    {
+
     }
 }
