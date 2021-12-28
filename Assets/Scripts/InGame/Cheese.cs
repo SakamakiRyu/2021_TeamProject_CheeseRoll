@@ -28,6 +28,7 @@ public class Cheese : MonoBehaviour
     CheeseCollisionChecker _collisionChecker;
 
     BurningCheese _burningCheese;
+    float _damageMultiplication = 1.0f;
 
     public float ZPosition => _zPosition;
     public float HP => _hp;
@@ -151,7 +152,10 @@ public class Cheese : MonoBehaviour
 
     public void GetDamage(float damage)
     {
-        if (_burningCheese.IsBurning == true) { damage *= _burningCheese.HpDamegeMagni; }
+        if (_burningCheese.IsBurning == true) { _damageMultiplication = _burningCheese.BurningMultiplication; }
+        else { _damageMultiplication = 1.0f; }
+
+        damage *= _damageMultiplication;
 
         _hp -= damage;
         if (_hp < 0)

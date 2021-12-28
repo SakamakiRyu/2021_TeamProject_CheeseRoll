@@ -70,7 +70,7 @@ public class HittableObject : MonoBehaviour
 
     public void StartBurning()
     {
-        _hitObj.GetComponent<BurningCheese>().StartBurn(_name);
+        _hitObj.GetComponent<BurningCheese>().StartBurn(_name, true);
     }
 
     /// <summary>
@@ -80,7 +80,7 @@ public class HittableObject : MonoBehaviour
     {
         if (_objectType == HittableObjectType.DropOfWater)
         {
-            _hitObj.GetComponent<BurningCheese>().EndBurn();
+            _hitObj.GetComponent<BurningCheese>().EndBurn("Water");
         }
     }
 

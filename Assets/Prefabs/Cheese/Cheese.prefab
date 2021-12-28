@@ -257,11 +257,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burns:
-  - name: Chili
-    time: 10
-  _timer: 0
-  _testObj: {fileID: 62056560103336941}
+  - _name: Chili
+    _time: 10
+    _priority: 0
+    _burningMultiplication: 2
+  _judgArea: {fileID: 62056560103336941}
   _fireUi: {fileID: 0}
+  _roadColorChange: {fileID: 0}
 --- !u!114 &1423245149723290730
 MonoBehaviour:
   m_ObjectHideFlags: 0

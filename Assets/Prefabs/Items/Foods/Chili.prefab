@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8555767413156987365, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _isRotate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2901069292810607970, guid: 538d4af330938be40aecd2038db86240,
         type: 3}
       propertyPath: m_RootOrder
@@ -90,14 +95,13 @@ PrefabInstance:
     - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
         type: 3}
       propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
         type: 3}
       propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: -216339680019050401, guid: 8c069d5c5b897cd41b48b0ea2513f524,
-        type: 3}
+      objectReference: {fileID: 6185277338127011968}
     - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
         type: 3}
       propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
@@ -106,7 +110,12 @@ PrefabInstance:
     - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
         type: 3}
       propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: StartBurn
+      value: StartBurning
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: _onItemPickup.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: HittableObject, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
         type: 3}
@@ -120,3 +129,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538d4af330938be40aecd2038db86240, type: 3}
+--- !u!114 &6185277338127011968 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6000558034892260601, guid: 538d4af330938be40aecd2038db86240,
+    type: 3}
+  m_PrefabInstance: {fileID: 473097083051250809}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253648f7d3507ab4bb351e021cc39bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
