@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class ResultObjectGenerate : MonoBehaviour
 {
-    [SerializeField] GameObject[] _prefabs;
+    GameObject[] _prefabs;
     [SerializeField] Transform[] _parents;
     [SerializeField] StarFiller _star;
-    [SerializeField] 
 
     private void Start()
     {
@@ -21,20 +20,21 @@ public class ResultObjectGenerate : MonoBehaviour
             _prefabs = ScoreManager.Instance.ScoreStructure.FoodsObject;
         }
 
-        int getFoodsNum = 0;
-        if (ScoreManager.Instance.ScoreStructure.FoodsNums != null)
-        {
-            for (int i = 0; i < ScoreManager.Instance.ScoreStructure.FoodsNums.Length; i++)
-            {
-                getFoodsNum += 1;
-            }
-        }
-        if (getFoodsNum == 0)
-        {
-            getFoodsNum = 10;//デバッグ用
-        }
-
-        for (int i = 0; i < getFoodsNum; i++)//今は_prefabs.Length回まわしてますが、ここの数字は取った具材の種類(getFoodsNum)になります
+        //int getFoodsNum = 0;
+        //if (ScoreManager.Instance.ScoreStructure.FoodsNums != null)
+        //{
+        //    Debug.Log(ScoreManager.Instance.ScoreStructure.FoodsNums);
+        //    for (int i = 0; i < ScoreManager.Instance.ScoreStructure.FoodsNums.Length; i++)
+        //    {
+        //        getFoodsNum += 1;
+        //    }
+        //}
+        //if (getFoodsNum == 0)
+        //{
+        //    getFoodsNum = 10;//デバッグ用
+        //}
+        
+        for (int i = 0; i < _prefabs.Length; i++)
         {
             Instantiate(_prefabs[i], _parents[i]);
         }

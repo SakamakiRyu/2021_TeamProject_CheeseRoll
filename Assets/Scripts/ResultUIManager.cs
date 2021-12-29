@@ -11,7 +11,7 @@ public class ResultUIManager : MonoBehaviour
     public int _foodsNum;
     [SerializeField]
     public int _ngFoodsNum;
-    [SerializeField]
+    //[SerializeField]
     public float _score;
     [SerializeField]
     Text[] _texts;
@@ -34,20 +34,31 @@ public class ResultUIManager : MonoBehaviour
 
     void SetScores()
     {
+        GetScores();
+
         _texts[0].text = _clearTime.ToString();
         _texts[1].text = _foodsNum.ToString();
         _texts[2].text = _ngFoodsNum.ToString();
         _texts[3].text = _score.ToString();
 
-        Instantiate(_dishObject, _dish);
+        _dishObject = ScoreManager.Instance.GetDish();
+
+        if (_dishObject != null)
+        {
+            Instantiate(_dishObject, _dish);
+        }
     }
 
-    public void  GetScores(float time,int foodsQuantity,int ngFoodsQuantity,float score,GameObject dish)
+    public void  GetScores()
     {
-        _clearTime = time;
-        _foodsNum = foodsQuantity;
-        _ngFoodsNum = ngFoodsQuantity;
-        _score = score;
-        _dishObject = dish;
+        _clearTime = ScoreManager.Instance.GetTime();
+        _foodsNum = ScoreManager.Instance.GetGetedFoodCount();
+        _ngFoodsNum = ScoreManager.Instance.GetNGFoodCount();
+        _score = ScoreManager.Instance.ScoreCalculation();
+
+        //Debug.Log(ScoreManager.Instance.GetTime());
+        //Debug.Log(ScoreManager.Instance.GetNGFoodCount());
+        //Debug.Log(ScoreManager.Instance.GetNGFoodCount());
+        //Debug.Log(_score);
     }
 }
