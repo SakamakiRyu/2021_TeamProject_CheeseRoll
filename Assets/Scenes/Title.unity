@@ -720,10 +720,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 97
-    m_FontStyle: 3
+    m_FontSize: 70
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 7
     m_MaxSize: 97
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -731,7 +731,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Please Touch !!
+  m_Text: "\u30BF\u30C3\u30D7\u3067\u30B2\u30FC\u30E0\u30B9\u30BF\u30FC\u30C8\uFF01\uFF01"
 --- !u!222 &1463969759
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -800,7 +800,7 @@ PrefabInstance:
     - target: {fileID: 602683755026691112, guid: c227935a160ae9b43b66258efb5d9e0b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2992319900718806952, guid: c227935a160ae9b43b66258efb5d9e0b,
         type: 3}
