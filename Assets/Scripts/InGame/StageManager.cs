@@ -35,6 +35,7 @@ public class StageManager : MonoBehaviour
     [SerializeField] int _dishes;
 
     [SerializeField] GameObject[] _foodsObject;
+    [Header("評価の大きい順に３つ入れてください")]
     [SerializeField] GameObject[] _dishesObject;
 
     [SerializeField] ScoreUI _scoreUI;

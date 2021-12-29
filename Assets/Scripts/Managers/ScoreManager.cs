@@ -155,11 +155,16 @@ public class ScoreManager : MonoBehaviour
 
     public int GetGetedFoodCount()
     {
-        return 5;
+        int a = 0;
+        foreach (var item in ScoreStructure.FoodsNums)
+        {
+            a += item;
+        }
+        return a;
     }
 
     public int GetNGFoodCount()
     {
-        return 1;
+        return ScoreStructure.BurntFoodCount;
     }
 }

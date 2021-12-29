@@ -816,7 +816,19 @@ MonoBehaviour:
   _scoreUI: {fileID: 5018806379936643540}
   _onGameOver:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9149001517921942913}
+        m_TargetAssemblyTypeName: UIPopupControl, Assembly-CSharp
+        m_MethodName: ShowGameOverWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onGameClear:
     m_PersistentCalls:
       m_Calls: []
@@ -1872,6 +1884,12 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9dc1e813d0f7a146899743836a037b4, type: 3}
+--- !u!224 &654555220944743713 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 938476036756444889, guid: f9dc1e813d0f7a146899743836a037b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 293666889238608888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5018806379936643540 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4734745236839465516, guid: f9dc1e813d0f7a146899743836a037b4,
@@ -1884,12 +1902,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6dc88ab73a33340a635fe0a4ef7f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &654555220944743713 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 938476036756444889, guid: f9dc1e813d0f7a146899743836a037b4,
-    type: 3}
-  m_PrefabInstance: {fileID: 293666889238608888}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &654555221336411132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2215,6 +2227,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4592709886297885507}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9149001517921942913 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4704956656797808322, guid: ed3b672c9ce05dd468e075b1a5ae5cc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 4592709886297885507}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc1b41ff34ba8249b3bd539cdc2ebe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7266451861991171510
 PrefabInstance:
   m_ObjectHideFlags: 0
