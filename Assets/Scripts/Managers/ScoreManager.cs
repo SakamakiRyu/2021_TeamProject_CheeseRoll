@@ -132,6 +132,14 @@ public class ScoreManager : MonoBehaviour
     }
 
     /// <summary>
+    /// 評価に応じた完成料理を返す
+    /// </summary>
+    /// <returns></returns>
+    public GameObject GetDish()
+    {
+        return ScoreStructure.DishsObject[0];
+    }
+    /// <summary>
     /// スコアの星の数を返す
     /// </summary>
     /// <returns></returns>
@@ -140,12 +148,22 @@ public class ScoreManager : MonoBehaviour
         return 5;
     }
 
-    /// <summary>
-    /// 評価に応じた完成料理を返す
-    /// </summary>
-    /// <returns></returns>
-    public GameObject GetDish()
+    public int GetTime()
     {
-        return ScoreStructure.DishsObject[0];
+        return 10;
+    }
+
+    public int GetGetedFoodCount()
+    {
+        return 5;
+    }
+
+    public int GetNGFoodCount()
+    {
+        return 1;
+    }
+    public int GetScore()
+    {
+        return ScoreCalculation();
     }
 }
