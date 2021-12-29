@@ -70,7 +70,10 @@ public class Cheese : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         ChangeSpeed(collision);
-        GetPlateDamage();
+        if (collision.gameObject.CompareTag("Road"))
+        {
+            GetPlateDamage();
+        }
     }
 
     void ChangeSpeed(Collision collision)

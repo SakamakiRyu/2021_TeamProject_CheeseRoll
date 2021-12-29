@@ -7,9 +7,10 @@ using UnityEngine;
 /// </summary>
 public class CheeseCollisionChecker : MonoBehaviour
 {
-    bool isCollision;
-    bool isCollisionPre;
-
+    const float WaitTime = 0.5f;
+    bool _isCollision;
+    bool _isCollisionPre;
+    float _timer;
     public bool IsGroundEnter { get; private set; }
     public bool IsAir { get; private set; }
 
@@ -17,14 +18,17 @@ public class CheeseCollisionChecker : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isCollision != isCollisionPre)
+        _timer -= Time.deltaTime;
+        _timer = Mathf.Max(-1.0f, _timer);
+        if (_isCollision && !_isCollisionPre)
         {
-            if (isCollision)
+            if (_isCollision && _timer < 0)
             {
                 IsGroundEnter = true;
             }
+            _timer = WaitTime;
         }
-        if (isCollision)
+        if (_isCollision)
         {
             IsAir = false;
         }
@@ -32,17 +36,17 @@ public class CheeseCollisionChecker : MonoBehaviour
         {
             IsAir = true;
         }
-        isCollisionPre = isCollision;
-        isCollision = false;
+        _isCollisionPre = _isCollision;
+        _isCollision = false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        isCollision = true;
+        _isCollision = true;
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        isCollision = true;
+        _isCollision = true;
     }
 }
