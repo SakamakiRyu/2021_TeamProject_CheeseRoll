@@ -43,6 +43,27 @@ public class StageManager : MonoBehaviour
     [SerializeField] UnityEvent _onGameClear;
     [SerializeField] CircleFade _fader;
 
+    [Header("クリア時間とスコア(スコアの高い順に入力してください)")]
+    [SerializeField] BorderAndScore[] _timeBorderAndScore;
+
+    [Header("具材獲得ボーナス(スコアの高い順に入力してください)")]
+    [SerializeField] BorderAndScore[] _bonusScore;
+
+    [Header("完成料理の量に応じたスコア")]
+    [SerializeField] float _dish0Score;
+    [SerializeField] float _dish1Score;
+    [SerializeField] float _dish2Score;
+    [SerializeField] float _dish3Score;
+
+    [Header("焦げたorダミー食材獲得時の減少スコア")]
+    [SerializeField] float _burntScore;
+
+    [Header("「星」の数の判定(1.5, 2.0, 2.5, 3.0のボーダーライン)(1.5以下は全て星1)")]
+    [SerializeField] float _star15Score;
+    [SerializeField] float _star20Score;
+    [SerializeField] float _star25Score;
+    [SerializeField] float _star30Score;
+
 
     StageState _state = StageState.PreGame;
 
@@ -109,6 +130,7 @@ public class StageManager : MonoBehaviour
 
     private void InGameUpdate()
     {
+        ScoreManager.Instance.ScoreStructure.Time += Time.deltaTime;
         if (_endTransform.position.z < Cheese.transform.position.z)
         {
             //_stageMover.MoveSpeed = 0;
@@ -145,7 +167,18 @@ public class StageManager : MonoBehaviour
         //GameObject kariMana = new GameObject("Kari_Manager");
         //kariMana.AddComponent<ScoreManager>();
 
-        ScoreManager.Instance.ScoreStructure = new ScoreManager.Score() { FoodsList = _foodsList, FoodsNums = _foodsNums, ScoreUI = _scoreUI, Dishes = _dishes, FoodsObject = _foodsObject, DishsObject = _dishesObject };
+        ScoreManager.Instance.ScoreStructure = new ScoreManager.Score
+            (_foodsList,
+            _foodsNums,
+            _dishes,
+            _scoreUI,
+            _foodsObject,
+            _dishesObject,
+            _timeBorderAndScore,
+            _bonusScore,
+            _burntScore, 
+            new float[] {_dish0Score, _dish1Score, _dish2Score, _dish3Score},
+            new float[] {_star15Score, _star20Score, _star25Score, _star30Score});
 
         _scoreUI.ScoreUiSetup();
 
@@ -169,4 +202,11 @@ public class StageManager : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Result");
     }
+}
+
+[System.Serializable]
+public struct BorderAndScore
+{
+    public float border;
+    public float score;
 }

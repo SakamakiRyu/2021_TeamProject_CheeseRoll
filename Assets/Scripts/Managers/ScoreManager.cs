@@ -14,8 +14,6 @@ public class ScoreManager : MonoBehaviour
 
     public Score ScoreStructure;
 
-    private int[] _dishesScore = { 10, 30, 60 };
-
 
 
     private void Awake()
@@ -53,7 +51,26 @@ public class ScoreManager : MonoBehaviour
         public GameObject[] FoodsObject { get; set; }
 
         public GameObject[] DishsObject { get; set; }
-        public Score(string[] foodsList, int[] foodsNums, int dishes, ScoreUI scoreUI, GameObject[] foodsObject, GameObject[] dishObject)
+
+        public BorderAndScore[] TimeBorderAndScore { get; set; }
+        public float Time { get; set; }
+        public BorderAndScore[] BonusScore { get; set; }
+        public float BurntScore { get; set; }
+        public float[] DishsScores { get; set; }
+        public float[] StarBorders { get; set; }
+
+        public Score(
+            string[] foodsList,
+            int[] foodsNums,
+            int dishes,
+            ScoreUI scoreUI,
+            GameObject[] foodsObject,
+            GameObject[] dishObject,
+            BorderAndScore[] timeBorderAndScore,
+            BorderAndScore[] bonusScore,
+            float burntScore, 
+            float[] dishsScores, 
+            float[] starBorders)
         {
             this.FoodsList = foodsList;
             this.FoodsNums = foodsNums;
@@ -62,6 +79,12 @@ public class ScoreManager : MonoBehaviour
             this.BurntFoodCount = 0;
             this.FoodsObject = foodsObject;
             this.DishsObject = dishObject;
+            this.TimeBorderAndScore = timeBorderAndScore;
+            this.Time = 0;
+            this.BonusScore = bonusScore;
+            this.BurntScore = burntScore;
+            this.DishsScores = dishsScores;
+            this.StarBorders = starBorders;
         }
         /// <summary>
         /// スコアを加算する
@@ -99,36 +122,38 @@ public class ScoreManager : MonoBehaviour
     /// <returns>最終的なスコア</returns>
     public int ScoreCalculation()
     {
-        if (ScoreStructure.FoodsNums == null)
+        //クリア時間スコア
+        float timeScore = 1;
+        for (int i = 0; i < ScoreStructure.TimeBorderAndScore.Length; i++)
         {
-            return 0;
-        }
-        int bonus = 0;//何個とったか？
-        ScoreStructure.FoodsNums.ToList().ForEach(x => bonus += x);
-
-        int dishes = 0;//何人前か？
-        bool isBreak = false;//trueなら抜け出す
-        for (int i = 0; i < ScoreStructure.Dishes; i++)
-        {
-            for (int k = 0; k < ScoreStructure.FoodsNums.Length; k++)
-            {
-                ScoreStructure.FoodsNums[k]--;
-                if (ScoreStructure.FoodsNums[k] > 0)
-                {
-                    isBreak = true;
-                    break;
-
-                }
-
-            }
-            if (isBreak)
+            timeScore = ScoreStructure.TimeBorderAndScore[i].score;
+            if (ScoreStructure.Time < ScoreStructure.TimeBorderAndScore[i].border)
             {
                 break;
             }
-            dishes = _dishesScore[i];
         }
 
-        return bonus * dishes - ScoreStructure.BurntFoodCount;//最終的なスコア
+        //ボーナススコア
+        float bonus = 1;//何個とったか？
+        int fCount = GetGetedFoodCount();
+        for (int i = 0; i < ScoreStructure.BonusScore.Length; i++)
+        {
+            bonus = ScoreStructure.BonusScore[i].score;
+            if (fCount >= ScoreStructure.BonusScore[i].border)
+            {
+                break;
+            }
+        }
+
+        //何人前か？
+        int dishes = 3;
+        for (int k = 0; k < ScoreStructure.FoodsNums.Length; k++)
+        {
+            dishes = Mathf.Min(dishes, ScoreStructure.FoodsNums[k]);
+        }
+        float dishScore = ScoreStructure.DishsScores[dishes];
+
+        return (int)(timeScore * bonus * dishScore - ScoreStructure.BurntFoodCount * ScoreStructure.BurntScore);//最終的なスコア
     }
 
     /// <summary>
@@ -145,12 +170,22 @@ public class ScoreManager : MonoBehaviour
     /// <returns></returns>
     public int GetStar()
     {
-        return 5;
+        int score = ScoreCalculation();
+        int star = 2;
+        for (int i = 0; i < ScoreStructure.StarBorders.Length; i++)
+        {
+            if (score < ScoreStructure.StarBorders[i])
+            {
+                break;
+            }
+            star++;
+        }
+        return star;
     }
 
     public int GetTime()
     {
-        return 10;
+        return (int)ScoreStructure.Time;
     }
 
     public int GetGetedFoodCount()
