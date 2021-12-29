@@ -8,7 +8,7 @@ public class AnchorPositioner : MonoBehaviour
     [SerializeField] Transform _thisAnchor;
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         Vector3 vec = _targetPos.position - _thisAnchor.position;
         this.transform.position += vec;

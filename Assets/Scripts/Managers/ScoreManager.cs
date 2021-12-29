@@ -162,8 +162,4 @@ public class ScoreManager : MonoBehaviour
     {
         return 1;
     }
-    public int GetScore()
-    {
-        return ScoreCalculation();
-    }
 }
