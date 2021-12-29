@@ -29,6 +29,7 @@ public class SceneManager : MonoBehaviour
         }
     }
 
+    [Header("False なら Title に移動します")]
     [SerializeField]
     private bool _toGameImmediately;
 
