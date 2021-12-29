@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CircleFade : MonoBehaviour
 {
+    const float FadeDuration = 25;
     [SerializeField] float _minAspect;
     [SerializeField] float _maxAspect;
 
@@ -25,8 +26,8 @@ public class CircleFade : MonoBehaviour
     {
         while (transform.localScale.x > _minAspect && this.transform.localScale.y > _minAspect)
         {
-            float x = transform.localScale.x - 0.4f;
-            float y = transform.localScale.y - 0.4f;
+            float x = transform.localScale.x - FadeDuration * Time.deltaTime;
+            float y = transform.localScale.y - FadeDuration * Time.deltaTime;
             Vector3 scale = new Vector3 (x,y,0);
             transform.localScale = scale;
             yield return null;
@@ -37,8 +38,8 @@ public class CircleFade : MonoBehaviour
     {
         while (transform.localScale.x < _maxAspect && this.transform.localScale.y < _maxAspect)
         {
-            float x = transform.localScale.x + 0.4f;
-            float y = transform.localScale.y + 0.4f;
+            float x = transform.localScale.x + FadeDuration * Time.deltaTime;
+            float y = transform.localScale.y + FadeDuration * Time.deltaTime;
             Vector3 scale = new Vector3(x, y, 0);
             transform.localScale = scale;
             yield return null;
