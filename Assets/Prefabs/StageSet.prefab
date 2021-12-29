@@ -427,7 +427,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.46753246, y: 1}
+    m_SensorSize: {x: 0.46712804, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -894,7 +894,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.46753246, y: 1}
+    m_SensorSize: {x: 0.46712804, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1054,8 +1054,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3628133222460774972}
-  m_LocalRotation: {x: 0.12747045, y: -0.21327196, z: 0.028077789, w: 0.9682345}
-  m_LocalPosition: {x: 5.96, y: 2.96, z: -10.35}
+  m_LocalRotation: {x: 0.1400426, y: -0.26182535, z: 0.038429573, w: 0.9541272}
+  m_LocalPosition: {x: 7, y: 2.29, z: -7.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3628133221480436980}
@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cea8b7262233aa40a3fe35a6eed6b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chaseSpeed: 1.5
+  _chaseSpeed: 2.25
   _attenuation: 1
   _targetTransform: {fileID: 7072109795087099705}
   _min: 0.55
@@ -1496,7 +1496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97579c7b4d1525429b5c6ec7d06ed01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 4
+  _moveSpeed: 6.75
 --- !u!1 &7072109795886998888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,14 +1564,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7072109796263669264}
-  m_LocalRotation: {x: 0.12747045, y: -0.21327196, z: 0.028077789, w: 0.9682345}
-  m_LocalPosition: {x: 5.96, y: 9.7, z: -13.76}
+  m_LocalRotation: {x: 0.1400426, y: -0.26182535, z: 0.038429573, w: 0.9541272}
+  m_LocalPosition: {x: 7, y: 9.03, z: -11.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7072109795886998891}
   m_Father: {fileID: 7072109795772827513}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 15, y: -24.844, z: 0}
+  m_LocalEulerAnglesHint: {x: 16.7, y: -30.69, z: 0}
 --- !u!114 &7072109796263669266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1601,7 +1601,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.46753246, y: 1}
+    m_SensorSize: {x: 0.46712804, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
