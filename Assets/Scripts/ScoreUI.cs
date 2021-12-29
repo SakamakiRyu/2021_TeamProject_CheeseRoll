@@ -18,6 +18,9 @@ public class ScoreUI : MonoBehaviour
 
     List<GameObject> _foods = new List<GameObject>();
 
+    [SerializeField] Animation _completeDishUi;
+    [SerializeField] Image _completeDishImage;
+    int _completeDishIndex;
     private void Start()
     {
         // ScoreUiSetup();
@@ -42,6 +45,7 @@ public class ScoreUI : MonoBehaviour
         {
             _foods.Add(Instantiate(_foodImage, _foodPanelUi.transform));
             _foods[i].GetComponent<Image>().sprite = _foodSprite[Array.IndexOf(_foodSpriteItemNames, ScoreManager.Instance.ScoreStructure.FoodsList[i])];
+            _foods[i].name= ScoreManager.Instance.ScoreStructure.FoodsList[i];
         }
 
         _foods.Add(Instantiate(_foodImage, _foodPanelUi.transform));
@@ -70,17 +74,32 @@ public class ScoreUI : MonoBehaviour
 
     void CheckSetFoods()
     {
-        if (ScoreManager.Instance.ScoreStructure.FoodsNums.All(x => x <= 1))
+        if (ScoreManager.Instance.ScoreStructure.FoodsNums.All(x => x >= 1) && _completeDishIndex == 0)//‚à‚µ1ƒZƒbƒg‘µ‚Á‚Ä‚½‚ç
         {
-
+            _completeDishImage.color = Color.black;
+            _completeDishUi.Play();
+            _completeDishIndex++;
         }
-        else if (ScoreManager.Instance.ScoreStructure.FoodsNums.All(x => x <= 2))
+        else if (ScoreManager.Instance.ScoreStructure.FoodsNums.All(x => x >= 2) && _completeDishIndex == 1)
         {
-
+            _completeDishImage.color = Color.red;
+            _completeDishUi.Play();
+            _completeDishIndex++;
         }
-        else if (ScoreManager.Instance.ScoreStructure.FoodsNums.All(x => x <= 3))
+        else if (ScoreManager.Instance.ScoreStructure.FoodsNums.All(x => x == 3) && _completeDishIndex == 2)
         {
-
+            _completeDishImage.color = Color.blue;
+            _completeDishUi.Play();
+        }
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            for (int i = 0; i < _foods.Count; i++)
+            {
+                ScoreManager.Instance.ScoreStructure.ScoreUp(_foods[i].name);
+            }
         }
     }
 }
