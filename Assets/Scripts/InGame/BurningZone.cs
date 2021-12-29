@@ -7,9 +7,20 @@ public class BurningZone : MonoBehaviour
     [Header("Cheese ‚Ì BurningCheese ‚É‚à“¯‚¶•¶Žš—ñ‚ð")]
     [SerializeField] string _zoneName;
 
+    [Header("False ‚È‚çƒQ[ƒ€’†‚É•\Ž¦‚³‚ê‚È‚­‚È‚è‚Ü‚·")]
+    [SerializeField] bool _isTest = true;
+
     BurningCheese _cheese;
 
     public string ZoneName { get => _zoneName;}
+
+    private void Awake()
+    {
+        if (_isTest == false)
+        {
+            Destroy(GetComponent<Renderer>());
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
