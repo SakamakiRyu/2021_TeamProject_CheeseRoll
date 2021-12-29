@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CircleFade : MonoBehaviour
 {
-    const float FadeDuration = 75;
+    const float FadeDuration = 50;
     [SerializeField] float _minAspect;
     [SerializeField] float _maxAspect;
 

@@ -40,6 +40,7 @@ public class StageManager : MonoBehaviour
     [SerializeField] ScoreUI _scoreUI;
     [SerializeField] UnityEvent _onGameOver;
     [SerializeField] UnityEvent _onGameClear;
+    [SerializeField] CircleFade _fader;
 
 
     StageState _state = StageState.PreGame;
@@ -67,6 +68,7 @@ public class StageManager : MonoBehaviour
 
     private void Start()
     {
+        _fader.FadeOut();
         if (_testStop)
         {
             Vector3 kari = _endTransform.position;
@@ -155,7 +157,15 @@ public class StageManager : MonoBehaviour
     }
     public void GateIn()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Result");
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("Result");
         //SceneManager.Instance.GoNextScene("Result");
+        StartCoroutine(GoResult());
+    }
+
+    private IEnumerator GoResult()
+    {
+        _fader.FadeIn();
+        yield return new WaitForSeconds(1.0f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Result");
     }
 }
