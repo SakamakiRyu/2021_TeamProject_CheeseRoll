@@ -20,7 +20,9 @@ public class StageSelectPlayerAnimationController : MonoBehaviour
     public enum Move
     {
         Right,
-        Left
+        Left,
+        Instage,
+        Goback
     }
 
     /// <summary>
@@ -37,6 +39,9 @@ public class StageSelectPlayerAnimationController : MonoBehaviour
                 break;
             case Move.Left:
                 _animator.SetTrigger("Left");
+                break;
+            case Move.Instage:
+                _animator.SetTrigger("Instage");
                 break;
             default:
                 break;

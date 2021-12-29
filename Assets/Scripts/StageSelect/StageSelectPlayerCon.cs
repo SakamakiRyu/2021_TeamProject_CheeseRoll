@@ -17,6 +17,7 @@ public class StageSelectPlayerCon : MonoBehaviour
 
     private bool _ismove;
     Vector3 vec = Vector3.zero;
+    public Vector3 _direction = new Vector3(0f, 0f, 1f);
 
     // Start is called before the first frame update
     void Start()
@@ -70,7 +71,7 @@ public class StageSelectPlayerCon : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter(Collider collision)
+    public void OnTriggerEnter(Collider collision)
     {
         //アニメストップ
         StageSelectPlayerAnimationController.Instance.AnimControll(false);
@@ -91,6 +92,32 @@ public class StageSelectPlayerCon : MonoBehaviour
             var namae = collision.GetComponent<stageID>();
             _StagePopupController.PopUp((int)namae._id);
             Debug.Log("out");
+        }
+    }
+    public void NextSceneAnime()
+    {
+        //todo
+        //後ろに下がる
+        //フェードのアニメ
+        StageSelectPlayerAnimationController.Instance.OnMove(StageSelectPlayerAnimationController.Move.Instage);
+    }
+    public void NextSene()
+    {
+        StageSelectPlayerAnimationController.Instance.OnMove(StageSelectPlayerAnimationController.Move.Goback);
+        //コルーチンで後ろに行く
+        int visIndex = _index + 1;
+        Debug.Log("Stage" + visIndex);
+        StartCoroutine("MoveIE");
+
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("Stage"+visIndex); 
+    }
+    public IEnumerator MoveIE()
+    {   
+        while (true)
+        {
+            float step = _speed * Time.deltaTime;
+            transform.position += _direction * _speed;
+            yield return null;
         }
     }
 }
