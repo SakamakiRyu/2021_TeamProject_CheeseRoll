@@ -16,6 +16,8 @@ public class TitleControl : MonoBehaviour
 
     private void Update()
     {
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "Title") return;
+
         if (Input.anyKeyDown)
         {
             StartCoroutine(WaitForCoroutine());
