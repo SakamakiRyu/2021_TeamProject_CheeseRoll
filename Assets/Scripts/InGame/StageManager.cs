@@ -139,8 +139,8 @@ public class StageManager : MonoBehaviour
     {
         _foodsNums = new int[_foodsList.Length];
 
-        GameObject kariMana = new GameObject("Kari_Manager");
-        kariMana.AddComponent<ScoreManager>();
+        //GameObject kariMana = new GameObject("Kari_Manager");
+        //kariMana.AddComponent<ScoreManager>();
 
         ScoreManager.Instance.ScoreStructure = new ScoreManager.Score() { FoodsList = _foodsList, FoodsNums = _foodsNums, ScoreUI = _scoreUI, Dishes = _dishes, FoodsObject = _foodsObject, DishsObject = _dishesObject };
 

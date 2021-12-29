@@ -139,4 +139,13 @@ public class ScoreManager : MonoBehaviour
     {
         return 5;
     }
+
+    /// <summary>
+    /// 評価に応じた完成料理を返す
+    /// </summary>
+    /// <returns></returns>
+    public GameObject GetDish()
+    {
+        return ScoreStructure.DishsObject[0];
+    }
 }
