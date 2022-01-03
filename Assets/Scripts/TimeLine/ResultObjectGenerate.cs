@@ -33,10 +33,10 @@ public class ResultObjectGenerate : MonoBehaviour
         //{
         //    getFoodsNum = 10;//デバッグ用
         //}
-        
         for (int i = 0; i < _prefabs.Length; i++)
         {
-            Instantiate(_prefabs[i], _parents[i]);
+            GameObject inst = Instantiate(_prefabs[i], _parents[i]);
+            inst.transform.localPosition = Vector3.zero;
         }
 
         TimeLineManager timeLineManager = GetComponent<TimeLineManager>();
