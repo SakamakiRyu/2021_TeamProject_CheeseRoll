@@ -12,6 +12,21 @@ PrefabInstance:
       propertyPath: _isRotate
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 953491429174271322, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 953491429174271322, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 953491429174271322, guid: 538d4af330938be40aecd2038db86240,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.67
+      objectReference: {fileID: 0}
     - target: {fileID: 2901069292810607970, guid: 538d4af330938be40aecd2038db86240,
         type: 3}
       propertyPath: m_RootOrder
