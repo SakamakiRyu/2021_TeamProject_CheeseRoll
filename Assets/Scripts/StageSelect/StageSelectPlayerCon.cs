@@ -8,6 +8,9 @@ public class StageSelectPlayerCon : MonoBehaviour
     public StagePopupController _StagePopupController;
 
     [SerializeField]
+    private CircleFade _fade;
+
+    [SerializeField]
     float _speed;
 
     GameObject[] _stageTarget ;
@@ -96,6 +99,7 @@ public class StageSelectPlayerCon : MonoBehaviour
     }
     public void NextSceneAnime()
     {
+        Debug.Log("test");
         //todo
         //後ろに下がる
         //フェードのアニメ
@@ -107,12 +111,13 @@ public class StageSelectPlayerCon : MonoBehaviour
         //コルーチンで後ろに行く
         int visIndex = _index + 1;
         Debug.Log("Stage" + visIndex);
-        StartCoroutine("MoveIE");
+        StartCoroutine(MoveIE());
 
         //UnityEngine.SceneManagement.SceneManager.LoadScene("Stage"+visIndex); 
     }
     public IEnumerator MoveIE()
-    {   
+    {
+        _fade.FadeIn();
         while (true)
         {
             float step = _speed * Time.deltaTime;
