@@ -3,7 +3,12 @@ guid: 612c4941a7a055f42bd4695467d1c9bb
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MT_Background_Stage2Decoration_toaster
+    second: {fileID: 2100000, guid: aa6cc90655927bb4aace47e3c4ca5a8e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

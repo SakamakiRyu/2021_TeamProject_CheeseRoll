@@ -3,7 +3,12 @@ guid: cc9cea46f558a28459247d2c46f432c8
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MT_Background_Stage5Decoration_kibaco
+    second: {fileID: 2100000, guid: 98fe7b90565edce4ca2f0f67909fcf72, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

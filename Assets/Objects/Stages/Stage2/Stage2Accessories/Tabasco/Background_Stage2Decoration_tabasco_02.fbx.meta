@@ -3,7 +3,12 @@ guid: 93f53f8018fd14e44b7a0a9813866002
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MT_Background_Stage2Decoration_tabasco
+    second: {fileID: 2100000, guid: ab1300c6485ed1141aa43b59f8f17a46, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

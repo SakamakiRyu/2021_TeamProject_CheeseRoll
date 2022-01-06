@@ -3,7 +3,12 @@ guid: 64099e7ab2c5b604e902770f1ec4fab7
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MT_Background_Stage5Decoration_taru
+    second: {fileID: 2100000, guid: d8c4305b92585514791300ffac946bfa, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
