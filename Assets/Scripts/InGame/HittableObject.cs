@@ -49,10 +49,35 @@ public class HittableObject : MonoBehaviour
             _hitObj = other.gameObject;
 
             _onItemPickup.Invoke();
+            PlayEffect();
 
             //DebugItem1();
 
             //DestroyThis();
+        }
+    }
+
+    private void PlayEffect()
+    {
+        switch (_objectType)
+        {
+            case HittableObjectType.Food:
+                EffectManager.Instance?.PlayEffect(EffectManager.EffectType.GetItem, this.transform.position);
+                break;
+            case HittableObjectType.DropOfWater:
+                EffectManager.Instance?.PlayEffect(EffectManager.EffectType.Cure, this.transform.position);
+                break;
+            case HittableObjectType.Recoverey:
+                EffectManager.Instance?.PlayEffect(EffectManager.EffectType.Cure, this.transform.position);
+                break;
+            case HittableObjectType.RedHeat:
+                break;
+            case HittableObjectType.Burn:
+                break;
+            case HittableObjectType.HittableObject:
+                break;
+            default:
+                break;
         }
     }
 
