@@ -61,7 +61,7 @@ public class ScoreManager : MonoBehaviour
         public float FakeScore { get; private set; }
         public float[] DishsScores { get; set; }
         public float[] StarBorders { get; set; }
-
+        public string StageName { get; set; }
         public Score(
             string[] foodsList,
             int[] foodsNums,
@@ -74,7 +74,8 @@ public class ScoreManager : MonoBehaviour
             float burntScore,
             float fakeScore,
             float[] dishsScores, 
-            float[] starBorders)
+            float[] starBorders,
+            string stageName)
         {
             this.FoodsList = foodsList;
             this.FoodsNums = foodsNums;
@@ -91,6 +92,7 @@ public class ScoreManager : MonoBehaviour
             this.FakeScore = fakeScore;
             this.DishsScores = dishsScores;
             this.StarBorders = starBorders;
+            this.StageName = stageName;
         }
         /// <summary>
         /// スコアを加算する
@@ -168,9 +170,16 @@ public class ScoreManager : MonoBehaviour
         }
         float dishScore = ScoreStructure.DishsScores[dishes];
 
-        return (int)(timeScore * bonus * dishScore
+        int score= (int)(timeScore * bonus * dishScore
             - ScoreStructure.BurntFoodCount * ScoreStructure.BurntScore
             - ScoreStructure.FakeFoodCount * ScoreStructure.FakeScore);  //最終的なスコア
+        int star = GetStar(score);
+        if (PlayerPrefs.GetInt(ScoreStructure.StageName) < star)
+        {
+            PlayerPrefs.SetInt(ScoreStructure.StageName, star);
+            
+        }
+        return score;
     }
 
     /// <summary>
@@ -188,6 +197,20 @@ public class ScoreManager : MonoBehaviour
     public int GetStar()
     {
         int score = ScoreCalculation();
+        int star = 2;
+        for (int i = 0; i < ScoreStructure.StarBorders.Length; i++)
+        {
+            if (score < ScoreStructure.StarBorders[i])
+            {
+                break;
+            }
+            star++;
+        }
+        return star;
+    }
+
+    public int GetStar(int score)
+    {
         int star = 2;
         for (int i = 0; i < ScoreStructure.StarBorders.Length; i++)
         {
