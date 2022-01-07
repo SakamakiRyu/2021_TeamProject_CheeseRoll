@@ -19,10 +19,16 @@ public class StageSelectPlayerCon : MonoBehaviour
     private float _startTime, distance;
 
     private bool _ismove;
+
+    int _visIndex;
+
     Vector3 vec = Vector3.zero;
     public Vector3 _direction = new Vector3(0f, 0f, 1f);
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        _fade.FadeOut();
+    }
     void Start()
     {
         _stageTarget = GameObject.FindGameObjectsWithTag("Stage trigger");
@@ -37,6 +43,8 @@ public class StageSelectPlayerCon : MonoBehaviour
         {
             if (Input.GetButtonUp("Fire1"))
             {
+                AudioManager.Instance.PlaySE(AudioManager.SEtype.Button01);
+
                 if (Input.mousePosition.x > Screen.width / 2 && Input.mousePosition.y > (Screen.height / 3) * 1)
                 {
                     if (_index < _stageTarget.Length - 1)
@@ -109,20 +117,25 @@ public class StageSelectPlayerCon : MonoBehaviour
     {
         StageSelectPlayerAnimationController.Instance.OnMove(StageSelectPlayerAnimationController.Move.Goback);
         //コルーチンで後ろに行く
-        int visIndex = _index + 1;
-        Debug.Log("Stage" + visIndex);
+        _visIndex = _index + 1;
+        Debug.Log("Stage" + _visIndex);
         StartCoroutine(MoveIE());
-
-        //UnityEngine.SceneManagement.SceneManager.LoadScene("Stage"+visIndex); 
     }
     public IEnumerator MoveIE()
     {
+        float timer = 0;
         _fade.FadeIn();
         while (true)
         {
             float step = _speed * Time.deltaTime;
             transform.position += _direction * _speed;
+            timer += Time.deltaTime;
+            if (timer > 2)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Stage" + _visIndex);
+                yield break;
+            }
             yield return null;
-        }
+        }    
     }
 }
