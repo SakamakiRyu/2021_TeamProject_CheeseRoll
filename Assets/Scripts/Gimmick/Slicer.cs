@@ -11,6 +11,7 @@ public class Slicer : MonoBehaviour
         if (other.gameObject.GetComponent<Cheese>())
         {
             other.gameObject.GetComponent<Cheese>().GetDamage(_hpDownValue);
+            AudioManager.Instance.PlaySE(AudioManager.SEtype.SlicerSound);
         }
     }
 }

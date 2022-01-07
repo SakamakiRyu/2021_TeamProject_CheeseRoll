@@ -70,18 +70,24 @@ public class HittableObject : MonoBehaviour
         {
             case HittableObjectType.Food:
                 EffectManager.Instance?.PlayEffect(EffectManager.EffectType.GetItem, this.transform.position);
+                AudioManager.Instance.PlaySE(AudioManager.SEtype.IngredientsAcquired);
                 break;
             case HittableObjectType.DropOfWater:
                 EffectManager.Instance?.PlayEffect(EffectManager.EffectType.Cure, this.transform.position);
                 break;
             case HittableObjectType.Recoverey:
                 EffectManager.Instance?.PlayEffect(EffectManager.EffectType.Cure, this.transform.position);
+                AudioManager.Instance.PlaySE(AudioManager.SEtype.RecoveryItem);
                 break;
             case HittableObjectType.RedHeat:
+                AudioManager.Instance.PlaySE(AudioManager.SEtype.BlowTheFire);
                 break;
             case HittableObjectType.Burn:
                 break;
             case HittableObjectType.HittableObject:
+                break;
+            case HittableObjectType.Fake:
+                AudioManager.Instance.PlaySE(AudioManager.SEtype.BurntIngredientsAcquired);
                 break;
             default:
                 break;

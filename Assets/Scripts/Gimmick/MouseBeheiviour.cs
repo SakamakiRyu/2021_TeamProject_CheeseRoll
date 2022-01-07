@@ -52,6 +52,7 @@ public class MouseBeheiviour : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
+            AudioManager.Instance.PlaySE(AudioManager.SEtype.MouseChewing);
             Debug.Log("hit cheese");
         }
     }

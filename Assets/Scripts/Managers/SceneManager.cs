@@ -54,19 +54,28 @@ public class SceneManager : MonoBehaviour
     /// <param name="nextSceneName">シーン指定 シーンの名前</param>
     public void GoNextScene(string nextSceneName)
     {
+        bool isChengeBGM = false;
+
         switch (nextSceneName)
         {
             case "Title":
                 {
                     AudioManager.Instance.PlayBGM(AudioManager.BGMtype.Title);
+                    isChengeBGM = true;
                     break;
                 }
 
             case "NewStageSelect":
                 {
                     AudioManager.Instance.PlayBGM(AudioManager.BGMtype.StageSelect);
+                    isChengeBGM = true;
                     break;
                 }
+        }
+
+        if (!isChengeBGM && nextSceneName.Contains("Stage"))
+        {
+            AudioManager.Instance.PlayBGM(AudioManager.BGMtype.GamePlay01);
         }
 
         UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
