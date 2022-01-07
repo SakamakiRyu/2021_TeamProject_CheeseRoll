@@ -58,10 +58,10 @@ TextureImporter:
     second: Shrimp
   - first:
       213: -7626119555790776381
-    second: Octopus
+    second: Oct
   - first:
       213: -8313114473517313320
-    second: Scallop
+    second: Scallops
   - first:
       213: -7080865979634192186
     second: SweetPotato
@@ -82,7 +82,7 @@ TextureImporter:
     second: Pineapple
   - first:
       213: -1546871586714270275
-    second: Mushroom
+    second: Mushrooms
   - first:
       213: 5906775966549428881
     second: Salami
@@ -91,7 +91,7 @@ TextureImporter:
     second: Honey
   - first:
       213: -7977512858920551813
-    second: Herb
+    second: Basil
   - first:
       213: -5236106859826513200
     second: Cheese
@@ -601,7 +601,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Octopus
+      name: Oct
       rect:
         serializedVersion: 2
         x: 588
@@ -622,7 +622,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scallop
+      name: Scallops
       rect:
         serializedVersion: 2
         x: 780
@@ -769,7 +769,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mushroom
+      name: Mushrooms
       rect:
         serializedVersion: 2
         x: 604
@@ -832,7 +832,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Herb
+      name: Basil
       rect:
         serializedVersion: 2
         x: 1256
