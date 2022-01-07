@@ -50,6 +50,7 @@ public class ScoreUI : MonoBehaviour
 
         _foods.Add(Instantiate(_foodImage, _foodPanelUi.transform));
         _foods[ScoreManager.Instance.ScoreStructure.FoodsList.Length].name = "BurntFood";
+        _foods[ScoreManager.Instance.ScoreStructure.FoodsList.Length].GetComponent<Image>().sprite = _foodSprite[Array.IndexOf(_foodSpriteItemNames, "Chile")];
     }
     /// <summary>
     /// älìæÇµÇΩêHçﬁÇÃUIÇ…îΩâfÇ∑ÇÈ

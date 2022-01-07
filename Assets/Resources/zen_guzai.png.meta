@@ -37,7 +37,7 @@ TextureImporter:
     second: Bacon
   - first:
       213: 2977275349008907022
-    second: zen_guzai_11
+    second: Bread
   - first:
       213: 3134338103828069795
     second: Zucchini
@@ -454,7 +454,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zen_guzai_11
+      name: Bread
       rect:
         serializedVersion: 2
         x: 774
