@@ -176,7 +176,8 @@ public class StageManager : MonoBehaviour
             _dishesObject,
             _timeBorderAndScore,
             _bonusScore,
-            _burntScore, 
+            burntScore:_burntScore, 
+            fakeScore:_burntScore,
             new float[] {_dish0Score, _dish1Score, _dish2Score, _dish3Score},
             new float[] {_star15Score, _star20Score, _star25Score, _star30Score});
 

@@ -47,6 +47,8 @@ public class ScoreManager : MonoBehaviour
         public ScoreUI ScoreUI { get; set; }
         ///<summary>獲得した焦げた具材の数</summary>
         public int BurntFoodCount { get; set; }
+        /// <summary> 獲得した ダミーの食材 の数 </summary>
+        public int FakeFoodCount { get; private set; }
 
         public GameObject[] FoodsObject { get; set; }
 
@@ -56,6 +58,7 @@ public class ScoreManager : MonoBehaviour
         public float Time { get; set; }
         public BorderAndScore[] BonusScore { get; set; }
         public float BurntScore { get; set; }
+        public float FakeScore { get; private set; }
         public float[] DishsScores { get; set; }
         public float[] StarBorders { get; set; }
 
@@ -68,7 +71,8 @@ public class ScoreManager : MonoBehaviour
             GameObject[] dishObject,
             BorderAndScore[] timeBorderAndScore,
             BorderAndScore[] bonusScore,
-            float burntScore, 
+            float burntScore,
+            float fakeScore,
             float[] dishsScores, 
             float[] starBorders)
         {
@@ -77,12 +81,14 @@ public class ScoreManager : MonoBehaviour
             this.Dishes = dishes;
             this.ScoreUI = scoreUI;
             this.BurntFoodCount = 0;
+            this.FakeFoodCount = 0;
             this.FoodsObject = foodsObject;
             this.DishsObject = dishObject;
             this.TimeBorderAndScore = timeBorderAndScore;
             this.Time = 0;
             this.BonusScore = bonusScore;
             this.BurntScore = burntScore;
+            this.FakeScore = fakeScore;
             this.DishsScores = dishsScores;
             this.StarBorders = starBorders;
         }
@@ -115,6 +121,15 @@ public class ScoreManager : MonoBehaviour
             ScoreUI.BurntFoodUi();
         }
 
+        /// <summary>
+        /// 偽物の食材 を取得したときに呼ばれて 偽物の食材 のカウントが増える
+        /// 偽物の食材 を獲得した場合呼び出してください
+        /// </summary>
+        public void FaketFoodCountUp()
+        {
+            FakeFoodCount++;
+
+        }
     }
     /// <summary>
     /// 最終的なスコアを計算する
@@ -153,7 +168,9 @@ public class ScoreManager : MonoBehaviour
         }
         float dishScore = ScoreStructure.DishsScores[dishes];
 
-        return (int)(timeScore * bonus * dishScore - ScoreStructure.BurntFoodCount * ScoreStructure.BurntScore);//最終的なスコア
+        return (int)(timeScore * bonus * dishScore
+            - ScoreStructure.BurntFoodCount * ScoreStructure.BurntScore
+            - ScoreStructure.FakeFoodCount * ScoreStructure.FakeScore);  //最終的なスコア
     }
 
     /// <summary>

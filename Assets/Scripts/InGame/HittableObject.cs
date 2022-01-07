@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HittableObject : MonoBehaviour
 {
+
     private enum HittableObjectType
     {
         Food = 0,            // 食べ物
@@ -11,9 +12,15 @@ public class HittableObject : MonoBehaviour
         Recoverey = 80,      // 回復
         RedHeat = 100,          // 唐辛子
         Burn = 110,             // 焦げた
+        Fake = 120,             // 偽物
 
         HittableObject = 150,　// 障害物
     }
+
+    [Space]
+    //[Header("ステージ３などの偽物の食べ物の場合は、ObjectTypeを 「シーン上」 で Fake にしてください")]
+    [Header("ObjectTypeを 「シーン上」 で Fake にしてください")]
+    [Header("ステージ３などの偽物の食べ物の場合は、")]
 
     [SerializeField] string _name;
 
@@ -90,6 +97,10 @@ public class HittableObject : MonoBehaviour
         else if ((int)_objectType == 110)
         {
             ScoreManager.Instance.ScoreStructure.BurntFoodCountUp();
+        }
+        else if ((int)_objectType == 120)
+        {
+            ScoreManager.Instance.ScoreStructure.FaketFoodCountUp();
         }
     }
 
