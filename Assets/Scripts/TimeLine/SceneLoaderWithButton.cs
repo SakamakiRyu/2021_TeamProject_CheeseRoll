@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+public class SceneLoaderWithButton : MonoBehaviour
 {
     [SerializeField]
     float _fadeTiming;
-    bool _fadeStart = false;
 
     public void Load(string sceneName)
     {
+        UnityEngine.UI.Button button = GetComponent<UnityEngine.UI.Button>();
+        button.interactable = false;
         StartCoroutine(WaitFade(sceneName));
     }
 
     IEnumerator WaitFade(string scene)
     {
         yield return new WaitForSeconds(_fadeTiming);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+        SceneManager.Instance.GoNextScene("NewStageSelect");
     }
 }
