@@ -164,7 +164,6 @@ public class Cheese : MonoBehaviour
         if (_hp < 0)
         {
             _hp = 0;
-            AudioManager.Instance.PlaySE(AudioManager.SEtype.CheeseMelted);
             StageManager.Instance.GameOver();
 
         }

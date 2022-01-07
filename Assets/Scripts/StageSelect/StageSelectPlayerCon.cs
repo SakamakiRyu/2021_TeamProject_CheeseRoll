@@ -38,7 +38,7 @@ public class StageSelectPlayerCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_index);
+        // Debug.Log(_index);
         if (!_ismove)
         {
             if (Input.GetButtonUp("Fire1"))
@@ -89,9 +89,9 @@ public class StageSelectPlayerCon : MonoBehaviour
         if (collision.CompareTag("Stage trigger"))
         {
             var namae = collision.GetComponent<stageID>();
-            Debug.Log(namae._id);
+            //Debug.Log(namae._id);
             _StagePopupController.PopUp((int)namae._id);
-            Debug.Log("in");
+            //Debug.Log("in");
         }
     }
     private void OnTriggerExit(Collider collision)
@@ -102,7 +102,7 @@ public class StageSelectPlayerCon : MonoBehaviour
         {
             var namae = collision.GetComponent<stageID>();
             _StagePopupController.PopUp((int)namae._id);
-            Debug.Log("out");
+            //Debug.Log("out");
         }
     }
     public void NextSceneAnime()
@@ -132,7 +132,8 @@ public class StageSelectPlayerCon : MonoBehaviour
             timer += Time.deltaTime;
             if (timer > 2)
             {
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Stage" + _visIndex);
+                // UnityEngine.SceneManagement.SceneManager.LoadScene("Stage" + _visIndex);
+                SceneManager.Instance.GoNextScene($"Stage{_visIndex}");
                 yield break;
             }
             yield return null;

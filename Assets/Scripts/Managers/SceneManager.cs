@@ -73,7 +73,7 @@ public class SceneManager : MonoBehaviour
                 }
         }
 
-        if (!isChengeBGM && nextSceneName.Contains("Stage"))
+        if (!isChengeBGM)
         {
             AudioManager.Instance.PlayBGM(AudioManager.BGMtype.GamePlay01);
         }

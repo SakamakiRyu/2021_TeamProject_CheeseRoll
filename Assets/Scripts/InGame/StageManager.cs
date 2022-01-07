@@ -20,7 +20,7 @@ public class StageManager : MonoBehaviour
     [SerializeField] Transform _startTransform;
     [SerializeField] StageMover _stageMover;
     [SerializeField] RoadMaker _roadMaker;
-    
+
     //[SerializeField] float _stopDistance = -1.5f;
     [SerializeField] bool _testStop;
 
@@ -72,6 +72,8 @@ public class StageManager : MonoBehaviour
     public StageState State => _state;
     public void GameOver()
     {
+        if (_state == StageState.GameOver) return;
+        AudioManager.Instance.PlaySE(AudioManager.SEtype.CheeseMelted);
         _state = StageState.GameOver;
         StopStage();
         _onGameOver.Invoke();
@@ -115,7 +117,7 @@ public class StageManager : MonoBehaviour
         {
             EndGameUpdate();
         }
-        
+
     }
 
 
@@ -176,10 +178,10 @@ public class StageManager : MonoBehaviour
             _dishesObject,
             _timeBorderAndScore,
             _bonusScore,
-            burntScore:_burntScore, 
-            fakeScore:_burntScore,
-            new float[] {_dish0Score, _dish1Score, _dish2Score, _dish3Score},
-            new float[] {_star15Score, _star20Score, _star25Score, _star30Score});
+            burntScore: _burntScore,
+            fakeScore: _burntScore,
+            new float[] { _dish0Score, _dish1Score, _dish2Score, _dish3Score },
+            new float[] { _star15Score, _star20Score, _star25Score, _star30Score });
 
         _scoreUI.ScoreUiSetup();
 
