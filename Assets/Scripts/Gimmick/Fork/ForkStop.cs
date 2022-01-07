@@ -8,14 +8,14 @@ public class ForkStop : MonoBehaviour
     GameObject _fork;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Road")|| other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             StageManager.Instance.StopStage();
         } 
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Road") || other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             StageManager.Instance.StageStart();
             foreach (var collider in _fork.GetComponentsInChildren<Collider>())
