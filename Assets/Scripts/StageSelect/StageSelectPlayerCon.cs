@@ -13,6 +13,9 @@ public class StageSelectPlayerCon : MonoBehaviour
     [SerializeField]
     float _speed;
 
+    [SerializeField]
+    public GameObject[] _tips; 
+
     GameObject[] _stageTarget ;
     int _index = 0;
 
@@ -132,7 +135,10 @@ public class StageSelectPlayerCon : MonoBehaviour
             timer += Time.deltaTime;
             if (timer > 2)
             {
-                // UnityEngine.SceneManagement.SceneManager.LoadScene("Stage" + _visIndex);
+                //TIPSを表示
+                _tips[_visIndex].gameObject.SetActive(true);
+                //5秒待つ
+                yield return new WaitForSeconds(5);
                 SceneManager.Instance.GoNextScene($"Stage{_visIndex}");
                 yield break;
             }
