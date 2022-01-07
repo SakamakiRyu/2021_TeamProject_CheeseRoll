@@ -5287,27 +5287,27 @@ PrefabInstance:
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _timeBorderAndScore.Array.data[0].border
-      value: 53
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _timeBorderAndScore.Array.data[1].border
-      value: 58
+      value: 35.1
       objectReference: {fileID: 0}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _timeBorderAndScore.Array.data[2].border
-      value: 63
+      value: 36.1
       objectReference: {fileID: 0}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _timeBorderAndScore.Array.data[3].border
-      value: 68
+      value: 38.1
       objectReference: {fileID: 0}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _timeBorderAndScore.Array.data[4].border
-      value: 73
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3355808611143427785, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
