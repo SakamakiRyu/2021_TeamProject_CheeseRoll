@@ -9,7 +9,7 @@ public class StarFiller : MonoBehaviour
     Image _image;
     
 
-    public void StarFill(float score)
+    public void StarFill(float score, float fillSpeed = 5.0f)
     {
         
         _image = GetComponent<Image>();
@@ -18,25 +18,25 @@ public class StarFiller : MonoBehaviour
             //‘S•”õ‚ß‚é
             //ŽŸ‚Ì“z‚ðõ‚ß‚é
             score -= 1;
-            StartCoroutine(Fill(1, score));
+            StartCoroutine(Fill(1, score, fillSpeed));
         }
         if (score - 1 == -0.5f)
         {
             //”¼•ªõ‚ß‚é
-            StartCoroutine(Fill(0.5f, 0));
+            StartCoroutine(Fill(0.5f, 0, fillSpeed));
         }
         if (score - 1 == 0)
         {
             //‘S•”õ‚ß‚é
-            StartCoroutine(Fill(1, 0));
+            StartCoroutine(Fill(1, 0, fillSpeed));
         }
     }
 
-    public IEnumerator Fill(float fillArea, float remaingScore)
+    public IEnumerator Fill(float fillArea, float remaingScore, float fillSpeed)
     {
         while (_image.fillAmount != fillArea)
         {
-            _image.fillAmount += 0.01f;
+            _image.fillAmount += Time.deltaTime * fillSpeed;
             if (_image.fillAmount > fillArea)
             {
                 break;
