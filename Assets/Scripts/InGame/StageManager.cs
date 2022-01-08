@@ -159,7 +159,7 @@ public class StageManager : MonoBehaviour
         _stageMover.MoveStop();
         _roadMaker.NowPlay = false;
         _onGameClear.Invoke();
-        _testResultButton?.SetActive(true);
+        //_testResultButton?.SetActive(true);
     }
 
     public void ScoreInit()
@@ -204,7 +204,7 @@ public class StageManager : MonoBehaviour
     {
         _fader.FadeIn();
         yield return new WaitForSeconds(1.0f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Result");
+        SceneManager.Instance.GoNextScene("Result");
     }
 }
 
