@@ -181,7 +181,8 @@ public class StageManager : MonoBehaviour
             burntScore: _burntScore,
             fakeScore: _burntScore,
             new float[] { _dish0Score, _dish1Score, _dish2Score, _dish3Score },
-            new float[] { _star15Score, _star20Score, _star25Score, _star30Score });
+            new float[] { _star15Score, _star20Score, _star25Score, _star30Score },
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
 
         _scoreUI.ScoreUiSetup();
 
