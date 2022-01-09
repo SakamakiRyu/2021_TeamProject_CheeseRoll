@@ -24,6 +24,8 @@ public class Cheese : MonoBehaviour
     float _zPosition = -1f;
     [SerializeField]
     Animator _animator;
+    [SerializeField]
+    CheeseBodyRoller roller;
 
     CheeseCollisionChecker _collisionChecker;
 
@@ -89,6 +91,8 @@ public class Cheese : MonoBehaviour
             {
                 nomal = chip.WallVector;
                 bai = nomal.y / nomal.z;
+                //ついでに自身の角度も変更しておく
+                roller.BodyLookAt = Quaternion.LookRotation(chip.WallVector, Vector3.up);
             }
             Vector3 velocity = _rigidbody.velocity;
             velocity.z = _speed;

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CheeseBodyRoller : MonoBehaviour
 {
+    public Quaternion BodyLookAt { get; set; } = Quaternion.identity;
+
     Transform body;
 
     private void Awake()
@@ -13,7 +15,7 @@ public class CheeseBodyRoller : MonoBehaviour
 
     private void LateUpdate()
     {
-        this.transform.rotation = Quaternion.identity;
+        this.transform.rotation = BodyLookAt;
         body.transform.rotation = transform.parent.rotation;
     }
 }

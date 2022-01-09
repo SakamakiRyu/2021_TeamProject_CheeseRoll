@@ -16,6 +16,11 @@ public class CheeseCollisionChecker : MonoBehaviour
 
     public void GroundEnterUsed() => IsGroundEnter = false;
 
+    [SerializeField]
+    ParticleSystem runEffectBase;
+    [SerializeField]
+    ParticleSystem runEffectTrail;
+
     private void FixedUpdate()
     {
         _timer -= Time.deltaTime;
@@ -38,6 +43,13 @@ public class CheeseCollisionChecker : MonoBehaviour
         }
         _isCollisionPre = _isCollision;
         _isCollision = false;
+
+        EffectUpdate();
+    }
+
+    private void EffectUpdate()
+    {
+        
     }
 
     private void OnCollisionEnter(Collision collision)
