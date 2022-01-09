@@ -288,11 +288,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 77701914}
     m_Modifications:
-    - target: {fileID: 9051184258669286854, guid: ca35fce06a89830419c6ab2da38f031f,
-        type: 3}
-      propertyPath: _zoneName
-      value: FireZone
-      objectReference: {fileID: 0}
     - target: {fileID: 9051184258957560505, guid: ca35fce06a89830419c6ab2da38f031f,
         type: 3}
       propertyPath: m_Name
@@ -592,11 +587,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 77701914}
     m_Modifications:
-    - target: {fileID: 9051184258669286854, guid: ca35fce06a89830419c6ab2da38f031f,
-        type: 3}
-      propertyPath: _zoneName
-      value: FireZone
-      objectReference: {fileID: 0}
     - target: {fileID: 9051184258957560505, guid: ca35fce06a89830419c6ab2da38f031f,
         type: 3}
       propertyPath: m_Name
@@ -7431,11 +7421,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 77701914}
     m_Modifications:
-    - target: {fileID: 9051184258669286854, guid: ca35fce06a89830419c6ab2da38f031f,
-        type: 3}
-      propertyPath: _zoneName
-      value: FireZone
-      objectReference: {fileID: 0}
     - target: {fileID: 9051184258957560505, guid: ca35fce06a89830419c6ab2da38f031f,
         type: 3}
       propertyPath: m_Name

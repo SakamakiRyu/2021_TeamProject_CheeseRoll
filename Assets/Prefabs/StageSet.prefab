@@ -1116,8 +1116,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3628133222460774972}
-  m_LocalRotation: {x: 0.22975291, y: 0.000000018722702, z: -0.00000000441983, w: 0.973249}
-  m_LocalPosition: {x: 0.1, y: 1.2600002, z: -9.56}
+  m_LocalRotation: {x: 0.1400426, y: -0.26182535, z: 0.038429573, w: 0.9541272}
+  m_LocalPosition: {x: 7, y: 2.29, z: -7.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3628133221480436980}
@@ -1147,11 +1147,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 40
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1394,6 +1394,7 @@ GameObject:
   - component: {fileID: 7072109795746733012}
   - component: {fileID: 7072109795746733017}
   - component: {fileID: 7072109795746733016}
+  - component: {fileID: 741599888376742521}
   m_Layer: 0
   m_Name: RoadMaker
   m_TagString: Road
@@ -1512,6 +1513,23 @@ MonoBehaviour:
     type: 3}
   _roadSizeX: 1.5
   _roadSizeY: 0.1
+--- !u!114 &741599888376742521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7072109795746733010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e72b46b01014d4eabebfad0c393b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _roadPrefab: {fileID: 4446000482208417858, guid: 673fbb6d3c3ff92419814828364ca65f,
+    type: 3}
+  _resetRoadMaterial: {fileID: 2100000, guid: 2a9c8bec6e99ca04794dbc6391d6b761, type: 2}
+  _heatingRoadMaterial: {fileID: 2100000, guid: df81c11b77cabda4a8ff6274a069287b,
+    type: 2}
 --- !u!1 &7072109795772827510
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,12 +2073,6 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9dc1e813d0f7a146899743836a037b4, type: 3}
---- !u!224 &654555220944743713 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 938476036756444889, guid: f9dc1e813d0f7a146899743836a037b4,
-    type: 3}
-  m_PrefabInstance: {fileID: 293666889238608888}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5018806379936643540 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4734745236839465516, guid: f9dc1e813d0f7a146899743836a037b4,
@@ -2073,6 +2085,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6dc88ab73a33340a635fe0a4ef7f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &654555220944743713 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 938476036756444889, guid: f9dc1e813d0f7a146899743836a037b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 293666889238608888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &654555221336411132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2285,6 +2303,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2819729533208839837}
     m_Modifications:
+    - target: {fileID: -216339680019050401, guid: 8c069d5c5b897cd41b48b0ea2513f524,
+        type: 3}
+      propertyPath: _roadColorChange
+      value: 
+      objectReference: {fileID: 741599888376742521}
     - target: {fileID: 3259726712727801094, guid: 8c069d5c5b897cd41b48b0ea2513f524,
         type: 3}
       propertyPath: m_RootOrder
@@ -2639,12 +2662,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c227935a160ae9b43b66258efb5d9e0b, type: 3}
---- !u!4 &5571309395756225054 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2992319900718806952, guid: c227935a160ae9b43b66258efb5d9e0b,
-    type: 3}
-  m_PrefabInstance: {fileID: 7266451861991171510}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6909235916480763343 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4266340469446897785, guid: c227935a160ae9b43b66258efb5d9e0b,
@@ -2657,3 +2674,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c0a670706f00ab47b207ef168f18a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &5571309395756225054 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2992319900718806952, guid: c227935a160ae9b43b66258efb5d9e0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7266451861991171510}
+  m_PrefabAsset: {fileID: 0}

@@ -261,6 +261,10 @@ MonoBehaviour:
     _time: 10
     _priority: 0
     _burningMultiplication: 2
+  - _name: Zone
+    _time: 0.5
+    _priority: 0
+    _burningMultiplication: 2
   _judgArea: {fileID: 62056560103336941}
   _fireUi: {fileID: 0}
   _roadColorChange: {fileID: 0}
