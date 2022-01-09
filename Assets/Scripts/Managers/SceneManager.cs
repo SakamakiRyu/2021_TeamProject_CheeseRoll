@@ -74,6 +74,7 @@ public class SceneManager : MonoBehaviour
 
             case "Result":
                 {
+                    AudioManager.Instance.PlaySE(AudioManager.SEtype.Fall);
                     AudioManager.Instance.PlayBGM(AudioManager.BGMtype.Result);
                     isChengeBGM = true;
                     break;

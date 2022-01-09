@@ -10,6 +10,7 @@ public class SceneLoaderWithButton : MonoBehaviour
 
     public void Load(string sceneName)
     {
+        AudioManager.Instance.PlaySE(AudioManager.SEtype.CancelButton);
         UnityEngine.UI.Button button = GetComponent<UnityEngine.UI.Button>();
         button.interactable = false;
         StartCoroutine(WaitFade(sceneName));
