@@ -48,6 +48,7 @@ MonoBehaviour:
   _effectPrefabs:
   - {fileID: 8522518615353188115, guid: 3e2b8ada87c122643bdc47ebdb5ff64c, type: 3}
   - {fileID: 8520018215172278551, guid: 235fe5d63a3cc544ab1228c9ee60b46b, type: 3}
+  - {fileID: 8522518615353188115, guid: 3e2b8ada87c122643bdc47ebdb5ff64c, type: 3}
 --- !u!114 &8109173650821675943
 MonoBehaviour:
   m_ObjectHideFlags: 0

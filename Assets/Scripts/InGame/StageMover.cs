@@ -45,6 +45,6 @@ public class StageMover : MonoBehaviour
     {
         _moveSpeed = 0;
         _isMoving = false;
-        AudioManager.Instance.PlayME(AudioManager.METype.Goal);
+        //AudioManager.Instance.PlayME(AudioManager.METype.Goal);
     }
 }

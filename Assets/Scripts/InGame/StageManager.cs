@@ -160,6 +160,7 @@ public class StageManager : MonoBehaviour
         _stageMover.MoveStop();
         _roadMaker.NowPlay = false;
         _onGameClear.Invoke();
+        AudioManager.Instance.PlayME(AudioManager.METype.Goal);
         //_testResultButton?.SetActive(true);
     }
 

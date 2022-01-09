@@ -83,6 +83,7 @@ public class HittableObject : MonoBehaviour
                 AudioManager.Instance.PlaySE(AudioManager.SEtype.BlowTheFire);
                 break;
             case HittableObjectType.Burn:
+                AudioManager.Instance.PlaySE(AudioManager.SEtype.BurntIngredientsAcquired);
                 break;
             case HittableObjectType.HittableObject:
                 break;

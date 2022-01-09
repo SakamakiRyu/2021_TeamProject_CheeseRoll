@@ -15,6 +15,7 @@ public class EffectManager : MonoBehaviour
     {
         GetItem,
         Cure,
+        HitObstacle,
     }
 
     public static EffectManager Instance { get; private set; }

@@ -34,10 +34,17 @@ public class SceneManager : MonoBehaviour
     private bool _toGameImmediately;
 
     [SerializeField]
+    private bool _noLoadTitleOnStart = false;
+
+    [SerializeField]
     private string _immediatelySceneName = "Game";
 
     private void StartTitle()
     {
+        if (_noLoadTitleOnStart)
+        {
+            return;
+        }
         if (_toGameImmediately == true)
         {
             GoNextScene(_immediatelySceneName);

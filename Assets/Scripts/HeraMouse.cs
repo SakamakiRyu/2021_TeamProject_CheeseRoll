@@ -55,6 +55,10 @@ public class HeraMouse : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             UpDownByFinger.Instance.ChengeControll();
+            Vector3 hitpos = (_myTransform.position + other.transform.position) / 2.0f;
+            EffectManager.Instance.PlayEffect(EffectManager.EffectType.HitObstacle, hitpos);
+            //‚Æ‚è‚Ü‚±‚ê‚Å
+            AudioManager.Instance.PlaySE(AudioManager.SEtype.SlicerSound);
         }
     }
 }
