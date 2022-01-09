@@ -1,0 +1,175 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: New Avatar Mask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Nezumi
+    m_Weight: 1
+  - m_Path: Nezumi/Nezumi_Boushi
+    m_Weight: 1
+  - m_Path: Nezumi/Nezumi_kari_02
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_ChestEndEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_ChestOriginEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_HeadEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_LeftUpLeg
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_LeftUpLeg/Nezumi3_Ctrl_LeftLeg
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_LeftUpLeg/Nezumi3_Ctrl_LeftLeg/Nezumi3_Ctrl_LeftFoot
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_LeftUpLeg/Nezumi3_Ctrl_LeftLeg/Nezumi3_Ctrl_LeftFoot/Nezumi3_Ctrl_LeftToeBase
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_RightUpLeg
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_RightUpLeg/Nezumi3_Ctrl_RightLeg
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_RightUpLeg/Nezumi3_Ctrl_RightLeg/Nezumi3_Ctrl_RightFoot
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_RightUpLeg/Nezumi3_Ctrl_RightLeg/Nezumi3_Ctrl_RightFoot/Nezumi3_Ctrl_RightToeBase
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_Spine
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_Spine/Nezumi3_Ctrl_Spine1
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_Spine/Nezumi3_Ctrl_Spine1/Nezumi3_Ctrl_Spine2
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_Spine/Nezumi3_Ctrl_Spine1/Nezumi3_Ctrl_Spine2/Nezumi3_Ctrl_LeftArm
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_Spine/Nezumi3_Ctrl_Spine1/Nezumi3_Ctrl_Spine2/Nezumi3_Ctrl_LeftArm/Nezumi3_Ctrl_LeftForeArm
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_Spine/Nezumi3_Ctrl_Spine1/Nezumi3_Ctrl_Spine2/Nezumi3_Ctrl_LeftArm/Nezumi3_Ctrl_LeftForeArm/Nezumi3_Ctrl_LeftHand
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_Spine/Nezumi3_Ctrl_Spine1/Nezumi3_Ctrl_Spine2/Nezumi3_Ctrl_Neck
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_Spine/Nezumi3_Ctrl_Spine1/Nezumi3_Ctrl_Spine2/Nezumi3_Ctrl_Neck/Nezumi3_Ctrl_Head
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_Spine/Nezumi3_Ctrl_Spine1/Nezumi3_Ctrl_Spine2/Nezumi3_Ctrl_RightArm
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_Spine/Nezumi3_Ctrl_Spine1/Nezumi3_Ctrl_Spine2/Nezumi3_Ctrl_RightArm/Nezumi3_Ctrl_RightForeArm
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_Hips/Nezumi3_Ctrl_Spine/Nezumi3_Ctrl_Spine1/Nezumi3_Ctrl_Spine2/Nezumi3_Ctrl_RightArm/Nezumi3_Ctrl_RightForeArm/Nezumi3_Ctrl_RightHand
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_HipsEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_LeftAnkleEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_LeftElbowEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_LeftFootEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_LeftHipEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_LeftKneeEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_LeftShoulderEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_LeftWristEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_RightAnkleEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_RightElbowEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_RightFootEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_RightHipEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_RightKneeEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_RightShoulderEffector
+    m_Weight: 1
+  - m_Path: Nezumi3_Ctrl_Reference/Nezumi3_Ctrl_RightWristEffector
+    m_Weight: 1
+  - m_Path: Nezumi_joint14
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_joint23
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_joint23/Nezumi_joint24
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_joint23/Nezumi_joint24/Nezumi_joint25
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_joint23/Nezumi_joint24/Nezumi_joint25/Nezumi_joint26
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_joint23/Nezumi_joint24/Nezumi_joint25/Nezumi_joint26/Nezumi_joint27
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_L_asi
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_L_asi/Nezumi_L_hiza
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_L_asi/Nezumi_L_hiza/Nezumi_L_kakato
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_L_asi/Nezumi_L_hiza/Nezumi_L_kakato/Nezumi_L_asiura
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_L_asi/Nezumi_L_hiza/Nezumi_L_kakato/Nezumi_L_asiura/Nezumi_L_tumasaki
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_R_asi
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_R_asi/Nezumi_R_hiza
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_R_asi/Nezumi_R_hiza/Nezumi_R_kakato
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_R_asi/Nezumi_R_hiza/Nezumi_R_kakato/Nezumi_R_asiura
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_R_asi/Nezumi_R_hiza/Nezumi_R_kakato/Nezumi_R_asiura/Nezumi_R_tumasaki
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_joint21
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_joint21/Nezumi_joint22
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_joint21/Nezumi_joint22/Nezumi_joint15
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_joint21/Nezumi_joint22/Nezumi_L_mimi
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_joint21/Nezumi_joint22/Nezumi_L_mimi/Nezumi_L_mimi2
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_joint21/Nezumi_joint22/Nezumi_L_mimi/Nezumi_L_mimi2/Nezumi_L_mimi2
+      1
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_joint21/Nezumi_joint22/Nezumi_R_mimi
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_joint21/Nezumi_joint22/Nezumi_R_mimi/Nezumi_R_mimi2
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_joint21/Nezumi_joint22/Nezumi_R_mimi/Nezumi_R_mimi2/Nezumi_R_mimi2
+      1
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_L_ude
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_L_ude/Nezumi_L_hizi
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_L_ude/Nezumi_L_hizi/Nezumi_L_tekubi
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_L_ude/Nezumi_L_hizi/Nezumi_L_tekubi/Nezumi_L_tesaki
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_R_ude
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_R_ude/Nezumi_R_hizi
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_R_ude/Nezumi_R_hizi/Nezumi_R_tekubi
+    m_Weight: 1
+  - m_Path: Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_R_ude/Nezumi_R_hizi/Nezumi_R_tekubi/Nezumi_R_tesaki
+    m_Weight: 1

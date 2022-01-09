@@ -71,6 +71,13 @@ public class SceneManager : MonoBehaviour
                     isChengeBGM = true;
                     break;
                 }
+
+            case "Result":
+                {
+                    AudioManager.Instance.PlayBGM(AudioManager.BGMtype.Result);
+                    isChengeBGM = true;
+                    break;
+                }
         }
 
         if (!isChengeBGM)

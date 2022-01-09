@@ -20,6 +20,7 @@ public class TitleControl : MonoBehaviour
 
         if (Input.anyKeyDown)
         {
+            AudioManager.Instance.PlaySE(AudioManager.SEtype.TitleTap);
             StartCoroutine(WaitForCoroutine());
         }
     }
