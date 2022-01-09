@@ -100,7 +100,6 @@ public class AudioManager : MonoBehaviour
     public void PlaySE(SEtype se)
     {
         if (se == SEtype.None) return;
-
         _seSource.cueName = $"SE_{se}";
         _seSource.Play();
     }
