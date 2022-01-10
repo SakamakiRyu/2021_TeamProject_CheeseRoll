@@ -36,6 +36,10 @@ public class HeraMouse : MonoBehaviour
 
     private void Update()
     {
+        if (StageManager.Instance?.State != StageManager.StageState.InGame)
+        {
+            return;
+        }
         Move();
     }
 

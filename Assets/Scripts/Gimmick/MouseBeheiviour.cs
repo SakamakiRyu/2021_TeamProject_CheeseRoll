@@ -34,6 +34,10 @@ public class MouseBeheiviour : MonoBehaviour
 
     private void Update()
     {
+        if (StageManager.Instance?.State != StageManager.StageState.InGame)
+        {
+            return;
+        }
         Move();
     }
 
