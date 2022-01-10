@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// スコアの管理を行う
@@ -14,7 +15,7 @@ public class ScoreManager : MonoBehaviour
 
     public Score ScoreStructure;
 
-
+    [SerializeField] Text text;
 
     private void Awake()
     {
@@ -174,10 +175,11 @@ public class ScoreManager : MonoBehaviour
             - ScoreStructure.BurntFoodCount * ScoreStructure.BurntScore
             - ScoreStructure.FakeFoodCount * ScoreStructure.FakeScore);  //最終的なスコア
         int star = GetStar(score);
-        if (PlayerPrefs.GetInt(ScoreStructure.StageName) < star)
+        int highScore = PlayerPrefs.GetInt(ScoreStructure.StageName, 0);
+        if (highScore < star)
         {
             PlayerPrefs.SetInt(ScoreStructure.StageName, star);
-            
+            PlayerPrefs.Save();
         }
         return score;
     }
@@ -241,5 +243,14 @@ public class ScoreManager : MonoBehaviour
     public int GetNGFoodCount()
     {
         return ScoreStructure.BurntFoodCount;
+    }
+    public int GetHighScore() 
+    {
+      
+        return PlayerPrefs.GetInt($"{ScoreStructure.StageName}");
+    } 
+    public void A()
+    {
+        text.text = PlayerPrefs.GetInt(ScoreStructure.StageName).ToString();
     }
 }
