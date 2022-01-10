@@ -342,6 +342,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cheese
       objectReference: {fileID: 0}
+    - target: {fileID: 7154410575647772141, guid: 8c069d5c5b897cd41b48b0ea2513f524,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7469568975760455596, guid: 8c069d5c5b897cd41b48b0ea2513f524,
         type: 3}
       propertyPath: m_Enabled
@@ -2099,7 +2104,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690898831}
-  m_LocalRotation: {x: -0.32016784, y: -0.51331156, z: -0.21430995, w: 0.7668606}
+  m_LocalRotation: {x: -0.32016784, y: -0.5133115, z: -0.21430995, w: 0.7668606}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2538,7 +2543,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724634725}
-  m_LocalRotation: {x: 0.36191946, y: -2.2952304e-15, z: 1.1055731e-15, w: 0.9322094}
+  m_LocalRotation: {x: 0.3619195, y: 0.000000039289684, z: -0.000000015253766, w: 0.9322094}
   m_LocalPosition: {x: 200, y: 204.5, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4564,7 +4569,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fadeTiming: 1
-  _fadeStart: 0
 --- !u!114 &1713380753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5069,8 +5073,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930164858}
-  m_LocalRotation: {x: 0.084460415, y: 0, z: 0, w: 0.9964269}
-  m_LocalPosition: {x: 0, y: 2.6, z: -12.47}
+  m_LocalRotation: {x: 0.3619195, y: 0.000000039289684, z: -0.000000015253766, w: 0.9322094}
+  m_LocalPosition: {x: 200, y: 204.5, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

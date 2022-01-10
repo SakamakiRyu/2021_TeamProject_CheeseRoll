@@ -48,12 +48,31 @@ public class CheeseCollisionChecker : MonoBehaviour
         EffectUpdate();
     }
 
+    float timer;
     private void EffectUpdate()
     {
         var main = runEffectTrail.main;
         main.startRotationX = Mathf.Deg2Rad * TrailLookAt.eulerAngles.x;
         main.startRotationY = TrailLookAt.eulerAngles.y;
         main.startRotationZ = TrailLookAt.eulerAngles.z;
+        if (_isCollisionPre)
+        {
+            var e = runEffectTrail.emission;
+            e.enabled = true;
+            runEffectBase.gameObject.SetActive(true);
+            timer = 0.25f;
+        }
+        else
+        {
+            timer -= Time.fixedDeltaTime;
+            if (timer < 0)
+            {
+                var e = runEffectTrail.emission;
+                e.enabled = false;
+                runEffectBase.gameObject.SetActive(false);
+                timer = 0;
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
