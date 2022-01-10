@@ -14,6 +14,7 @@ public class CheeseCollisionChecker : MonoBehaviour
     public bool IsGroundEnter { get; private set; }
     public bool IsAir { get; private set; }
 
+    public Quaternion TrailLookAt { get; set; }
     public void GroundEnterUsed() => IsGroundEnter = false;
 
     [SerializeField]
@@ -49,7 +50,10 @@ public class CheeseCollisionChecker : MonoBehaviour
 
     private void EffectUpdate()
     {
-        
+        var main = runEffectTrail.main;
+        main.startRotationX = Mathf.Deg2Rad * TrailLookAt.eulerAngles.x;
+        main.startRotationY = TrailLookAt.eulerAngles.y;
+        main.startRotationZ = TrailLookAt.eulerAngles.z;
     }
 
     private void OnCollisionEnter(Collision collision)
