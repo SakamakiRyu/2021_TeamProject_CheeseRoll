@@ -33,6 +33,7 @@ public class Cheese : MonoBehaviour
     public float ZPosition => _zPosition;
     public float HP => _hp;
     public float MaxHp => _maxHp;
+    public Animator Animator => _animator;
 
     float _speed = 0;
 
