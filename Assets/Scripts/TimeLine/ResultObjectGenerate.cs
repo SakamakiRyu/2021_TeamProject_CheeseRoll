@@ -7,6 +7,7 @@ public class ResultObjectGenerate : MonoBehaviour
     GameObject[] _prefabs;
     [SerializeField] Transform[] _parents;
     [SerializeField] StarFiller _star;
+    [SerializeField] GameObject _debug;
 
     private void Start()
     {
@@ -18,6 +19,10 @@ public class ResultObjectGenerate : MonoBehaviour
         if (ScoreManager.Instance.ScoreStructure.FoodsObject != null)
         {
             _prefabs = ScoreManager.Instance.ScoreStructure.FoodsObject;
+        }
+        else
+        {
+            Instantiate(_debug, _parents[0]);
         }
 
         //int getFoodsNum = 0;
