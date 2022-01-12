@@ -16,6 +16,14 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private CriAtomSource _seSource;
 
+    public enum Type
+    {
+        None,
+        BGM,
+        ME,
+        SE
+    }
+
     private void Awake()
     {
         if (Instance is null)
@@ -70,6 +78,34 @@ public class AudioManager : MonoBehaviour
     }
 
     /// <summary>
+    /// ‰¹‚ÌÄ¶‚ğ‹­§“I‚É~‚ß‚é
+    /// </summary>
+    /// <param name="type">~‚ß‚é‰¹‚Ìí—Ş</param>
+    public void StopSound(Type type)
+    {
+        switch (type)
+        {
+            case Type.None:
+                break;
+            case Type.BGM:
+                {
+                    _bgmSource.Stop();
+                }
+                break;
+            case Type.ME:
+                {
+                    _meSource.Stop();
+                }
+                break;
+            case Type.SE:
+                {
+                    _seSource.Stop();
+                }
+                break;
+        }
+    }
+
+    /// <summary>
     /// BGM‚ğ–Â‚ç‚·
     /// </summary>
     /// <param name="bgm">–Â‚ç‚·BGM</param>
@@ -100,6 +136,9 @@ public class AudioManager : MonoBehaviour
     public void PlaySE(SEtype se)
     {
         if (se == SEtype.None) return;
+        // Ä¶’†‚Ì‰¹‚ğ~‚ß‚Ä‚©‚çAV‚½‚ÉÄ¶‚·‚é
+        _seSource.Stop();
+
         _seSource.cueName = $"SE_{se}";
         _seSource.Play();
     }
