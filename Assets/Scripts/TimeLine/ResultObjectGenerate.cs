@@ -6,7 +6,6 @@ public class ResultObjectGenerate : MonoBehaviour
 {
     GameObject[] _prefabs;
     [SerializeField] Transform[] _parents;
-    [SerializeField] StarFiller _star;
     [SerializeField] GameObject _debug;
 
     private void Start()
@@ -45,36 +44,6 @@ public class ResultObjectGenerate : MonoBehaviour
         }
 
         TimeLineManager timeLineManager = GetComponent<TimeLineManager>();
-        timeLineManager.PlayTimeLine(0);//0‚Í‰¼‚Å‚·
-    }
-
-    public void StarFillStart()
-    {
-        int i = ScoreManager.Instance.GetStar();
-        switch (i)
-        {
-            case 2:
-                _star.StarFill(1);
-                break;
-
-            case 3:
-                _star.StarFill(1.5f);
-                break;
-
-            case 4:
-                _star.StarFill(2);
-                break;
-
-            case 5:
-                _star.StarFill(2.5f);
-                break;
-
-            case 6:
-                _star.StarFill(3);
-                break;
-
-            default:
-                break;
-        }
+        timeLineManager.PlayTimeLine(0);
     }
 }
