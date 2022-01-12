@@ -31,7 +31,9 @@ ModelImporter:
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
-    extraExposedTransformPaths: []
+    extraExposedTransformPaths:
+    - Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_L_ude/Nezumi_L_hizi/Nezumi_L_tekubi/Nezumi_L_tesaki
+    - Nezumi_joint14/Nezumi_joint16/Nezumi_spine1/Nezumi_spine2/Nezumi_spine3/Nezumi_kubi/Nezumi_R_ude/Nezumi_R_hizi/Nezumi_R_tekubi/Nezumi_R_tesaki
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
