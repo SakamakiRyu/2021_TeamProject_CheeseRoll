@@ -9668,6 +9668,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 91d0df738f805de47b53c4ac1373b13e,
+        type: 3}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: b28582bea8eefcf4a9ff763e6952f9f0,
+        type: 3}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4bc83d4c39dc87148a499cb5e8d77944,
+        type: 3}
     - target: {fileID: 7072109795746733017, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _max

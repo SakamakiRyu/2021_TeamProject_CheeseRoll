@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -192,25 +192,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7320a46650208649ac67aae913f454b, type: 3}
---- !u!1 &1794096 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3807381784529111354, guid: 26b9e919101e3da4f97eaa7e99292a39,
-    type: 3}
-  m_PrefabInstance: {fileID: 16107326}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1794100
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794096}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 20.000004, y: 6, z: 7.500003}
-  m_Center: {x: 0, y: 3, z: 0.00000047683716}
 --- !u!1 &3729953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2192,25 +2173,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229569924}
   m_Mesh: {fileID: -3758573805739257388, guid: f4486edd55b413744a5f296546b57033, type: 3}
---- !u!1 &239041412 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3807381784529111354, guid: 26b9e919101e3da4f97eaa7e99292a39,
-    type: 3}
-  m_PrefabInstance: {fileID: 449491877}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &239041416
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239041412}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 20.000004, y: 6, z: 7.500003}
-  m_Center: {x: 0, y: 3, z: 0.00000023841858}
 --- !u!1 &251763841
 GameObject:
   m_ObjectHideFlags: 0
@@ -4565,25 +4527,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 449491877}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &460452544 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3807381784529111354, guid: 26b9e919101e3da4f97eaa7e99292a39,
-    type: 3}
-  m_PrefabInstance: {fileID: 750179877}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &460452548
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 460452544}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 20.000004, y: 6, z: 7.500003}
-  m_Center: {x: 0, y: 3, z: 0}
 --- !u!1 &463824421
 GameObject:
   m_ObjectHideFlags: 0
@@ -5537,7 +5480,7 @@ PrefabInstance:
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _burntScore
-      value: -2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
@@ -5889,6 +5832,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 91d0df738f805de47b53c4ac1373b13e,
+        type: 3}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: b28582bea8eefcf4a9ff763e6952f9f0,
+        type: 3}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4bc83d4c39dc87148a499cb5e8d77944,
+        type: 3}
     - target: {fileID: 7072109795746733017, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _max
@@ -9299,25 +9265,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1020374503}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1036713414 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3807381784529111354, guid: 26b9e919101e3da4f97eaa7e99292a39,
-    type: 3}
-  m_PrefabInstance: {fileID: 131357122}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1036713418
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036713414}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 20.000004, y: 6, z: 7.500003}
-  m_Center: {x: 0, y: 3, z: 0.00000071525574}
 --- !u!1 &1041147304
 GameObject:
   m_ObjectHideFlags: 0
@@ -16969,25 +16916,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923511842}
   m_Mesh: {fileID: 6606501483488557099, guid: f4486edd55b413744a5f296546b57033, type: 3}
---- !u!1 &1925877613 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3807381784529111354, guid: 26b9e919101e3da4f97eaa7e99292a39,
-    type: 3}
-  m_PrefabInstance: {fileID: 1653665744}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1925877617
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925877613}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 20.000004, y: 6, z: 7.500003}
-  m_Center: {x: 0, y: 3, z: 0.00000047683716}
 --- !u!4 &1937609261 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3373878285746178331, guid: d7320a46650208649ac67aae913f454b,

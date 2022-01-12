@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6007,7 +6007,7 @@ PrefabInstance:
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _burntScore
-      value: -5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
@@ -6172,19 +6172,19 @@ PrefabInstance:
         type: 3}
       propertyPath: _dishesObject.Array.data[0]
       value: 
-      objectReference: {fileID: 6859034727193956214, guid: 1c54f223ba5bd9940930c4104428c967,
+      objectReference: {fileID: 8347146697268662794, guid: 965f59469ac098f4f98a04f62570558a,
         type: 3}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _dishesObject.Array.data[1]
       value: 
-      objectReference: {fileID: 6416828430309199098, guid: e2f472acb9cd0a24b81dd489d4de8720,
+      objectReference: {fileID: 8261007792178006104, guid: cf05db979c38e2c4a91d0bdbebe78187,
         type: 3}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _dishesObject.Array.data[2]
       value: 
-      objectReference: {fileID: 522262028450309124, guid: b1c55d7456937b441b0f92abdd8a8079,
+      objectReference: {fileID: 546464417318078352, guid: 61da4551b8580db4ca99a75821cf67c5,
         type: 3}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
@@ -6386,6 +6386,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 30b5b6acc71c14f4a9f1a29b020318a6,
+        type: 3}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: d1aa5ee1fbab1d74f97f54b318049be3,
+        type: 3}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7d3f6919f4a223d478e9524129b71161,
+        type: 3}
     - target: {fileID: 6921888296192405364, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: m_IsActive

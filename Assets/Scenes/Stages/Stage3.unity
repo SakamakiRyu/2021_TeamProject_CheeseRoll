@@ -1808,65 +1808,112 @@ PrefabInstance:
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _foodsList.Array.size
-      value: 6
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _foodsObject.Array.size
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _dishesObject.Array.size
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _foodsList.Array.data[0]
-      value: Broccoli
+      value: Egg
       objectReference: {fileID: 0}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _foodsList.Array.data[1]
-      value: Chili
+      value: Cabbage
       objectReference: {fileID: 0}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _foodsList.Array.data[2]
-      value: Meat
+      value: Bacon
       objectReference: {fileID: 0}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _foodsList.Array.data[3]
-      value: Onion
+      value: Oct
       objectReference: {fileID: 0}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _foodsList.Array.data[4]
-      value: RawMeat
+      value: Squid
       objectReference: {fileID: 0}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _foodsList.Array.data[5]
-      value: Broccoli
+      value: Shrimp
       objectReference: {fileID: 0}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _foodsList.Array.data[6]
-      value: Chili
+      value: Scallops
       objectReference: {fileID: 0}
+    - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _foodsObject.Array.data[0]
+      value: 
+      objectReference: {fileID: 5765169061124432614, guid: d9a8f7aa64b9c9647be65d2921124ef9,
+        type: 3}
+    - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _foodsObject.Array.data[1]
+      value: 
+      objectReference: {fileID: 5765169061124432614, guid: 5cf74ea76eac2b647ab6c4ca98188db6,
+        type: 3}
+    - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _foodsObject.Array.data[2]
+      value: 
+      objectReference: {fileID: 5765169061124432614, guid: f97cded3a3da9ec40acc81f137a30a40,
+        type: 3}
+    - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _foodsObject.Array.data[3]
+      value: 
+      objectReference: {fileID: 5765169061124432614, guid: f0aa58fb5afb5b0489dd91f7b2979481,
+        type: 3}
+    - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _foodsObject.Array.data[4]
+      value: 
+      objectReference: {fileID: 5765169061124432614, guid: a7775556819850f439fc3f1215191628,
+        type: 3}
+    - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _foodsObject.Array.data[5]
+      value: 
+      objectReference: {fileID: 5765169061124432614, guid: 80f264ba7ed1f5c48ba81db233661ad3,
+        type: 3}
+    - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _foodsObject.Array.data[6]
+      value: 
+      objectReference: {fileID: 5765169061124432614, guid: a272abace994d3445bb2e71638df8a09,
+        type: 3}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _dishesObject.Array.data[0]
       value: 
-      objectReference: {fileID: 5368754495886403586, guid: c899ad5cb266c254e8f2d7e5476fa772,
+      objectReference: {fileID: 6085768363066656943, guid: fba8bdc2edc6e2c488099b9ecd122ea4,
         type: 3}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _dishesObject.Array.data[1]
       value: 
-      objectReference: {fileID: 6237830718176622239, guid: d7320a46650208649ac67aae913f454b,
+      objectReference: {fileID: 6908218828222059209, guid: 8d9b98a1bbb261f4fb607fc4b8f849c2,
         type: 3}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _dishesObject.Array.data[2]
       value: 
-      objectReference: {fileID: 6458594994677938982, guid: 3b363f625894ae041a3653fbea3cb741,
+      objectReference: {fileID: 4006388300632047979, guid: 2d4caf1ffa5239b49a1f6afff763bec4,
         type: 3}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
@@ -1947,6 +1994,29 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.038429573
       objectReference: {fileID: 0}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 975aa2fb07f630447ba4dd3ff3cee6c5,
+        type: 3}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 3505348266f32a94891b9d62c9861318,
+        type: 3}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 079cdb011b3f8aa489deb4e96187143a,
+        type: 3}
     - target: {fileID: 7072109795746733017, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _chaseSpeed

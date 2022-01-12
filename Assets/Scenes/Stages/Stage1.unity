@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5672,19 +5672,19 @@ PrefabInstance:
         type: 3}
       propertyPath: _dishesObject.Array.data[0]
       value: 
-      objectReference: {fileID: 6859034727193956214, guid: 1c54f223ba5bd9940930c4104428c967,
+      objectReference: {fileID: 3716237023484167854, guid: 393321139de0aa94cbb2e32b7a0fc0c7,
         type: 3}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _dishesObject.Array.data[1]
       value: 
-      objectReference: {fileID: 6416828430309199098, guid: e2f472acb9cd0a24b81dd489d4de8720,
+      objectReference: {fileID: 1720591531795017133, guid: d76512b0380a9f044aea0a8a4f1922fc,
         type: 3}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _dishesObject.Array.data[2]
       value: 
-      objectReference: {fileID: 522262028450309124, guid: b1c55d7456937b441b0f92abdd8a8079,
+      objectReference: {fileID: 2507373912782284117, guid: 228c50f8cf1e2214787d51705b9692a8,
         type: 3}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}

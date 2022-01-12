@@ -128,8 +128,8 @@ public class ScoreManager : MonoBehaviour
         /// </summary>
         public void FaketFoodCountUp()
         {
-            FakeFoodCount++;
-
+            //FakeFoodCount++;
+            BurntFoodCountUp();
         }
     }
     /// <summary>
