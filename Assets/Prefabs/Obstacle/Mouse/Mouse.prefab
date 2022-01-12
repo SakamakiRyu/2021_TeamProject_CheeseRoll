@@ -118,6 +118,20 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 2628322263097977218}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &5596854183767341524
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6030705610399953368}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.68883705
+  m_Height: 1.807128
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8622546, z: 0.40353966}
 --- !u!114 &4033925327029251269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,17 +150,3 @@ MonoBehaviour:
   _moveSpeed: 1
   _upDownMoveValue: 5
   _damage: 10
---- !u!136 &5596854183767341524
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6030705610399953368}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.68883705
-  m_Height: 1.807128
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.8622546, z: 0.40353966}
