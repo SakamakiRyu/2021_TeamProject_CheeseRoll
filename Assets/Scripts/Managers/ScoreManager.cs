@@ -188,7 +188,9 @@ public class ScoreManager : MonoBehaviour
     /// <returns></returns>
     public GameObject GetDish()
     {
-        return ScoreStructure.DishsObject[0];
+        int index = GetStar() / 2;
+        index = 3 - index;
+        return ScoreStructure.DishsObject[index];
     }
     /// <summary>
     /// スコアの星の数を返す
