@@ -90,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isRotate: 1
   _rotateSpeed: 2
+  _isSmokeEffect: 0
 --- !u!65 &953491429174271322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -172,9 +173,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26dc242960343aa4ca082f9e56135505, type: 3}
+--- !u!1 &7323579631144544003 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26dc242960343aa4ca082f9e56135505,
+    type: 3}
+  m_PrefabInstance: {fileID: 7594191636379540050}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7991994277747523001 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 26dc242960343aa4ca082f9e56135505,
     type: 3}
   m_PrefabInstance: {fileID: 7594191636379540050}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1532150684889278055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7323579631144544003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c9b36d96dcfbfd46ad27024c35fa7bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineMaterial: {fileID: 2100000, guid: 2a3a05c7c9b61c94e82a2f93f2984b52, type: 2}
