@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class GoalGateTriger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    Transform _effectPos;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             StageManager.Instance.GateIn();
-            //SceneManager.Instance.GoNextScene("Result");
+            GameObject e = EffectManager.Instance?.PlayEffect(EffectManager.EffectType.Goal, _effectPos.position);
+            e.GetComponent<ParticleSystem>()?.Play();
         }
     }
 }
