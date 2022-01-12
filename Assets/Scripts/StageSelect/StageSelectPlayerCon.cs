@@ -31,7 +31,9 @@ public class StageSelectPlayerCon : MonoBehaviour
 
     int _visIndex;
 
+
     Vector3 vec = Vector3.zero;
+    private float _progress = 0.0f;
     public Vector3 _direction = new Vector3(0f, 0f, 1f);
 
     private void Awake()
@@ -50,29 +52,34 @@ public class StageSelectPlayerCon : MonoBehaviour
         // Debug.Log(_index);
         if (!_ismove)
         {
+            Debug.Log("not ismove");
             if (Input.GetButtonUp("Fire1"))
             {
                 AudioManager.Instance.PlaySE(AudioManager.SEtype.Button01);
 
                 if (Input.mousePosition.x > Screen.width / 2 && Input.mousePosition.y > (Screen.height / 3) * 1)
                 {
+                    
                     if (_index < _stageTarget.Length - 1)
                     {
+                        _index++;
                         StageSelectPlayerAnimationController.Instance.OnMove(StageSelectPlayerAnimationController.Move.Right);
                         vec.x = _speed;
                         Debug.Log(_index);
-                        _index++;
+                        
                     }
                     _ismove = true;
                 }
                 else if ((Input.mousePosition.x <= Screen.width / 2 && Input.mousePosition.y > (Screen.height / 3) * 1))
                 {
+                    
                     if (_index > 0)
                     {
+                        _index--;
                         StageSelectPlayerAnimationController.Instance.OnMove(StageSelectPlayerAnimationController.Move.Left);
                         vec.x = -_speed;
                         Debug.Log(_index);
-                        _index--;
+                        
                     }
                     _ismove = true;
                 }
@@ -82,8 +89,9 @@ public class StageSelectPlayerCon : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, _stageTarget[_index].transform.position) > 0.05)
             {
-                transform.position += vec;
-               // Debug.Log(_stageTarget[_index].transform.position);
+                //_progress += _speed * Time.deltaTime;
+                transform.position += vec * Time.deltaTime;
+                // Debug.Log(_stageTarget[_index].transform.position);
             }
             else
             {
@@ -136,8 +144,7 @@ public class StageSelectPlayerCon : MonoBehaviour
         _fade.FadeIn();
         while (true)
         {
-            float step = _speed * Time.deltaTime;
-            transform.position += _direction * _speed;
+            transform.position += _direction * _speed * Time.deltaTime;
             timer += Time.deltaTime;
             if (timer > 2)
             {

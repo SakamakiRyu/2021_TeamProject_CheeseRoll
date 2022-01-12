@@ -20,6 +20,8 @@ public class ResultUIManager : MonoBehaviour
     [SerializeField]
     Transform _dish;
     public GameObject _dishObject;
+    [SerializeField]
+    StarFiller _star;
 
     private void Start()
     {
@@ -60,5 +62,35 @@ public class ResultUIManager : MonoBehaviour
         //Debug.Log(ScoreManager.Instance.GetNGFoodCount());
         //Debug.Log(ScoreManager.Instance.GetNGFoodCount());
         //Debug.Log(_score);
+    }
+
+    public void StarFillStart()
+    {
+        int i = ScoreManager.Instance.GetStar();
+        switch (i)
+        {
+            case 2:
+                _star.StarFill(1);
+                break;
+
+            case 3:
+                _star.StarFill(1.5f);
+                break;
+
+            case 4:
+                _star.StarFill(2);
+                break;
+
+            case 5:
+                _star.StarFill(2.5f);
+                break;
+
+            case 6:
+                _star.StarFill(3);
+                break;
+
+            default:
+                break;
+        }
     }
 }
