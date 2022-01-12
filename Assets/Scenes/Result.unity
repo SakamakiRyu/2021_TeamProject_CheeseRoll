@@ -2109,7 +2109,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690898831}
-  m_LocalRotation: {x: -0.32016784, y: -0.5133115, z: -0.21430995, w: 0.7668606}
+  m_LocalRotation: {x: -0.32016784, y: -0.51331156, z: -0.21430995, w: 0.7668606}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2548,7 +2548,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724634725}
-  m_LocalRotation: {x: 0.38268343, y: -1e-45, z: 1e-45, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268343, y: 3e-45, z: -1e-45, w: 0.92387956}
   m_LocalPosition: {x: 200, y: 204.5, z: -2.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4664,8 +4664,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: eb4041efebf696d4e8f0ba704f5e461e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4806,7 +4806,7 @@ MonoBehaviour:
     type: 3}
   _star: {fileID: 553963515}
   _debugMode: 1
-  _debugDish: {fileID: 8347146697268662794, guid: 965f59469ac098f4f98a04f62570558a,
+  _debugDish: {fileID: 6859034727193956214, guid: 1c54f223ba5bd9940930c4104428c967,
     type: 3}
   _debugStar: 2.5
 --- !u!4 &1810806337
@@ -5056,7 +5056,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930164858}
-  m_LocalRotation: {x: 0.38268343, y: -1e-45, z: 1e-45, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268343, y: 3e-45, z: -1e-45, w: 0.92387956}
   m_LocalPosition: {x: 200, y: 204.5, z: -2.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
