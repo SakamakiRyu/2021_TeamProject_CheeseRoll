@@ -19469,7 +19469,7 @@ GameObject:
   - component: {fileID: 8520018215172278549}
   - component: {fileID: 8520018215172278548}
   m_Layer: 0
-  m_Name: Eff_cure_01
+  m_Name: Eff_Cure_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19483,7 +19483,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8520018215172278551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.145, y: 5.508, z: -0.401}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8520018214164586711}
