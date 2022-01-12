@@ -16,6 +16,8 @@ public class EffectManager : MonoBehaviour
         GetItem,
         Cure,
         HitObstacle,
+        Death01,
+        Death02,
     }
 
     public static EffectManager Instance { get; private set; }
@@ -26,8 +28,8 @@ public class EffectManager : MonoBehaviour
     [Header("EffectType‚Ìenum‚Æ“¯‚¶‡”Ô‚É“ü‚ê‚Ä‚­‚¾‚³‚¢")]
     [SerializeField]
     private GameObject[] _effectPrefabs;
-    private int[] _effectVibrationLength = new int[3] { 100, 100, 100 };
-    private float[] _effectCameraShakePower = new float[3] { 0, 0, 0.1f };
+    private int[] _effectVibrationLength = new int[] { 25, 25, 100, 0, 100};
+    private float[] _effectCameraShakePower = new float[] { 0, 0, 0.2f, 0, 0.2f};
     
 
     private void Awake()

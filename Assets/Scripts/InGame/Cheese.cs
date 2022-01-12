@@ -24,7 +24,10 @@ public class Cheese : MonoBehaviour
     float _zPosition = -1f;
     [SerializeField]
     Animator _animator;
+    [SerializeField]
+    MeshRenderer _renderer;
 
+    bool _isHIde = false;
     CheeseCollisionChecker _collisionChecker;
 
     BurningCheese _burningCheese;
@@ -34,6 +37,7 @@ public class Cheese : MonoBehaviour
     public float HP => _hp;
     public float MaxHp => _maxHp;
     public Animator Animator => _animator;
+    public bool IsHide => _isHIde;
 
     float _speed = 0;
 
@@ -175,5 +179,14 @@ public class Cheese : MonoBehaviour
             _hp = 100;
         }
         UpdateSize();
+    }
+
+    /// <summary>
+    /// チーズくんのモデルを非表示にする
+    /// </summary>
+    public void HideModel()
+    {
+        _isHIde = true;
+        _renderer.enabled = false;
     }
 }
