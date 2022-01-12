@@ -57,13 +57,13 @@ Material:
     - Boolean_96577b7190174e2287e538336373bee2: 1
     - Vector1_1: 0
     - Vector1_6daa2ee332c4426a859bd859d221dd7a: 1
-    - Vector1_7f81bc3aefce435690e6f3a0dfadfa2f: 2.0000005
+    - Vector1_7f81bc3aefce435690e6f3a0dfadfa2f: 2
     - Vector1_94240692bb2a440c9fd8b87ab7ddf429: 1
     - Vector1_9daf89cb3c6d4fa3bb5243586130bb4e: -1
     m_Colors:
     - Color_13cb5488afc1408ea7837d077bc6c300: {r: 0.19607845, g: 0.19607845, b: 0.19607845,
         a: 1}
-    - Color_7c2c9ab94c004508a97a96a7d632d94a: {r: 0.99400014, g: 0.23418854, b: 0.13010477,
+    - Color_7c2c9ab94c004508a97a96a7d632d94a: {r: 0.994, g: 0.23418851, b: 0.13010474,
         a: 0}
     - Color_cc2d39716ec443ceafd2d16dc5fdc32c: {r: 0.8666667, g: 0.6792453, b: 0.6792453,
         a: 0}
