@@ -14,6 +14,11 @@ public class TitleControl : MonoBehaviour
     [SerializeField]
     private float _waitTime;
 
+    private void Awake()
+    {
+        _fade.FadeOut();
+    }
+
     private void Update()
     {
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "Title") return;

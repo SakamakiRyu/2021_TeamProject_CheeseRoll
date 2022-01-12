@@ -23,6 +23,7 @@ public class VideoPlayerOnUGUI : MonoBehaviour
         if (player.isPrepared)
         {
             image.texture = player.texture;
+            image.color = Color.white;
         }
     }
 }
