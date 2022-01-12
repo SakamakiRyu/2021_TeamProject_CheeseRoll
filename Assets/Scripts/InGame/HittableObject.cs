@@ -19,8 +19,8 @@ public class HittableObject : MonoBehaviour
 
     [Space]
     //[Header("ステージ３などの偽物の食べ物の場合は、ObjectTypeを 「シーン上」 で Fake にしてください")]
-    [Header("ObjectTypeを 「シーン上」 で Fake にしてください")]
-    [Header("ステージ３などの偽物の食べ物の場合は、")]
+    //[Header("ObjectTypeを 「シーン上」 で Fake にしてください")]
+    //[Header("ステージ３などの偽物の食べ物の場合は、")]
 
     [SerializeField] string _name;
 
