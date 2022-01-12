@@ -24,6 +24,10 @@ public class MouseBeheiviour : MonoBehaviour
     [SerializeField]
     private float _upDownMoveValue = 5.0f;
 
+    [Header("ダメージ")]
+    [SerializeField]
+    int _damage = 10;
+
     private float _gapRemoveValue;
 
     private void Start()
@@ -59,6 +63,7 @@ public class MouseBeheiviour : MonoBehaviour
             AudioManager.Instance.PlaySE(AudioManager.SEtype.MouseChewing);
             Vector3 hitpos = (_myTransform.position + other.transform.position) / 2.0f;
             EffectManager.Instance.PlayEffect(EffectManager.EffectType.HitObstacle, hitpos);
+            AteCheese();
             Debug.Log("hit cheese");
         }
     }
@@ -68,6 +73,7 @@ public class MouseBeheiviour : MonoBehaviour
     /// </summary>
     public void AteCheese()
     {
-        StageManager.Instance.GameOver();
+        //StageManager.Instance.GameOver();
+        Cheese.Instance?.GetDamage(_damage);
     }
 }
