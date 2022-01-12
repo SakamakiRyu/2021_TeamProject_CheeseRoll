@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class StageSelectPlayerCon : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class StageSelectPlayerCon : MonoBehaviour
     [SerializeField]
     public GameObject _loadRoll;
 
-    GameObject[] _stageTarget ;
+    [SerializeField]
+    GameObject[] _stageTarget;
     int _index = 0;
 
     private float _startTime, distance;
@@ -42,7 +44,6 @@ public class StageSelectPlayerCon : MonoBehaviour
     }
     void Start()
     {
-        _stageTarget = GameObject.FindGameObjectsWithTag("Stage trigger");
         transform.position = _stageTarget[0].transform.position;
     }
 
@@ -87,7 +88,7 @@ public class StageSelectPlayerCon : MonoBehaviour
         }
         else
         {
-            if (Vector3.Distance(transform.position, _stageTarget[_index].transform.position) > 0.05)
+            if (Vector3.Distance(transform.position, _stageTarget[_index].transform.position) > 0.25)
             {
                 //_progress += _speed * Time.deltaTime;
                 transform.position += vec * Time.deltaTime;
@@ -103,24 +104,16 @@ public class StageSelectPlayerCon : MonoBehaviour
     {
         //アニメストップ
         StageSelectPlayerAnimationController.Instance.AnimControll(false);
-        if (collision.CompareTag("Stage trigger"))
-        {
-            var namae = collision.GetComponent<stageID>();
-            Debug.Log(namae._id);
-            _StagePopupController.PopUp((int)namae._id);
-            //Debug.Log("in");
-        }
+        var namae = collision.GetComponent<stageID>();
+        Debug.Log(namae._id);
+        _StagePopupController.PopUp((int)namae._id);
     }
     private void OnTriggerExit(Collider collision)
     {
         //アニメスタート
         StageSelectPlayerAnimationController.Instance.AnimControll(true);
-        if (collision.CompareTag("Stage trigger"))
-        {
-            var namae = collision.GetComponent<stageID>();
-            _StagePopupController.PopUp((int)namae._id);
-            //Debug.Log("out");
-        }
+        var namae = collision.GetComponent<stageID>();
+        _StagePopupController.PopUp((int)namae._id);
     }
     public void NextSceneAnime()
     {
