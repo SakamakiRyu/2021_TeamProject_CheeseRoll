@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f5dca4a6eb509034da9da0006d670c8c
+guid: f6708f74d2d8db44295e004071a77187
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MT_Background_Stage2_Counter
-    second: {fileID: 2100000, guid: 7ea20c2f24c1d5d4da587e2b01df64c3, type: 2}
+      name: MT_Stage2
+    second: {fileID: 2100000, guid: 49d3142ef7ddc3640abff8c34ad7a1d5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
