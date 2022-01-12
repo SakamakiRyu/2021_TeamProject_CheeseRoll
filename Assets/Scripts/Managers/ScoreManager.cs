@@ -246,8 +246,8 @@ public class ScoreManager : MonoBehaviour
     }
     public int GetHighScore(string stageName) 
     {
-      
-        return PlayerPrefs.GetInt($"{stageName}");
+
+        return PlayerPrefs.GetInt($"{stageName}", 0);
     } 
    
 }
