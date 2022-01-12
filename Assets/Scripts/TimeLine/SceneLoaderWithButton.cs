@@ -22,6 +22,11 @@ public class SceneLoaderWithButton : MonoBehaviour
     IEnumerator WaitFade(string scene)
     {
         yield return new WaitForSeconds(_fadeTiming);
+        if (scene == "Retry")
+        {
+            scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        }
         SceneManager.Instance.GoNextScene(scene);
+
     }
 }
