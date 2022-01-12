@@ -40,7 +40,7 @@ TextureImporter:
     second: Bread
   - first:
       213: 3134338103828069795
-    second: Zucchini
+    second: Pickles
   - first:
       213: -3959904134074166010
     second: Cabbage
@@ -97,7 +97,7 @@ TextureImporter:
     second: Cheese
   - first:
       213: -133752044019148636
-    second: Chile
+    second: Chili
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -475,7 +475,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zucchini
+      name: Pickles
       rect:
         serializedVersion: 2
         x: 1004
@@ -874,7 +874,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chile
+      name: Chili
       rect:
         serializedVersion: 2
         x: 1667
