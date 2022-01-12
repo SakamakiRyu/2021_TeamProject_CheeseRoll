@@ -55,7 +55,7 @@ public class CheeseCollisionChecker : MonoBehaviour
         main.startRotationX = Mathf.Deg2Rad * TrailLookAt.eulerAngles.x;
         main.startRotationY = TrailLookAt.eulerAngles.y;
         main.startRotationZ = TrailLookAt.eulerAngles.z;
-        if (_isCollisionPre)
+        if (_isCollisionPre && (!Cheese.Instance?.IsHide ?? false))
         {
             var e = runEffectTrail.emission;
             e.enabled = true;

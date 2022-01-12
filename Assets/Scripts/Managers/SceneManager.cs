@@ -83,6 +83,7 @@ public class SceneManager : MonoBehaviour
                 {
                     AudioManager.Instance.PlaySE(AudioManager.SEtype.Fall);
                     AudioManager.Instance.PlayBGM(AudioManager.BGMtype.Result);
+                    AudioManager.Instance.StopSound(AudioManager.Type.SE);
                     isChengeBGM = true;
                     break;
                 }
