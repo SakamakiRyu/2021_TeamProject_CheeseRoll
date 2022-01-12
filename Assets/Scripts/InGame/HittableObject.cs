@@ -125,10 +125,11 @@ public class HittableObject : MonoBehaviour
     /// </summary>
     public void EndBurning()
     {
-        if (_objectType == HittableObjectType.DropOfWater)
-        {
-            _hitObj.GetComponent<BurningCheese>().EndBurn("Water");
-        }
+        _hitObj.GetComponent<BurningCheese>().EndBurn("Water");
+        //if (_objectType == HittableObjectType.DropOfWater)
+        //{
+            
+        //}
     }
 
     /// <summary>
