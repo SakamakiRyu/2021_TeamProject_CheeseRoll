@@ -5,12 +5,26 @@ using UnityEngine;
 public class ResultObjectGenerate : MonoBehaviour
 {
     GameObject[] _prefabs;
-    [SerializeField] Transform[] _parents;
-    [SerializeField] GameObject _debug;
+    [SerializeField]
+    Transform[] _parents;
+
+    [SerializeField]
+    bool _debugMode;
+    [SerializeField]
+    GameObject _debugFood;
 
     private void Start()
     {
-        GeneratePrefabs();
+        if (_debugMode)
+        {
+            Instantiate(_debugFood, _parents[0]);
+            TimeLineManager timeLineManager = GetComponent<TimeLineManager>();
+            timeLineManager.PlayTimeLine(0);
+        }
+        else
+        {
+            GeneratePrefabs();
+        }
     }
 
     public void GeneratePrefabs()
@@ -19,28 +33,14 @@ public class ResultObjectGenerate : MonoBehaviour
         {
             _prefabs = ScoreManager.Instance.ScoreStructure.FoodsObject;
         }
-        else
-        {
-            Instantiate(_debug, _parents[0]);
-        }
 
-        //int getFoodsNum = 0;
-        //if (ScoreManager.Instance.ScoreStructure.FoodsNums != null)
-        //{
-        //    Debug.Log(ScoreManager.Instance.ScoreStructure.FoodsNums);
-        //    for (int i = 0; i < ScoreManager.Instance.ScoreStructure.FoodsNums.Length; i++)
-        //    {
-        //        getFoodsNum += 1;
-        //    }
-        //}
-        //if (getFoodsNum == 0)
-        //{
-        //    getFoodsNum = 10;//デバッグ用
-        //}
         for (int i = 0; i < _prefabs.Length; i++)
         {
-            GameObject inst = Instantiate(_prefabs[i], _parents[i]);
-            inst.transform.localPosition = Vector3.zero;
+            if (ScoreManager.Instance.ScoreStructure.FoodsNums[i] != 0)
+            {
+                GameObject inst = Instantiate(_prefabs[i], _parents[i]);
+                inst.transform.localPosition = Vector3.zero;
+            }
         }
 
         TimeLineManager timeLineManager = GetComponent<TimeLineManager>();

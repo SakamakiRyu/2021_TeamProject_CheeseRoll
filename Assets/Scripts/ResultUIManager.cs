@@ -22,11 +22,29 @@ public class ResultUIManager : MonoBehaviour
     public GameObject _dishObject;
     [SerializeField]
     StarFiller _star;
+    
+    [SerializeField]
+    bool _debugMode;
+    [SerializeField]
+    GameObject _debugDish;
+    [SerializeField]
+    float _debugStar;
 
     private void Start()
     {
-        //ShowScoreUI();
-        SetScores();
+        if (_debugMode)
+        {
+            _texts[0].text = 0.ToString();
+            _texts[1].text = 0.ToString();
+            _texts[2].text = 0.ToString();
+            _texts[3].text = 0.ToString();
+
+            Instantiate(_debugDish, _dish);
+        }
+        else
+        {
+            SetScores();
+        }
     }
 
     public void ShowScoreUI()
@@ -57,40 +75,44 @@ public class ResultUIManager : MonoBehaviour
         _foodsNum = ScoreManager.Instance.GetGetedFoodCount();
         _ngFoodsNum = ScoreManager.Instance.GetNGFoodCount();
         _score = ScoreManager.Instance.ScoreCalculation();
-
-        //Debug.Log(ScoreManager.Instance.GetTime());
-        //Debug.Log(ScoreManager.Instance.GetNGFoodCount());
-        //Debug.Log(ScoreManager.Instance.GetNGFoodCount());
-        //Debug.Log(_score);
     }
 
     public void StarFillStart()
     {
-        int i = ScoreManager.Instance.GetStar();
-        switch (i)
+        float i = 0;
+        if (_debugMode)
         {
-            case 2:
-                _star.StarFill(1);
-                break;
+            i = _debugStar;
+            _star.StarFill(i);
+        }
+        else
+        {
+            i = ScoreManager.Instance.GetStar();
+            switch (i)
+            {
+                case 2:
+                    _star.StarFill(1);
+                    break;
 
-            case 3:
-                _star.StarFill(1.5f);
-                break;
+                case 3:
+                    _star.StarFill(1.5f);
+                    break;
 
-            case 4:
-                _star.StarFill(2);
-                break;
+                case 4:
+                    _star.StarFill(2);
+                    break;
 
-            case 5:
-                _star.StarFill(2.5f);
-                break;
+                case 5:
+                    _star.StarFill(2.5f);
+                    break;
 
-            case 6:
-                _star.StarFill(3);
-                break;
+                case 6:
+                    _star.StarFill(3);
+                    break;
 
-            default:
-                break;
+                default:
+                    break;
+            }
         }
     }
 }
