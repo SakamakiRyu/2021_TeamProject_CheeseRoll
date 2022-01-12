@@ -1351,7 +1351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6d9949440ffb6478f106c5e499a825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
 --- !u!1 &7072109795087099702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1959,11 +1958,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 938476036756444889, guid: f9dc1e813d0f7a146899743836a037b4,
         type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 947
-      objectReference: {fileID: 0}
-    - target: {fileID: 938476036756444889, guid: f9dc1e813d0f7a146899743836a037b4,
-        type: 3}
       propertyPath: m_SizeDelta.y
       value: 289.1
       objectReference: {fileID: 0}
@@ -2001,16 +1995,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 938476036756444889, guid: f9dc1e813d0f7a146899743836a037b4,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 470.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 938476036756444889, guid: f9dc1e813d0f7a146899743836a037b4,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 141.4
       objectReference: {fileID: 0}
     - target: {fileID: 938476036756444889, guid: f9dc1e813d0f7a146899743836a037b4,
         type: 3}
