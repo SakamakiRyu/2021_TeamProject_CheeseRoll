@@ -4641,7 +4641,7 @@ PrefabInstance:
     - target: {fileID: 583005063473995340, guid: 3b63084223cf2ac48ab9782a16a21125,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.45
       objectReference: {fileID: 0}
     - target: {fileID: 583005063473995340, guid: 3b63084223cf2ac48ab9782a16a21125,
         type: 3}
@@ -5989,6 +5989,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -13.389999
       objectReference: {fileID: 0}
+    - target: {fileID: 3355808610197401421, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 0.46712804
+      objectReference: {fileID: 0}
     - target: {fileID: 3355808610940595374, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -6306,6 +6311,11 @@ PrefabInstance:
       propertyPath: _timeBorderAndScore.Array.data[4].border
       value: 57.6
       objectReference: {fileID: 0}
+    - target: {fileID: 3355808611323104439, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 0.46712804
+      objectReference: {fileID: 0}
     - target: {fileID: 3628133222460774961, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: field of view
@@ -6391,6 +6401,11 @@ PrefabInstance:
       propertyPath: _moveSpeed
       value: 6.75
       objectReference: {fileID: 0}
+    - target: {fileID: 7072109796263669266, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 0.46712804
+      objectReference: {fileID: 0}
     - target: {fileID: 7072109796263669267, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6435,6 +6450,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -30.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196011674341010866, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _volume
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85f54cc43e9e66d40857cfefdc4d7b11, type: 3}
@@ -18658,7 +18678,7 @@ PrefabInstance:
     - target: {fileID: 7923698867049576716, guid: a6b245fe182684147ac6ea22ee63cc93,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 350
+      value: 347.27
       objectReference: {fileID: 0}
     - target: {fileID: 7923698867049576716, guid: a6b245fe182684147ac6ea22ee63cc93,
         type: 3}
