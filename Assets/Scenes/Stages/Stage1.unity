@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 6e498724773bb6949ba097ed38c68d1b,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -526,7 +527,7 @@ PrefabInstance:
     - target: {fileID: 3660115953390433628, guid: b8b2ead96c4e49240a17b0e377594049,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3660115953390433628, guid: b8b2ead96c4e49240a17b0e377594049,
         type: 3}
@@ -600,7 +601,7 @@ PrefabInstance:
     - target: {fileID: 3102586277133041389, guid: c8d7e0dc6b37ff0479c967e9f1a82844,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3102586277133041389, guid: c8d7e0dc6b37ff0479c967e9f1a82844,
         type: 3}
@@ -1211,7 +1212,7 @@ PrefabInstance:
     - target: {fileID: 3660115953390433628, guid: b8b2ead96c4e49240a17b0e377594049,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3660115953390433628, guid: b8b2ead96c4e49240a17b0e377594049,
         type: 3}
@@ -1958,7 +1959,7 @@ PrefabInstance:
     - target: {fileID: 3102586277133041389, guid: c8d7e0dc6b37ff0479c967e9f1a82844,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3102586277133041389, guid: c8d7e0dc6b37ff0479c967e9f1a82844,
         type: 3}
@@ -4377,7 +4378,7 @@ PrefabInstance:
     - target: {fileID: 3660115953390433628, guid: b8b2ead96c4e49240a17b0e377594049,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3660115953390433628, guid: b8b2ead96c4e49240a17b0e377594049,
         type: 3}
@@ -4692,6 +4693,91 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 589626915}
     m_Modifications:
+    - target: {fileID: 3138144382175689496, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3138144382175689496, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3138144382175689496, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3138144382175689496, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499633901621814839, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499633901621814839, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499633901621814839, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499633901621814839, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3960925001172143911, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3960925001172143911, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3960925001172143911, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3960925001172143911, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049340781144791525, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049340781144791525, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049340781144791525, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049340781144791525, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4510097954427117226, guid: a6b245fe182684147ac6ea22ee63cc93,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6026666372693734723, guid: a6b245fe182684147ac6ea22ee63cc93,
         type: 3}
       propertyPath: m_Name
@@ -5198,7 +5284,7 @@ PrefabInstance:
     - target: {fileID: 3102586277133041389, guid: c8d7e0dc6b37ff0479c967e9f1a82844,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3102586277133041389, guid: c8d7e0dc6b37ff0479c967e9f1a82844,
         type: 3}
