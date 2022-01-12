@@ -5540,7 +5540,7 @@ PrefabInstance:
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _burntScore
-      value: -50
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
