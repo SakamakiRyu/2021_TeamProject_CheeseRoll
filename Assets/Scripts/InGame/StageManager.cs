@@ -75,6 +75,9 @@ public class StageManager : MonoBehaviour
         if (_state == StageState.GameOver) return;
         AudioManager.Instance.PlaySE(AudioManager.SEtype.CheeseMelted);
         AudioManager.Instance.PlayME(AudioManager.METype.GameOver);
+        Cheese.Instance.HideModel();
+        EffectManager.Instance.PlayEffect(EffectManager.EffectType.Death01, Cheese.Instance.transform.position);
+        EffectManager.Instance.PlayEffect(EffectManager.EffectType.Death02, Cheese.Instance.transform.position);
         _state = StageState.GameOver;
         StopStage();
         _onGameOver.Invoke();
