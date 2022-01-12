@@ -96,3 +96,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isRotate: 1
   _rotateSpeed: 0.5
+  _isSmokeEffect: 1
