@@ -2028,18 +2028,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 938476037524085233, guid: f9dc1e813d0f7a146899743836a037b4,
         type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 727.9656
-      objectReference: {fileID: 0}
-    - target: {fileID: 938476037524085233, guid: f9dc1e813d0f7a146899743836a037b4,
-        type: 3}
       propertyPath: m_SizeDelta.y
       value: 289
-      objectReference: {fileID: 0}
-    - target: {fileID: 938476037524085233, guid: f9dc1e813d0f7a146899743836a037b4,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 583.0172
       objectReference: {fileID: 0}
     - target: {fileID: 938476037524085233, guid: f9dc1e813d0f7a146899743836a037b4,
         type: 3}
