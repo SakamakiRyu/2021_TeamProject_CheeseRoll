@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2109,7 +2109,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690898831}
-  m_LocalRotation: {x: -0.32016784, y: -0.51331156, z: -0.21430995, w: 0.7668606}
+  m_LocalRotation: {x: -0.32016784, y: -0.5133115, z: -0.21430995, w: 0.7668606}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4752,7 +4752,7 @@ MonoBehaviour:
   - {fileID: 159652713}
   - {fileID: 205995335}
   - {fileID: 114008438}
-  _debugMode: 1
+  _debugMode: 0
   _debugFood: {fileID: 421045152291318733, guid: 335658df7a338a74b86142d7ad68db28,
     type: 3}
 --- !u!4 &1759234392 stripped
@@ -4805,7 +4805,7 @@ MonoBehaviour:
   _dishObject: {fileID: 421045152291318733, guid: 335658df7a338a74b86142d7ad68db28,
     type: 3}
   _star: {fileID: 553963515}
-  _debugMode: 1
+  _debugMode: 0
   _debugDish: {fileID: 6859034727193956214, guid: 1c54f223ba5bd9940930c4104428c967,
     type: 3}
   _debugStar: 2.5
