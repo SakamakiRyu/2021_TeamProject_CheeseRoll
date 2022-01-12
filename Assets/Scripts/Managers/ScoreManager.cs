@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
 /// <summary>
 /// スコアの管理を行う
@@ -15,8 +14,7 @@ public class ScoreManager : MonoBehaviour
 
     public Score ScoreStructure;
 
-    [SerializeField] Text text;
-
+  
     private void Awake()
     {
         MakeSingle();
@@ -244,13 +242,10 @@ public class ScoreManager : MonoBehaviour
     {
         return ScoreStructure.BurntFoodCount;
     }
-    public int GetHighScore() 
+    public int GetHighScore(string stageName) 
     {
       
-        return PlayerPrefs.GetInt($"{ScoreStructure.StageName}");
+        return PlayerPrefs.GetInt($"{stageName}");
     } 
-    public void A()
-    {
-        text.text = PlayerPrefs.GetInt(ScoreStructure.StageName).ToString();
-    }
+   
 }

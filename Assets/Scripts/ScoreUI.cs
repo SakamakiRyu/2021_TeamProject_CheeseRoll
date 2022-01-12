@@ -20,6 +20,7 @@ public class ScoreUI : MonoBehaviour
 
     [SerializeField] Animation _completeDishUi;
     [SerializeField] Image _completeDishImage;
+    [SerializeField] Sprite[] _curentStageCompleteDishSprite;
     int _completeDishIndex;
     private void Start()
     {
@@ -45,12 +46,12 @@ public class ScoreUI : MonoBehaviour
         {
             _foods.Add(Instantiate(_foodImage, _foodPanelUi.transform));
             _foods[i].GetComponent<Image>().sprite = _foodSprite[Array.IndexOf(_foodSpriteItemNames, ScoreManager.Instance.ScoreStructure.FoodsList[i])];
-            _foods[i].name= ScoreManager.Instance.ScoreStructure.FoodsList[i];
+            _foods[i].name = ScoreManager.Instance.ScoreStructure.FoodsList[i];
         }
 
         _foods.Add(Instantiate(_foodImage, _foodPanelUi.transform));
         _foods[ScoreManager.Instance.ScoreStructure.FoodsList.Length].name = "BurntFood";
-        _foods[ScoreManager.Instance.ScoreStructure.FoodsList.Length].GetComponent<Image>().sprite = _foodSprite[Array.IndexOf(_foodSpriteItemNames, "Chile")];
+        _foods[ScoreManager.Instance.ScoreStructure.FoodsList.Length].GetComponent<Image>().sprite = _foodSprite[Array.IndexOf(_foodSpriteItemNames, "Chili")];
     }
     /// <summary>
     /// Šl“¾‚µ‚½HÞ‚ÌUI‚É”½‰f‚·‚é
@@ -77,19 +78,19 @@ public class ScoreUI : MonoBehaviour
     {
         if (ScoreManager.Instance.ScoreStructure.FoodsNums.All(x => x >= 1) && _completeDishIndex == 0)//‚à‚µ1ƒZƒbƒg‘µ‚Á‚Ä‚½‚ç
         {
-            _completeDishImage.color = Color.black;
+            _completeDishImage.sprite = _curentStageCompleteDishSprite[_completeDishIndex];
             _completeDishUi.Play();
             _completeDishIndex++;
         }
         else if (ScoreManager.Instance.ScoreStructure.FoodsNums.All(x => x >= 2) && _completeDishIndex == 1)
         {
-            _completeDishImage.color = Color.red;
+            _completeDishImage.sprite = _curentStageCompleteDishSprite[_completeDishIndex];
             _completeDishUi.Play();
             _completeDishIndex++;
         }
         else if (ScoreManager.Instance.ScoreStructure.FoodsNums.All(x => x == 3) && _completeDishIndex == 2)
         {
-            _completeDishImage.color = Color.blue;
+            _completeDishImage.sprite = _curentStageCompleteDishSprite[_completeDishIndex];
             _completeDishUi.Play();
         }
     }
