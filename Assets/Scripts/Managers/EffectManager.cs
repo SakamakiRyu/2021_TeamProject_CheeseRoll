@@ -30,7 +30,7 @@ public class EffectManager : MonoBehaviour
     [Header("EffectType‚Ìenum‚Æ“¯‚¶‡”Ô‚É“ü‚ê‚Ä‚­‚¾‚³‚¢")]
     [SerializeField]
     private GameObject[] _effectPrefabs;
-    private int[] _effectVibrationLength = new int[] { 25, 25, 100, 0, 100, 250, 0};
+    private int[] _effectVibrationLength = new int[] { 50, 50, 100, 0, 100, 250, 0};
     private float[] _effectCameraShakePower = new float[] { 0, 0, 0.2f, 0, 0.2f, 0.1f, 0};
     
 
