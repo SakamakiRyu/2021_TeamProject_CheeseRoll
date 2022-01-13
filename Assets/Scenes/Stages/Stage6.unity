@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4581,19 +4581,19 @@ PrefabInstance:
         type: 3}
       propertyPath: _dishesObject.Array.data[0]
       value: 
-      objectReference: {fileID: 919132149155446097, guid: f1f0e0455aac1b84d88b27dcfa55afd9,
+      objectReference: {fileID: 4006388300632047979, guid: 78d1f3ec244393946904a233b3ef5849,
         type: 3}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _dishesObject.Array.data[1]
       value: 
-      objectReference: {fileID: 919132149155446097, guid: aa7018ce34071b24a875c273ce6cba98,
+      objectReference: {fileID: 6908218828222059209, guid: 4b5a55be41ec6a34dba3bf8f20f9e5e0,
         type: 3}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _dishesObject.Array.data[2]
       value: 
-      objectReference: {fileID: 919132149155446097, guid: 40741d16474b76545b1e88012966d212,
+      objectReference: {fileID: 6085768363066656943, guid: eeb952b914ad420468c6df4f6810af88,
         type: 3}
     - target: {fileID: 3355808611143427784, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
@@ -4795,6 +4795,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7df01a663c7657742922e1b11c554634,
+        type: 3}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: fbc566cb474c9664d94876e7d190f5c6,
+        type: 3}
+    - target: {fileID: 5018806379936643540, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
+        type: 3}
+      propertyPath: _curentStageCompleteDishSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 37ad5a939733e4d448a5fe07cb8846c3,
+        type: 3}
     - target: {fileID: 7072109795746733017, guid: 85f54cc43e9e66d40857cfefdc4d7b11,
         type: 3}
       propertyPath: _chaseSpeed
