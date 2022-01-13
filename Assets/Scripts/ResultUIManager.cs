@@ -62,7 +62,7 @@ public class ResultUIManager : MonoBehaviour
         float time = 0;
         while (time < countUpTime)
         {
-            int temp = (int)Random.RandomRange(0, _score);
+            int temp = Random.RandomRange(0, 100);
             _texts[3].text = temp.ToString();
             time += Time.deltaTime;
             yield return null;
