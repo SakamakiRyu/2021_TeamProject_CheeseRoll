@@ -22,7 +22,7 @@ public class ResultUIManager : MonoBehaviour
     public GameObject _dishObject;
     [SerializeField]
     StarFiller _star;
-    
+
     [SerializeField]
     bool _debugMode;
     [SerializeField]
@@ -50,6 +50,22 @@ public class ResultUIManager : MonoBehaviour
     public void ShowScoreUI()
     {
         scoreUIPanel.SetActive(true);
+        StartCoroutine(ScoreCountUp());
+    }
+
+    IEnumerator ScoreCountUp()
+    {
+        int temp = 0;
+        while (temp < _score)
+        {
+            _texts[3].text = temp.ToString();
+            yield return null;
+            temp++;
+            if (temp == _score)
+            {
+                break;
+            }
+        }
     }
 
     void SetScores()
@@ -59,7 +75,7 @@ public class ResultUIManager : MonoBehaviour
         _texts[0].text = _clearTime.ToString();
         _texts[1].text = _foodsNum.ToString();
         _texts[2].text = _ngFoodsNum.ToString();
-        _texts[3].text = _score.ToString();
+        _texts[3].text = 0.ToString();
 
         _dishObject = ScoreManager.Instance.GetDish();
 
