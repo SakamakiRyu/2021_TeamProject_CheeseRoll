@@ -10,6 +10,10 @@ public class SceneLoaderWithButton : MonoBehaviour
 
     public void Load(string sceneName)
     {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySE(AudioManager.SEtype.CancelButton);
+        }
         UnityEngine.UI.Button button = GetComponent<UnityEngine.UI.Button>();
         button.interactable = false;
         StartCoroutine(WaitFade(sceneName));
@@ -18,6 +22,11 @@ public class SceneLoaderWithButton : MonoBehaviour
     IEnumerator WaitFade(string scene)
     {
         yield return new WaitForSeconds(_fadeTiming);
-        SceneManager.Instance.GoNextScene("NewStageSelect");
+        if (scene == "Retry")
+        {
+            scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        }
+        SceneManager.Instance.GoNextScene(scene);
+
     }
 }

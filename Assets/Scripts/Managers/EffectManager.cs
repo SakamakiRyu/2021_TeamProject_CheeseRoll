@@ -15,6 +15,11 @@ public class EffectManager : MonoBehaviour
     {
         GetItem,
         Cure,
+        HitObstacle,
+        Death01,
+        Death02,
+        Goal,
+        Smoke
     }
 
     public static EffectManager Instance { get; private set; }
@@ -25,6 +30,8 @@ public class EffectManager : MonoBehaviour
     [Header("EffectTypeのenumと同じ順番に入れてください")]
     [SerializeField]
     private GameObject[] _effectPrefabs;
+    private int[] _effectVibrationLength = new int[] { 50, 50, 100, 0, 100, 250, 0};
+    private float[] _effectCameraShakePower = new float[] { 0, 0, 0.2f, 0, 0.2f, 0.1f, 0};
     
 
     private void Awake()
@@ -63,8 +70,21 @@ public class EffectManager : MonoBehaviour
 
     public GameObject PlayEffect(EffectType type, Vector3? localPosition = null, Transform parent = null)
     {
+        int index = (int)type;
+        //バイブレーション
+        if (_effectVibrationLength[index] != 0)
+        {
+            VibrationManager.Vibration(_effectVibrationLength[index]);
+        }
+        //カメラシェイク
+        if (_effectCameraShakePower[index] != 0f)
+        {
+            float a = _effectCameraShakePower[index];
+            PlayCameraShake(new Vector3(a, a, a));
+        }
+        //エフェクト生成
         Vector3 pos = localPosition ?? Vector3.zero;
-        GameObject effect = Instantiate(_effectPrefabs[(int)type]);
+        GameObject effect = Instantiate(_effectPrefabs[index]);
         effect.transform.parent = parent;
         effect.transform.localPosition = pos;
         return effect;

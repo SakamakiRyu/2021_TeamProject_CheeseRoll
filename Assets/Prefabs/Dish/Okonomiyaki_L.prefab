@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isRotate: 1
   _rotateSpeed: 0.5
+  _isSmokeEffect: 1
 --- !u!1001 &4006388301462607838
 PrefabInstance:
   m_ObjectHideFlags: 0

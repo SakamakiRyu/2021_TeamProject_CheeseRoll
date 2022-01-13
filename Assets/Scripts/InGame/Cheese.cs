@@ -24,7 +24,10 @@ public class Cheese : MonoBehaviour
     float _zPosition = -1f;
     [SerializeField]
     Animator _animator;
+    [SerializeField]
+    MeshRenderer _renderer;
 
+    bool _isHIde = false;
     CheeseCollisionChecker _collisionChecker;
 
     BurningCheese _burningCheese;
@@ -33,6 +36,8 @@ public class Cheese : MonoBehaviour
     public float ZPosition => _zPosition;
     public float HP => _hp;
     public float MaxHp => _maxHp;
+    public Animator Animator => _animator;
+    public bool IsHide => _isHIde;
 
     float _speed = 0;
 
@@ -89,6 +94,8 @@ public class Cheese : MonoBehaviour
             {
                 nomal = chip.WallVector;
                 bai = nomal.y / nomal.z;
+                //ついでに自身の角度も変更しておく
+                _collisionChecker.TrailLookAt = Quaternion.LookRotation(chip.WallVector, Vector3.up);
             }
             Vector3 velocity = _rigidbody.velocity;
             velocity.z = _speed;
@@ -172,5 +179,14 @@ public class Cheese : MonoBehaviour
             _hp = 100;
         }
         UpdateSize();
+    }
+
+    /// <summary>
+    /// チーズくんのモデルを非表示にする
+    /// </summary>
+    public void HideModel()
+    {
+        _isHIde = true;
+        _renderer.enabled = false;
     }
 }

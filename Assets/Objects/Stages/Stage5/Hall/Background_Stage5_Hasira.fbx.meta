@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: accb5b48dad641f4ea9eed4e1db1a8f0
+guid: 833b08568a0f0ee47acf3ed1ed425e81
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MT_Background_Stage5_Hall
-    second: {fileID: 2100000, guid: 7991ede914e28a74095583bdd78ef70e, type: 2}
+      name: MT_Stage5
+    second: {fileID: 2100000, guid: 63914acefd4defb4aa8af608c605c618, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -34,10 +34,17 @@ public class SceneManager : MonoBehaviour
     private bool _toGameImmediately;
 
     [SerializeField]
+    private bool _noLoadTitleOnStart = false;
+
+    [SerializeField]
     private string _immediatelySceneName = "Game";
 
     private void StartTitle()
     {
+        if (_noLoadTitleOnStart)
+        {
+            return;
+        }
         if (_toGameImmediately == true)
         {
             GoNextScene(_immediatelySceneName);
@@ -68,6 +75,15 @@ public class SceneManager : MonoBehaviour
             case "NewStageSelect":
                 {
                     AudioManager.Instance.PlayBGM(AudioManager.BGMtype.StageSelect);
+                    isChengeBGM = true;
+                    break;
+                }
+
+            case "Result":
+                {
+                    AudioManager.Instance.PlaySE(AudioManager.SEtype.Fall);
+                    AudioManager.Instance.PlayBGM(AudioManager.BGMtype.Result);
+                    AudioManager.Instance.StopSound(AudioManager.Type.SE);
                     isChengeBGM = true;
                     break;
                 }

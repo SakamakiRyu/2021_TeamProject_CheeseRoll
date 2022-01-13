@@ -19,8 +19,8 @@ public class HittableObject : MonoBehaviour
 
     [Space]
     //[Header("ステージ３などの偽物の食べ物の場合は、ObjectTypeを 「シーン上」 で Fake にしてください")]
-    [Header("ObjectTypeを 「シーン上」 で Fake にしてください")]
-    [Header("ステージ３などの偽物の食べ物の場合は、")]
+    //[Header("ObjectTypeを 「シーン上」 で Fake にしてください")]
+    //[Header("ステージ３などの偽物の食べ物の場合は、")]
 
     [SerializeField] string _name;
 
@@ -56,7 +56,7 @@ public class HittableObject : MonoBehaviour
             _hitObj = other.gameObject;
 
             _onItemPickup.Invoke();
-            PlayEffect();
+            PlayEffect(other);
 
             //DebugItem1();
 
@@ -64,25 +64,30 @@ public class HittableObject : MonoBehaviour
         }
     }
 
-    private void PlayEffect()
+    private void PlayEffect(Collider other)
     {
         switch (_objectType)
         {
             case HittableObjectType.Food:
-                EffectManager.Instance?.PlayEffect(EffectManager.EffectType.GetItem, this.transform.position);
+                var e = EffectManager.Instance?.PlayEffect(EffectManager.EffectType.GetItem, Vector3.zero, Cheese.Instance?.Animator.transform ?? null);
+                e.GetComponent<ParticleSystem>()?.Play();
                 AudioManager.Instance.PlaySE(AudioManager.SEtype.IngredientsAcquired);
                 break;
             case HittableObjectType.DropOfWater:
-                EffectManager.Instance?.PlayEffect(EffectManager.EffectType.Cure, this.transform.position);
+                var f = EffectManager.Instance?.PlayEffect(EffectManager.EffectType.Cure, Vector3.zero, Cheese.Instance?.Animator.transform ?? null);
+                f.GetComponent<ParticleSystem>()?.Play();
+                AudioManager.Instance.PlaySE(AudioManager.SEtype.RecoveryItem);
                 break;
             case HittableObjectType.Recoverey:
-                EffectManager.Instance?.PlayEffect(EffectManager.EffectType.Cure, this.transform.position);
+                var g = EffectManager.Instance?.PlayEffect(EffectManager.EffectType.Cure, Vector3.zero, Cheese.Instance?.Animator.transform ?? null);
+                g.GetComponent<ParticleSystem>()?.Play();
                 AudioManager.Instance.PlaySE(AudioManager.SEtype.RecoveryItem);
                 break;
             case HittableObjectType.RedHeat:
                 AudioManager.Instance.PlaySE(AudioManager.SEtype.BlowTheFire);
                 break;
             case HittableObjectType.Burn:
+                AudioManager.Instance.PlaySE(AudioManager.SEtype.BurntIngredientsAcquired);
                 break;
             case HittableObjectType.HittableObject:
                 break;
@@ -120,10 +125,11 @@ public class HittableObject : MonoBehaviour
     /// </summary>
     public void EndBurning()
     {
-        if (_objectType == HittableObjectType.DropOfWater)
-        {
-            _hitObj.GetComponent<BurningCheese>().EndBurn("Water");
-        }
+        _hitObj.GetComponent<BurningCheese>().EndBurn("Water");
+        //if (_objectType == HittableObjectType.DropOfWater)
+        //{
+            
+        //}
     }
 
     /// <summary>

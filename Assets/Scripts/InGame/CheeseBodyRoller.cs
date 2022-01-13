@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class CheeseBodyRoller : MonoBehaviour
 {
+    [SerializeField]
     Transform body;
 
-    private void Awake()
-    {
-        body = transform.GetChild(0);
-    }
 
     private void LateUpdate()
     {

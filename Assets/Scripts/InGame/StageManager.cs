@@ -74,6 +74,12 @@ public class StageManager : MonoBehaviour
     {
         if (_state == StageState.GameOver) return;
         AudioManager.Instance.PlaySE(AudioManager.SEtype.CheeseMelted);
+        AudioManager.Instance.PlayME(AudioManager.METype.GameOver);
+        Cheese.Instance.HideModel();
+        GameObject e =  EffectManager.Instance.PlayEffect(EffectManager.EffectType.Death01, Cheese.Instance.transform.position);
+        e.GetComponent<ParticleSystem>()?.Play();
+        e = EffectManager.Instance.PlayEffect(EffectManager.EffectType.Death02, Cheese.Instance.transform.position);
+        e.GetComponent<ParticleSystem>()?.Play();
         _state = StageState.GameOver;
         StopStage();
         _onGameOver.Invoke();
@@ -159,7 +165,8 @@ public class StageManager : MonoBehaviour
         _stageMover.MoveStop();
         _roadMaker.NowPlay = false;
         _onGameClear.Invoke();
-        _testResultButton?.SetActive(true);
+        AudioManager.Instance.PlayME(AudioManager.METype.Goal);
+        //_testResultButton?.SetActive(true);
     }
 
     public void ScoreInit()
@@ -181,7 +188,8 @@ public class StageManager : MonoBehaviour
             burntScore: _burntScore,
             fakeScore: _burntScore,
             new float[] { _dish0Score, _dish1Score, _dish2Score, _dish3Score },
-            new float[] { _star15Score, _star20Score, _star25Score, _star30Score });
+            new float[] { _star15Score, _star20Score, _star25Score, _star30Score },
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
 
         _scoreUI.ScoreUiSetup();
 
@@ -203,7 +211,7 @@ public class StageManager : MonoBehaviour
     {
         _fader.FadeIn();
         yield return new WaitForSeconds(1.0f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Result");
+        SceneManager.Instance.GoNextScene("Result");
     }
 }
 

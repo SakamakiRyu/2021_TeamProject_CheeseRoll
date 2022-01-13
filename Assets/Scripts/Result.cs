@@ -43,6 +43,7 @@ public class Result : MonoBehaviour
     /// </summary>
     public void ScoreAnimStart()
     {
+        AudioManager.Instance.PlaySE(AudioManager.SEtype.ResultScore);
         StartCoroutine(ScoreAnim());
     }
     /// <summary>
@@ -63,7 +64,7 @@ public class Result : MonoBehaviour
     }
     IEnumerator evaluationAnim()
     {
-       
+
         if (EvaluationScore[4] <= _scoreValue)
         {
             yield return new WaitForSeconds(1.0f);

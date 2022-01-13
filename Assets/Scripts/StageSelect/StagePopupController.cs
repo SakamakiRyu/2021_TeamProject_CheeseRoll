@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class StagePopupController : MonoBehaviour
 {
-    [SerializeField] string[] _texts;
+    [SerializeField] Sprite[] _PressedSprites;
     [SerializeField] Sprite[] _sprites;
-    [SerializeField] Text _stageText;
-    [SerializeField] Image _stageImage;
+    [SerializeField] Button _stageButton;
     Animator _anim;
     bool _isPop;
+
+    SpriteState _state = new SpriteState();
 
     private void Start()
     {
@@ -24,12 +25,15 @@ public class StagePopupController : MonoBehaviour
         {
             PopUp(0);
         }
+        _state = _stageButton.spriteState;
     }
 
     public void PopUp(int id)
     {
-        _stageText.text = _texts[id];
-        _stageImage.sprite = _sprites[id];
+        _state = _stageButton.spriteState;
+        _stageButton.image.sprite = _sprites[id];
+        _state.pressedSprite = _PressedSprites[id];
+        _stageButton.spriteState = _state;
         if (!_isPop)
         {
             _anim.SetTrigger("In");
