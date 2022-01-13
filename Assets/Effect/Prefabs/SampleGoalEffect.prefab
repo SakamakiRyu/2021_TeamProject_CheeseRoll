@@ -43,7 +43,7 @@ PrefabInstance:
     - target: {fileID: 1161147070344290461, guid: c414873ffca2312418a493637fc6d761,
         type: 3}
       propertyPath: looping
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1161147070344290461, guid: c414873ffca2312418a493637fc6d761,
         type: 3}
@@ -63,7 +63,7 @@ PrefabInstance:
     - target: {fileID: 3279994642670860568, guid: c414873ffca2312418a493637fc6d761,
         type: 3}
       propertyPath: looping
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3279994642670860568, guid: c414873ffca2312418a493637fc6d761,
         type: 3}

@@ -120,38 +120,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7305128230152358593}
     m_Modifications:
-    - target: {fileID: 2088209671, guid: 69d78e246964aa14686e26380a254b21, type: 3}
-      propertyPath: looping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2088209671, guid: 69d78e246964aa14686e26380a254b21, type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2088209671, guid: 69d78e246964aa14686e26380a254b21, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8520018214128196754, guid: 69d78e246964aa14686e26380a254b21,
-        type: 3}
-      propertyPath: looping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8520018214164586709, guid: 69d78e246964aa14686e26380a254b21,
-        type: 3}
-      propertyPath: looping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8520018214164586709, guid: 69d78e246964aa14686e26380a254b21,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8520018215172278549, guid: 69d78e246964aa14686e26380a254b21,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8520018215172278551, guid: 69d78e246964aa14686e26380a254b21,
         type: 3}
       propertyPath: m_Name
