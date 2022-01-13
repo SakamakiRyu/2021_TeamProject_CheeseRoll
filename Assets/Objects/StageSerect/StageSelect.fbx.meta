@@ -3,12 +3,7 @@ guid: fba5623b826deb74fb41acde0efa33ed
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MT_Stageselect
-    second: {fileID: 2100000, guid: 233b158a3c57e7a48b04cc999150c18b, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
