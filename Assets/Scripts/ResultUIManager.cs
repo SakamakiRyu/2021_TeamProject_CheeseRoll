@@ -49,6 +49,7 @@ public class ResultUIManager : MonoBehaviour
 
     public void ShowScoreUI()
     {
+        Debug.Log(_score);
         scoreUIPanel.SetActive(true);
         StartCoroutine(ScoreCountUp());
     }
@@ -58,9 +59,9 @@ public class ResultUIManager : MonoBehaviour
         int temp = 0;
         while (temp < _score)
         {
-            _texts[3].text = temp.ToString();
             yield return null;
             temp++;
+            _texts[3].text = temp.ToString();
             if (temp == _score)
             {
                 break;
