@@ -11,6 +11,7 @@ public class GoalGateOpenTrigger : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             _animator.CrossFadeInFixedTime("OPEN", 0.25f);
+            Debug.Log("gateOpen");
         }
     }
 }
