@@ -22,6 +22,9 @@ public class CheeseCollisionChecker : MonoBehaviour
     [SerializeField]
     ParticleSystem runEffectTrail;
 
+    [SerializeField]
+    ParticleSystem endRunEffectTrail;
+
     private void FixedUpdate()
     {
         _timer -= Time.deltaTime;
@@ -49,6 +52,7 @@ public class CheeseCollisionChecker : MonoBehaviour
     }
 
     float timer;
+    float timer2;
     private void EffectUpdate()
     {
         var main = runEffectTrail.main;
@@ -59,7 +63,7 @@ public class CheeseCollisionChecker : MonoBehaviour
         runEffectTrail.transform.localScale = this.transform.localScale;
         runEffectBase.transform.localScale = this.transform.localScale;
 
-        if (_isCollisionPre && (!Cheese.Instance?.IsHide ?? false))
+        if (_isCollisionPre && (!Cheese.Instance?.IsHide ?? false) && (StageManager.Instance?.State == StageManager.StageState.InGame))
         {
             var e = runEffectTrail.emission;
             e.enabled = true;
@@ -75,6 +79,28 @@ public class CheeseCollisionChecker : MonoBehaviour
                 e.enabled = false;
                 runEffectBase.gameObject.SetActive(false);
                 timer = 0;
+            }
+        }
+
+        //ゲームクリア後のゲートまで転がる時のエフェクト
+        runEffectTrail.transform.localScale = this.transform.localScale;
+        runEffectBase.transform.localScale = this.transform.localScale;
+        if ((StageManager.Instance?.State == StageManager.StageState.EndGame) && _isCollisionPre)
+        {
+            var e = endRunEffectTrail.emission;
+            e.enabled = true;
+            //endRunEffectBase.gameObject.SetActive(true);
+            timer2 = 0.25f;
+        }
+        else
+        {
+            timer2 -= Time.fixedDeltaTime;
+            if (timer2 < 0)
+            {
+                var e = endRunEffectTrail.emission;
+                e.enabled = false;
+                //endRunEffectBase.gameObject.SetActive(false);
+                timer2 = 0;
             }
         }
     }
