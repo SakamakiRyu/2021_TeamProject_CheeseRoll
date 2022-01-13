@@ -164,7 +164,7 @@ public class StageSelectPlayerCon : MonoBehaviour
             if (timer > 2)
             {
                 //TIPSを表示
-                _tips[_visIndex].gameObject.SetActive(true);
+                _tips[_index].gameObject.SetActive(true);
                 _nowLoading.gameObject.SetActive(true);
                 _loadRoll.gameObject.SetActive(true);
 
