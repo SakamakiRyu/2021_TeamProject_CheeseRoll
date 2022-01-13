@@ -33,6 +33,7 @@ public class StageSelectPlayerCon : MonoBehaviour
 
     private float _startTime, distance;
 
+    private bool _basebool = true;
     private bool _ismove;
 
     int _visIndex;
@@ -54,53 +55,56 @@ public class StageSelectPlayerCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log(_index);
-        if (!_ismove)
+        if (_basebool)
         {
-            Debug.Log("not ismove");
-            if (Input.GetButtonUp("Fire1"))
+            // Debug.Log(_index);
+            if (!_ismove)
             {
-                AudioManager.Instance.PlaySE(AudioManager.SEtype.Button01);
-
-                if (Input.mousePosition.x > Screen.width / 2 && Input.mousePosition.y > (Screen.height / 3) * 1)
+                Debug.Log("not ismove");
+                if (Input.GetButtonUp("Fire1"))
                 {
-                    
-                    if (_index < _stageTarget.Length - 1)
-                    {
-                        _index++;
-                        StageSelectPlayerAnimationController.Instance.OnMove(StageSelectPlayerAnimationController.Move.Right);
-                        vec.x = _speed;
-                        Debug.Log(_index);
+                    AudioManager.Instance.PlaySE(AudioManager.SEtype.Button01);
 
-                    }
-                    _ismove = true;
-                }
-                else if ((Input.mousePosition.x <= Screen.width / 2 && Input.mousePosition.y > (Screen.height / 3) * 1))
-                {
-                    
-                    if (_index > 0)
+                    if (Input.mousePosition.x > Screen.width / 2 && Input.mousePosition.y > (Screen.height / 3) * 1)
                     {
-                        _index--;
-                        StageSelectPlayerAnimationController.Instance.OnMove(StageSelectPlayerAnimationController.Move.Left);
-                        vec.x = -_speed;
-                        Debug.Log(_index);
-                        
+
+                        if (_index < _stageTarget.Length - 1)
+                        {
+                            _index++;
+                            StageSelectPlayerAnimationController.Instance.OnMove(StageSelectPlayerAnimationController.Move.Right);
+                            vec.x = _speed;
+                            Debug.Log(_index);
+
+                        }
+                        _ismove = true;
                     }
-                    _ismove = true;
+                    else if ((Input.mousePosition.x <= Screen.width / 2 && Input.mousePosition.y > (Screen.height / 3) * 1))
+                    {
+
+                        if (_index > 0)
+                        {
+                            _index--;
+                            StageSelectPlayerAnimationController.Instance.OnMove(StageSelectPlayerAnimationController.Move.Left);
+                            vec.x = -_speed;
+                            Debug.Log(_index);
+
+                        }
+                        _ismove = true;
+                    }
                 }
-            }
-        }
-        else
-        {
-            if (Vector3.Distance(transform.position, _stageTarget[_index].transform.position) > 0.25)
-            {
-                //_progress += _speed * Time.deltaTime;
-                transform.position += vec * Time.deltaTime;
-                // Debug.Log(_stageTarget[_index].transform.position);
             }
             else
             {
-                _ismove = false;
+                if (Vector3.Distance(transform.position, _stageTarget[_index].transform.position) > 0.25)
+                {
+                    //_progress += _speed * Time.deltaTime;
+                    transform.position += vec * Time.deltaTime;
+                    // Debug.Log(_stageTarget[_index].transform.position);
+                }
+                else
+                {
+                    _ismove = false;
+                }
             }
         }
         if (_index == 0)
@@ -140,7 +144,7 @@ public class StageSelectPlayerCon : MonoBehaviour
         Debug.Log("test");
         //todo
         //後ろに下がる
-        //フェードのアニメ
+        //フェードのアニメ  
         StageSelectPlayerAnimationController.Instance.OnMove(StageSelectPlayerAnimationController.Move.Instage);
     }
     public void NextSene()
@@ -175,5 +179,11 @@ public class StageSelectPlayerCon : MonoBehaviour
             }
             yield return null;
         }    
+    }
+    public void Ismove()
+    {
+        _basebool = false;
+        Vector3 pos = transform.position;
+        
     }
 }
