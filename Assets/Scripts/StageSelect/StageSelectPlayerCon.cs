@@ -27,6 +27,10 @@ public class StageSelectPlayerCon : MonoBehaviour
     GameObject[] _stageTarget;
     int _index = 0;
 
+    [SerializeField]
+    public GameObject _botan_right;
+    public GameObject _botan_left;
+
     private float _startTime, distance;
 
     private bool _ismove;
@@ -67,7 +71,7 @@ public class StageSelectPlayerCon : MonoBehaviour
                         StageSelectPlayerAnimationController.Instance.OnMove(StageSelectPlayerAnimationController.Move.Right);
                         vec.x = _speed;
                         Debug.Log(_index);
-                        
+
                     }
                     _ismove = true;
                 }
@@ -98,6 +102,22 @@ public class StageSelectPlayerCon : MonoBehaviour
             {
                 _ismove = false;
             }
+        }
+        if (_index == 0)
+        {
+            _botan_left.gameObject.SetActive(false);
+        }
+        else
+        {
+            _botan_left.gameObject.SetActive(true);
+        }
+        if (_index == _stageTarget.Length - 1)
+        {
+            _botan_right.gameObject.SetActive(false);
+        }
+        else
+        {
+            _botan_right.gameObject.SetActive(true);
         }
     }
     public void OnTriggerEnter(Collider collision)
@@ -135,6 +155,8 @@ public class StageSelectPlayerCon : MonoBehaviour
     {
         float timer = 0;
         _fade.FadeIn();
+        Destroy(_botan_left.gameObject);
+        Destroy(_botan_right.gameObject);
         while (true)
         {
             transform.position += _direction * _speed * Time.deltaTime;
