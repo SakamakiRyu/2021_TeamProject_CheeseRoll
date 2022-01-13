@@ -40,6 +40,8 @@ public class UpDownByFinger : MonoBehaviour
 
     private RoadMaker _maker;
 
+    public bool IsReverse => _isReverse;
+
     private void Awake()
     {
         if (!_targetTransform)
