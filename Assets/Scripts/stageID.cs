@@ -15,6 +15,8 @@ public class stageID : MonoBehaviour
         four,
         five,
         six,
+        seven,
+        eight,
     }
 
 
