@@ -22,6 +22,8 @@ public class ResultUIManager : MonoBehaviour
     public GameObject _dishObject;
     [SerializeField]
     StarFiller _star;
+    [SerializeField]
+    float countUpTime;
 
     [SerializeField]
     bool _debugMode;
@@ -49,6 +51,7 @@ public class ResultUIManager : MonoBehaviour
 
     public void ShowScoreUI()
     {
+        AudioManager.Instance.PlaySE(AudioManager.SEtype.ResultScore);
         Debug.Log(_score);
         scoreUIPanel.SetActive(true);
         StartCoroutine(ScoreCountUp());
@@ -56,17 +59,15 @@ public class ResultUIManager : MonoBehaviour
 
     IEnumerator ScoreCountUp()
     {
-        int temp = 0;
-        while (temp < _score)
+        float time = 0;
+        while (time < countUpTime)
         {
-            yield return null;
-            temp++;
+            int temp = (int)Random.RandomRange(0, _score);
             _texts[3].text = temp.ToString();
-            if (temp == _score)
-            {
-                break;
-            }
+            time += Time.deltaTime;
+            yield return null;
         }
+        _texts[3].text = _score.ToString();
     }
 
     void SetScores()

@@ -20,10 +20,10 @@ public class ResultObjectGenerate : MonoBehaviour
             Instantiate(_debugFood, _parents[0]);
             TimeLineManager timeLineManager = GetComponent<TimeLineManager>();
             timeLineManager.PlayTimeLine(0);
-            AudioManager.Instance.PlaySE(AudioManager.SEtype.Fall);
         }
         else
         {
+            AudioManager.Instance.PlaySE(AudioManager.SEtype.Fall);
             GeneratePrefabs();
         }
     }
