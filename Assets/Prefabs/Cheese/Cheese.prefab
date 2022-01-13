@@ -235,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runEffectBase: {fileID: 5918661153053416562}
   runEffectTrail: {fileID: 9160315574476415568}
+  endRunEffectTrail: {fileID: 0}
 --- !u!1001 &3425252162858687280
 PrefabInstance:
   m_ObjectHideFlags: 0
