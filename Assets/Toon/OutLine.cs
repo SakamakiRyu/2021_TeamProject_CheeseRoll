@@ -11,8 +11,11 @@ public class OutLine : MonoBehaviour
 
     void Start()
     {
-        _outlineRenderer = CreateOutline(OutlineMaterial, _outlineScaleFactor, _outlineColor);
-        _outlineRenderer.enabled = true;
+        if (SceneManager.Instance?.CurrentScene != "Result")
+        {
+            _outlineRenderer = CreateOutline(OutlineMaterial, _outlineScaleFactor, _outlineColor);
+            _outlineRenderer.enabled = true;
+        }
     }
 
     void Update()

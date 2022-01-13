@@ -6,6 +6,9 @@ public class SceneManager : MonoBehaviour
 {
     public static SceneManager Instance;
 
+    private string _currentScene = "none";
+    public string CurrentScene => _currentScene;
+
     private void Awake()
     {
         MakeSingle();
@@ -88,6 +91,7 @@ public class SceneManager : MonoBehaviour
                     break;
                 }
         }
+        _currentScene = nextSceneName;
 
         if (!isChengeBGM)
         {
