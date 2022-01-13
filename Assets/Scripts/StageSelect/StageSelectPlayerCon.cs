@@ -46,10 +46,11 @@ public class StageSelectPlayerCon : MonoBehaviour
     private void Awake()
     {
         _fade.FadeOut();
+        _index = PlayerPrefs.GetInt("LastStage", 0);
     }
     void Start()
     {
-        transform.position = _stageTarget[0].transform.position;
+        transform.position = _stageTarget[_index].transform.position;
     }
 
     // Update is called once per frame
@@ -174,6 +175,7 @@ public class StageSelectPlayerCon : MonoBehaviour
 
                 //5秒待つ
                 yield return new WaitForSeconds(5);
+                PlayerPrefs.SetInt("LastStage", _index);
                 SceneManager.Instance.GoNextScene($"Stage{_visIndex}");
                 yield break;
             }
