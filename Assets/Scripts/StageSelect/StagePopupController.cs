@@ -37,6 +37,7 @@ public class StagePopupController : MonoBehaviour
         _state.pressedSprite = _PressedSprites[id];
         _stageButton.spriteState = _state;
         _dishFoodImage.sprite = HighScoreManager.Incetance.HighScoreStructurs[id].GetDishPic();
+        _starFiller.ResetFill(3);
         switch (HighScoreManager.Incetance.HighScoreStructurs[id].GetHighScore())
         {
             case 2:
