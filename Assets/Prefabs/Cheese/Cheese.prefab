@@ -184,6 +184,8 @@ MonoBehaviour:
   _zPosition: -1
   _animator: {fileID: 7732156074455775939}
   _renderer: {fileID: 6762712743921614624}
+  _facePatternA: {fileID: 2100000, guid: c4c8c9e2adada084cb0364d549408109, type: 2}
+  _facePatternB: {fileID: 2100000, guid: 6c980ea362f11bd42b136ca5505de587, type: 2}
 --- !u!135 &2240036976987341437
 SphereCollider:
   m_ObjectHideFlags: 0
