@@ -14,6 +14,7 @@ public class Slicer : MonoBehaviour
             other.gameObject.GetComponent<Cheese>().GetDamage(_hpDownValue);
             EffectManager.Instance.PlayEffect(EffectManager.EffectType.HitObstacle, other.transform.position);
             AudioManager.Instance.PlaySE(AudioManager.SEtype.SlicerSound);
+            Cheese.Instance.ChengeFace();
         }
     }
 }

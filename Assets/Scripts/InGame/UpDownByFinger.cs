@@ -22,14 +22,12 @@ public class UpDownByFinger : MonoBehaviour
     [Header("鉄板生成の下限値( y座標 )")]
     [SerializeField]
     private float _min;
-
-    [Header("鉄板生成の上限値( y座標 )")]
+    
     [SerializeField]
     private float _max;
 
     /// <summary>前のフレームのy座標を保存しておく変数</summary>
     private float _prevMousePosY;
-
     /// <summary>画面に触れていたか</summary>
     private bool _isTouch = false;
 

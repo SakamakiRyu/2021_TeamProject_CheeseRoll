@@ -62,7 +62,7 @@ public class HeraMouse : MonoBehaviour
             Vector3 hitpos = (_myTransform.position + other.transform.position) / 2.0f;
             EffectManager.Instance.PlayEffect(EffectManager.EffectType.HitObstacle, hitpos);
             //‚Æ‚è‚Ü‚±‚ê‚Å
-            AudioManager.Instance.PlaySE(AudioManager.SEtype.SlicerSound);
+            AudioManager.Instance.PlaySE(AudioManager.SEtype.MouseChewing);
         }
     }
 }

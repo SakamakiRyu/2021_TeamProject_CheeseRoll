@@ -41,6 +41,12 @@ public class Cheese : MonoBehaviour
 
     float _speed = 0;
 
+    [SerializeField]
+    private Material _facePatternA;
+
+    [SerializeField]
+    private Material _facePatternB;
+
     private void Awake()
     {
         Instance = this;
@@ -116,7 +122,7 @@ public class Cheese : MonoBehaviour
             //差に応じて速度を変化させる
             _speed = _move.MoveSpeed + sa;
         }
-        else if(StageManager.Instance.State == StageManager.StageState.PreGame || StageManager.Instance.State == StageManager.StageState.EndGame)
+        else if (StageManager.Instance.State == StageManager.StageState.PreGame || StageManager.Instance.State == StageManager.StageState.EndGame)
         {
             //デフォルトの移動スピードを採用する
             _speed = _move.DefaultMoveSpeed;
@@ -125,8 +131,6 @@ public class Cheese : MonoBehaviour
         {
             _speed = 0;
         }
-
-
     }
 
     bool _lr;
@@ -188,5 +192,20 @@ public class Cheese : MonoBehaviour
     {
         _isHIde = true;
         _renderer.enabled = false;
+    }
+
+    /// <summary>
+    /// 表情変更処理
+    /// </summary>
+    public void ChengeFace()
+    {
+        StartCoroutine(ChengeFaceMaterial());
+    }
+
+    private IEnumerator ChengeFaceMaterial()
+    {
+        _renderer.material = _facePatternB;
+        yield return new WaitForSeconds(1f);
+        _renderer.material = _facePatternA;
     }
 }

@@ -60,6 +60,7 @@ public class MouseBeheiviour : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
+            Cheese.Instance.ChengeFace();
             AudioManager.Instance.PlaySE(AudioManager.SEtype.MouseChewing);
             Vector3 hitpos = (_myTransform.position + other.transform.position) / 2.0f;
             EffectManager.Instance.PlayEffect(EffectManager.EffectType.HitObstacle, hitpos);
