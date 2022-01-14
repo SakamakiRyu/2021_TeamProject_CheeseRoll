@@ -48,4 +48,16 @@ public class StarFiller : MonoBehaviour
             _star.StarFill(remaingScore);
         }
     }
+    public void ResetFill(int count)
+    {
+        count -= 1;
+        _image = GetComponent<Image>();
+        _image.fillAmount = 0;
+        if (count != 0)
+        {
+            _star.ResetFill(count);
+        }
+      
+       
+    }
 }
