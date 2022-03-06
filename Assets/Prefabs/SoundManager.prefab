@@ -216,7 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playOnStart: 1
   _cueName: BGM_GamePlay01
-  _cueSheet: BGM
+  _cueSheet: BGM1
   _regionOnStart: {fileID: 0}
   _listenerOnStart: {fileID: 0}
   _use3dPositioning: 1

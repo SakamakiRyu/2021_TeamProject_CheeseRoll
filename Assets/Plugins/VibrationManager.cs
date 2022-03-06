@@ -26,7 +26,9 @@ public static class VibrationManager
         }
         else
         {
+#if UNITY_ANDROID
             Handheld.Vibrate();
+#endif
         }
     }
     public static bool isAndroid()
